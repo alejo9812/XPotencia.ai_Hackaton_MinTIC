@@ -1,0 +1,146 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Proyecto MinTIC | Fase 2</title>
+    <style>
+      :root {
+        color-scheme: light;
+        --bg: #f4fbf8;
+        --surface: #ffffff;
+        --text: #12241d;
+        --muted: #567165;
+        --accent: #0f766e;
+        --accent-soft: #e0f7f4;
+        --border: #cce7e2;
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: linear-gradient(180deg, #edfdf8 0%, var(--bg) 100%);
+        color: var(--text);
+      }
+
+      main {
+        max-width: 880px;
+        margin: 0 auto;
+        padding: 48px 20px 64px;
+      }
+
+      .card {
+        background: var(--surface);
+        border: 1px solid var(--border);
+        border-radius: 20px;
+        box-shadow: 0 14px 40px rgba(18, 36, 29, 0.08);
+        padding: 32px;
+      }
+
+      .eyebrow {
+        display: inline-block;
+        margin-bottom: 16px;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: var(--accent-soft);
+        color: var(--accent);
+        font-size: 0.9rem;
+        font-weight: 700;
+      }
+
+      h1 {
+        margin: 0 0 12px;
+        font-size: clamp(2rem, 5vw, 3.2rem);
+      }
+
+      .lead {
+        margin: 0 0 24px;
+        color: var(--muted);
+        font-size: 1.05rem;
+        line-height: 1.6;
+      }
+
+      .grid {
+        display: grid;
+        gap: 16px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .panel {
+        background: #fbfffe;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 18px;
+      }
+
+      .label {
+        margin: 0 0 8px;
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+        color: var(--muted);
+      }
+
+      .value {
+        margin: 0;
+        font-size: 1.1rem;
+        font-weight: 700;
+      }
+
+      ul {
+        margin: 12px 0 0;
+        padding-left: 20px;
+        color: var(--muted);
+      }
+
+      .back {
+        display: inline-block;
+        margin-top: 22px;
+        color: var(--accent);
+        text-decoration: none;
+        font-weight: 700;
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="card">
+        <span class="eyebrow">Fase 2</span>
+        <h1>Proyecto independiente de Fase 2</h1>
+        <p class="lead">
+          Esta fase tambien vive en su propio espacio, con sus propias variables y contenido. La idea es mantenerla completamente separada de Fase 1.
+        </p>
+
+        <div class="grid">
+          <article class="panel">
+            <p class="label">Estado</p>
+            <p class="value">Separado del resto del sitio</p>
+          </article>
+          <article class="panel">
+            <p class="label">Alcance</p>
+            <p class="value">Solo contenido de Fase 2</p>
+          </article>
+          <article class="panel">
+            <p class="label">Variables</p>
+            <p class="value">No se mezclan con Fase 1</p>
+          </article>
+        </div>
+
+        <div class="panel" style="margin-top: 16px;">
+          <p class="label">Notas de trabajo</p>
+          <ul>
+            <li>Usa esta area solo para el proyecto de la Fase 2.</li>
+            <li>Agrega aqui sus archivos, avances y validaciones propias.</li>
+            <li>Si cambia esta fase, no modifiques Fase 1.</li>
+          </ul>
+        </div>
+
+        <a class="back" href="../">Volver al inicio</a>
+      </section>
+    </main>
+  </body>
+</html>
