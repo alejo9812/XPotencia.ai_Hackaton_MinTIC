@@ -21,53 +21,39 @@ from base2_common import (
 TARGET_ID_DOCUMENTO = 756926574
 
 
-def count_total_rows() -> int:
+def get_total_rows() -> int:
     return int(query_resource({"$select": "count(*) as total", "$limit": "1"})[0]["total"])
 
 
 def build_html() -> str:
     metadata = load_metadata()
-    total_rows = count_total_rows()
+    total_rows = get_total_rows()
     total_columns = len(metadata["columns"])
 
     date_columns = column_names_by_type(metadata, "calendar_date")
     numeric_columns = column_names_by_type(metadata, "number")
     text_columns = column_names_by_types(metadata, {"text", "url"})
 
-    missing_exprs = {
-        "descripci_n": build_missing_count_expr("descripci_n", treat_blank_as_missing=True),
-        "proceso": build_missing_count_expr("proceso", treat_blank_as_missing=True),
-        "fecha_carga": build_missing_count_expr("fecha_carga", treat_blank_as_missing=True),
-        "id_documento": build_missing_count_expr("id_documento"),
-        "tamanno_archivo": build_missing_count_expr("tamanno_archivo"),
-        "nit_entidad": build_missing_count_expr("nit_entidad"),
-        "n_mero_de_contrato": build_missing_count_expr("n_mero_de_contrato", treat_blank_as_missing=True),
-        "nombre_archivo": build_missing_count_expr("nombre_archivo", treat_blank_as_missing=True),
-        "extensi_n": build_missing_count_expr("extensi_n", treat_blank_as_missing=True),
-        "entidad": build_missing_count_expr("entidad", treat_blank_as_missing=True),
-        "url_descarga_documento": build_missing_count_expr("url_descarga_documento", treat_blank_as_missing=True),
-    }
-
     stats = query_resource(
         {
             "$select": ",".join(
                 [
-                    f"{missing_exprs['descripci_n']} as descripcion_nulls",
-                    f"{missing_exprs['proceso']} as proceso_nulls",
-                    f"min(id_documento) as min_id_documento",
-                    f"max(id_documento) as max_id_documento",
-                    f"avg(id_documento) as avg_id_documento",
-                    f"median(id_documento) as median_id_documento",
-                    f"min(tamanno_archivo) as min_tamano_archivo",
-                    f"max(tamanno_archivo) as max_tamano_archivo",
-                    f"avg(tamanno_archivo) as avg_tamano_archivo",
-                    f"median(tamanno_archivo) as median_tamano_archivo",
-                    f"min(nit_entidad) as min_nit_entidad",
-                    f"max(nit_entidad) as max_nit_entidad",
-                    f"avg(nit_entidad) as avg_nit_entidad",
-                    f"median(nit_entidad) as median_nit_entidad",
-                    f"min(fecha_carga) as min_fecha_carga",
-                    f"max(fecha_carga) as max_fecha_carga",
+                    f"{build_missing_count_expr('descripci_n', treat_blank_as_missing=True)} as descripcion_nulls",
+                    f"{build_missing_count_expr('proceso', treat_blank_as_missing=True)} as proceso_nulls",
+                    "min(id_documento) as min_id_documento",
+                    "max(id_documento) as max_id_documento",
+                    "avg(id_documento) as avg_id_documento",
+                    "median(id_documento) as median_id_documento",
+                    "min(tamanno_archivo) as min_tamano_archivo",
+                    "max(tamanno_archivo) as max_tamano_archivo",
+                    "avg(tamanno_archivo) as avg_tamano_archivo",
+                    "median(tamanno_archivo) as median_tamano_archivo",
+                    "min(nit_entidad) as min_nit_entidad",
+                    "max(nit_entidad) as max_nit_entidad",
+                    "avg(nit_entidad) as avg_nit_entidad",
+                    "median(nit_entidad) as median_nit_entidad",
+                    "min(fecha_carga) as min_fecha_carga",
+                    "max(fecha_carga) as max_fecha_carga",
                 ]
             ),
             "$limit": "1",
@@ -83,6 +69,89 @@ def build_html() -> str:
         }
     )
 
+    min_fecha = parse_iso_datetime(stats["min_fecha_carga"])
+    max_fecha = parse_iso_datetime(stats["max_fecha_carga"])
+    rango_dias = (max_fecha - min_fecha).days if min_fecha and max_fecha else None
+
+    def join_names(items):
+        return ", ".join(escape(name) for _, name in items) if items else "N/D"
+
+    answer_rows = [
+        ("15", "¿Cuál es el total de registros en el dataset de documentos electrónicos dmgg-8hin?", format_int_es(total_rows)),
+        ("16", "¿Cuántas columnas tiene el dataset?", format_int_es(total_columns)),
+        ("17", "¿Cuántos valores nulos tiene el campo descripción?", format_int_es(int(stats["descripcion_nulls"]))),
+        ("18", "¿Cuántos valores nulos tiene el campo proceso?", format_int_es(int(stats["proceso_nulls"]))),
+        ("19", "¿Cuáles columnas tienen tipo de dato int64?", join_names(numeric_columns)),
+        ("20", "¿Cuáles columnas tienen tipo de dato str?", join_names(text_columns)),
+        (
+            "21",
+            "Máximo, mínimo, media y mediana de la columna ID documento.",
+            " | ".join(
+                [
+                    f"Máximo: {format_int_es(int(stats['max_id_documento']))}",
+                    f"Mínimo: {format_int_es(int(stats['min_id_documento']))}",
+                    f"Media: {format_float_es(float(stats['avg_id_documento']))}",
+                    f"Mediana: {format_int_es(int(round(float(stats['median_id_documento']))))}",
+                ]
+            ),
+        ),
+        (
+            "22",
+            "Máximo, mínimo, media y mediana de la columna tamaño archivo.",
+            " | ".join(
+                [
+                    f"Máximo: {format_int_es(int(stats['max_tamano_archivo']))}",
+                    f"Mínimo: {format_int_es(int(stats['min_tamano_archivo']))}",
+                    f"Media: {format_float_es(float(stats['avg_tamano_archivo']))}",
+                    f"Mediana: {format_int_es(int(round(float(stats['median_tamano_archivo']))))}",
+                ]
+            ),
+        ),
+        (
+            "23",
+            "Máximo, mínimo, media y mediana de la columna nit_entidad.",
+            " | ".join(
+                [
+                    f"Máximo: {format_int_es(int(stats['max_nit_entidad']))}",
+                    f"Mínimo: {format_int_es(int(stats['min_nit_entidad']))}",
+                    f"Media: {format_float_es(float(stats['avg_nit_entidad']))}",
+                    f"Mediana: {format_int_es(int(round(float(stats['median_nit_entidad']))))}",
+                ]
+            ),
+        ),
+        (
+            "24",
+            "Máximos y mínimos de fecha carga.",
+            f"Mínimo: {format_iso_datetime(stats['min_fecha_carga'])} | Máximo: {format_iso_datetime(stats['max_fecha_carga'])}",
+        ),
+        (
+            "25",
+            "Rango de fecha o diferencia de fecha de fecha carga.",
+            f"{format_int_es(rango_dias) if rango_dias is not None else 'N/D'} días",
+        ),
+        (
+            "26",
+            f"¿Cuál es el nombre_archivo y fecha_carga para el ID Documento = {TARGET_ID_DOCUMENTO}?",
+            "; ".join(
+                f"{row['nombre_archivo']} ({format_iso_datetime(row['fecha_carga'])})"
+                for row in lookup_rows
+            )
+            if lookup_rows
+            else "No se encontraron registros para ese ID",
+        ),
+    ]
+
+    qa_rows_html = "".join(
+        f"""
+        <tr>
+          <td>{num}</td>
+          <td>{escape(question)}</td>
+          <td>{escape(answer)}</td>
+        </tr>
+        """
+        for num, question, answer in answer_rows
+    )
+
     lookup_html = (
         "".join(
             f"<tr><td>{escape(row['nombre_archivo'])}</td><td>{format_iso_datetime(row['fecha_carga'])}</td></tr>"
@@ -92,13 +161,8 @@ def build_html() -> str:
         else "<tr><td colspan='2'>No se encontraron registros para el ID solicitado.</td></tr>"
     )
 
-    numeric_columns_html = ", ".join(escape(name) for _, name in numeric_columns)
-    text_columns_html = ", ".join(escape(name) for _, name in text_columns)
-    date_columns_html = ", ".join(escape(name) for _, name in date_columns)
-
-    min_fecha = parse_iso_datetime(stats["min_fecha_carga"])
-    max_fecha = parse_iso_datetime(stats["max_fecha_carga"])
-    rango_dias = (max_fecha - min_fecha).days if min_fecha and max_fecha else None
+    min_fecha_display = format_iso_datetime(stats["min_fecha_carga"])
+    max_fecha_display = format_iso_datetime(stats["max_fecha_carga"])
 
     html = f"""<!DOCTYPE html>
 <html lang="es">
@@ -159,7 +223,6 @@ def build_html() -> str:
       padding: 2px 5px;
       border-radius: 6px;
     }}
-    ul {{ margin: 10px 0 0; padding-left: 20px; }}
     .section {{ margin-top: 18px; }}
   </style>
 </head>
@@ -180,9 +243,25 @@ def build_html() -> str:
 
     <div class="section">
       <h2>Tipos de columnas</h2>
-      <p><strong>int64 / number:</strong> {numeric_columns_html}</p>
-      <p><strong>str / text:</strong> {text_columns_html}</p>
-      <p><strong>fecha / calendar_date:</strong> {date_columns_html}</p>
+      <p><strong>int64 / number:</strong> {join_names(numeric_columns)}</p>
+      <p><strong>str / text:</strong> {join_names(text_columns)}</p>
+      <p><strong>fecha / calendar_date:</strong> {join_names(date_columns)}</p>
+    </div>
+
+    <div class="section">
+      <h2>Preguntas y respuestas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Pregunta</th>
+            <th>Respuesta</th>
+          </tr>
+        </thead>
+        <tbody>
+          {qa_rows_html}
+        </tbody>
+      </table>
     </div>
 
     <div class="section">
@@ -206,7 +285,7 @@ def build_html() -> str:
             <td>{format_int_es(int(round(float(stats['median_id_documento']))))}</td>
           </tr>
           <tr>
-            <td>Tamaño Documento</td>
+            <td>Tamaño archivo</td>
             <td>{format_int_es(int(stats['min_tamano_archivo']))}</td>
             <td>{format_int_es(int(stats['max_tamano_archivo']))}</td>
             <td>{format_float_es(float(stats['avg_tamano_archivo']))}</td>
@@ -225,18 +304,14 @@ def build_html() -> str:
 
     <div class="section">
       <h2>Fecha carga</h2>
-      <p><strong>Mínimo:</strong> {format_iso_datetime(stats['min_fecha_carga'])}</p>
-      <p><strong>Máximo:</strong> {format_iso_datetime(stats['max_fecha_carga'])}</p>
-    </div>
-
-    <div class="section">
-      <h2>Rango de fecha carga</h2>
-      <p>25. Diferencia entre la fecha mínima y máxima de carga: <strong>{format_int_es(rango_dias) if rango_dias is not None else 'N/D'}</strong> días.</p>
+      <p><strong>Mínimo:</strong> {min_fecha_display}</p>
+      <p><strong>Máximo:</strong> {max_fecha_display}</p>
+      <p><strong>25. Rango:</strong> {format_int_es(rango_dias) if rango_dias is not None else 'N/D'} días</p>
     </div>
 
     <div class="section">
       <h2>Consulta puntual</h2>
-      <p>26. ¿Cuál es el nombre_archivo y fecha_carga para el ID Documento = {TARGET_ID_DOCUMENTO}?</p>
+      <p><strong>26.</strong> ¿Cuál es el nombre_archivo y fecha_carga para el ID Documento = {TARGET_ID_DOCUMENTO}?</p>
       <table>
         <thead>
           <tr>
@@ -265,8 +340,7 @@ def parse_args() -> argparse.Namespace:
 def main() -> None:
     args = parse_args()
     output_path = Path(args.output)
-    html = build_html()
-    output_path.write_text(html, encoding="utf-8")
+    output_path.write_text(build_html(), encoding="utf-8")
     print(f"Reporte EDA base 2 generado en: {output_path}")
 
 

@@ -1,0 +1,235 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>EDA Base 2 - SECOP II</title>
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      background: linear-gradient(180deg, #0b1120 0%, #111827 100%);
+      color: #e5e7eb;
+    }
+    .wrap {
+      max-width: 1200px;
+      margin: 0 auto;
+      padding: 32px 20px 48px;
+    }
+    .hero, .section, .card {
+      background: rgba(17,24,39,.84);
+      border: 1px solid rgba(148,163,184,.16);
+      border-radius: 18px;
+      padding: 18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.18);
+    }
+    .hero {
+      background: linear-gradient(135deg, rgba(56,189,248,.18), rgba(52,211,153,.14));
+      margin-bottom: 18px;
+    }
+    h1, h2 { margin: 0 0 12px; }
+    .subtle, .muted { color: #9ca3af; }
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 14px;
+      margin: 18px 0;
+    }
+    .metric {
+      font-size: 30px;
+      font-weight: 700;
+      color: #38bdf8;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-top: 10px;
+    }
+    th, td {
+      border-bottom: 1px solid #334155;
+      padding: 10px 8px;
+      text-align: left;
+      vertical-align: top;
+    }
+    th { color: #cbd5e1; }
+    code {
+      background: rgba(15,23,42,.8);
+      padding: 2px 5px;
+      border-radius: 6px;
+    }
+    .section { margin-top: 18px; }
+  </style>
+</head>
+<body>
+  <div class="wrap">
+    <div class="hero">
+      <div class="subtle">Base 2 · SECOP II - Archivos Descarga Desde 2025</div>
+      <h1>EDA de la base 2</h1>
+      <p class="subtle">Análisis generado sobre el dataset completo vía API oficial de datos.gov.co.</p>
+    </div>
+
+    <div class="grid">
+      <div class="card"><div class="subtle">15. Registros totales</div><div class="metric">17.353.029</div></div>
+      <div class="card"><div class="subtle">16. Columnas totales</div><div class="metric">11</div></div>
+      <div class="card"><div class="subtle">17. Nulos en descripción</div><div class="metric">238</div></div>
+      <div class="card"><div class="subtle">18. Nulos en proceso</div><div class="metric">0</div></div>
+    </div>
+
+    <div class="section">
+      <h2>Tipos de columnas</h2>
+      <p><strong>int64 / number:</strong> ID Documento, Tamaño Documento, NIT Entidad</p>
+      <p><strong>str / text:</strong> Número de Contrato, Proceso, Nombre Documento, Extensión, Descripción, Entidad, URL Descarga Documento</p>
+      <p><strong>fecha / calendar_date:</strong> Fecha Carga</p>
+    </div>
+
+    <div class="section">
+      <h2>Preguntas y respuestas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>#</th>
+            <th>Pregunta</th>
+            <th>Respuesta</th>
+          </tr>
+        </thead>
+        <tbody>
+          
+        <tr>
+          <td>15</td>
+          <td>¿Cuál es el total de registros en el dataset de documentos electrónicos dmgg-8hin?</td>
+          <td>17.353.029</td>
+        </tr>
+        
+        <tr>
+          <td>16</td>
+          <td>¿Cuántas columnas tiene el dataset?</td>
+          <td>11</td>
+        </tr>
+        
+        <tr>
+          <td>17</td>
+          <td>¿Cuántos valores nulos tiene el campo descripción?</td>
+          <td>238</td>
+        </tr>
+        
+        <tr>
+          <td>18</td>
+          <td>¿Cuántos valores nulos tiene el campo proceso?</td>
+          <td>0</td>
+        </tr>
+        
+        <tr>
+          <td>19</td>
+          <td>¿Cuáles columnas tienen tipo de dato int64?</td>
+          <td>ID Documento, Tamaño Documento, NIT Entidad</td>
+        </tr>
+        
+        <tr>
+          <td>20</td>
+          <td>¿Cuáles columnas tienen tipo de dato str?</td>
+          <td>Número de Contrato, Proceso, Nombre Documento, Extensión, Descripción, Entidad, URL Descarga Documento</td>
+        </tr>
+        
+        <tr>
+          <td>21</td>
+          <td>Máximo, mínimo, media y mediana de la columna ID documento.</td>
+          <td>Máximo: 757.010.598 | Mínimo: 563.041.734 | Media: 658560206,52 | Mediana: 656.263.760</td>
+        </tr>
+        
+        <tr>
+          <td>22</td>
+          <td>Máximo, mínimo, media y mediana de la columna tamaño archivo.</td>
+          <td>Máximo: 52.428.800 | Mínimo: 1 | Media: 1383901,19 | Mediana: 331.149</td>
+        </tr>
+        
+        <tr>
+          <td>23</td>
+          <td>Máximo, mínimo, media y mediana de la columna nit_entidad.</td>
+          <td>Máximo: 9.020.109.854 | Mínimo: 4.653.184 | Media: 1454719639,59 | Mediana: 890.907.241</td>
+        </tr>
+        
+        <tr>
+          <td>24</td>
+          <td>Máximos y mínimos de fecha carga.</td>
+          <td>Mínimo: 2024-12-31 | Máximo: 2026-02-24</td>
+        </tr>
+        
+        <tr>
+          <td>25</td>
+          <td>Rango de fecha o diferencia de fecha de fecha carga.</td>
+          <td>420 días</td>
+        </tr>
+        
+        <tr>
+          <td>26</td>
+          <td>¿Cuál es el nombre_archivo y fecha_carga para el ID Documento = 756926574?</td>
+          <td>SOLICITUD COTIZACIoN ITEMS NO PREVISTOS MUJER.XLSX (2026-02-24)</td>
+        </tr>
+        
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Estadísticas numéricas</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Columna</th>
+            <th>Mínimo</th>
+            <th>Máximo</th>
+            <th>Media</th>
+            <th>Mediana</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>ID Documento</td>
+            <td>563.041.734</td>
+            <td>757.010.598</td>
+            <td>658560206,52</td>
+            <td>656.263.760</td>
+          </tr>
+          <tr>
+            <td>Tamaño archivo</td>
+            <td>1</td>
+            <td>52.428.800</td>
+            <td>1383901,19</td>
+            <td>331.149</td>
+          </tr>
+          <tr>
+            <td>NIT Entidad</td>
+            <td>4.653.184</td>
+            <td>9.020.109.854</td>
+            <td>1454719639,59</td>
+            <td>890.907.241</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+
+    <div class="section">
+      <h2>Fecha carga</h2>
+      <p><strong>Mínimo:</strong> 2024-12-31</p>
+      <p><strong>Máximo:</strong> 2026-02-24</p>
+      <p><strong>25. Rango:</strong> 420 días</p>
+    </div>
+
+    <div class="section">
+      <h2>Consulta puntual</h2>
+      <p><strong>26.</strong> ¿Cuál es el nombre_archivo y fecha_carga para el ID Documento = 756926574?</p>
+      <table>
+        <thead>
+          <tr>
+            <th>nombre_archivo</th>
+            <th>fecha_carga</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>SOLICITUD COTIZACIoN ITEMS NO PREVISTOS MUJER.XLSX</td><td>2026-02-24</td></tr>
+        </tbody>
+      </table>
+    </div>
+  </div>
+</body>
+</html>
