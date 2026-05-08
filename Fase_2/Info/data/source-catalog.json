@@ -1,0 +1,56 @@
+[
+  {
+    "id": "all",
+    "label": "Todos los datos",
+    "datasetId": "multi-source",
+    "jsonUrl": "",
+    "csvUrl": "",
+    "description": "Vista combinada para revisar el universo completo de la demo.",
+    "focus": ["risk", "value", "competition", "quality"]
+  },
+  {
+    "id": "secop_contracts",
+    "label": "SECOP II - Contratos Electronicos",
+    "datasetId": "jbjy-vk9h",
+    "jsonUrl": "https://www.datos.gov.co/resource/jbjy-vk9h.json?$limit=5000",
+    "csvUrl": "https://www.datos.gov.co/resource/jbjy-vk9h.csv?$limit=5000",
+    "description": "Contrato, valor, proveedor, entidad y trazabilidad basica.",
+    "focus": ["risk", "value", "quality"]
+  },
+  {
+    "id": "secop_processes",
+    "label": "SECOP II - Procesos de Contratacion",
+    "datasetId": "p6dx-8zbt",
+    "jsonUrl": "https://www.datos.gov.co/resource/p6dx-8zbt.json?$limit=5000",
+    "csvUrl": "https://www.datos.gov.co/resource/p6dx-8zbt.csv?$limit=5000",
+    "description": "Procesos, competencia, modalidad y etapa de compra.",
+    "focus": ["competition", "quality"]
+  },
+  {
+    "id": "secop_bidders",
+    "label": "SECOP II - Proponentes por Proceso",
+    "datasetId": "hgi6-6wh3",
+    "jsonUrl": "https://www.datos.gov.co/resource/hgi6-6wh3.json?$limit=5000",
+    "csvUrl": "https://www.datos.gov.co/resource/hgi6-6wh3.csv?$limit=5000",
+    "description": "Pluralidad de participantes y comportamiento de oferentes.",
+    "focus": ["competition", "risk"]
+  },
+  {
+    "id": "secop_offers",
+    "label": "SECOP II - Ofertas por Proceso",
+    "datasetId": "wi7w-2nvm",
+    "jsonUrl": "https://www.datos.gov.co/resource/wi7w-2nvm.json?$limit=5000",
+    "csvUrl": "https://www.datos.gov.co/resource/wi7w-2nvm.csv?$limit=5000",
+    "description": "Cantidad de ofertas y dinamica de participacion.",
+    "focus": ["competition", "value"]
+  },
+  {
+    "id": "secop_sanctions",
+    "label": "SECOP II - Multas y Sanciones",
+    "datasetId": "it5q-hg94",
+    "jsonUrl": "https://www.datos.gov.co/resource/it5q-hg94.json?$limit=5000",
+    "csvUrl": "https://www.datos.gov.co/resource/it5q-hg94.csv?$limit=5000",
+    "description": "Señales reputacionales para priorizar revision humana.",
+    "focus": ["risk", "quality"]
+  }
+]

@@ -1,0 +1,47 @@
+[
+  {
+    "id": "risk",
+    "label": "Riesgo",
+    "description": "Score deterministico y señales de opacidad.",
+    "groupHint": "entity",
+    "chartLabel": "Ranking de riesgo",
+    "study": "Prioriza contratos con montos altos, descripciones debiles o campos incompletos.",
+    "question": "Que contratos requieren revision humana primero?"
+  },
+  {
+    "id": "value",
+    "label": "Valor",
+    "description": "Concentracion economica y montos mas altos.",
+    "groupHint": "provider",
+    "chartLabel": "Concentracion por valor",
+    "study": "Muestra quien concentra mas recursos y si el valor se concentra en pocas manos.",
+    "question": "Donde esta el mayor monto contratado?"
+  },
+  {
+    "id": "competition",
+    "label": "Competencia",
+    "description": "Pluralidad de participantes y oportunidades de oferta.",
+    "groupHint": "modality",
+    "chartLabel": "Competencia por categoria",
+    "study": "Ayuda a ver procesos con poca pluralidad o baja participacion.",
+    "question": "Que procesos tienen menos competencia?"
+  },
+  {
+    "id": "quality",
+    "label": "Calidad",
+    "description": "Completitud de datos y limpieza para auditoria.",
+    "groupHint": "entity",
+    "chartLabel": "Calidad de datos",
+    "study": "Detecta registros con campos vacios, fechas dudosas o textos genericos.",
+    "question": "Que registros necesitan limpieza o verificacion?"
+  },
+  {
+    "id": "timeline",
+    "label": "Linea temporal",
+    "description": "Distribucion por fecha para encontrar picos de carga o concentracion.",
+    "groupHint": "month",
+    "chartLabel": "Distribucion temporal",
+    "study": "Sirve para detectar periodos con mucha actividad, repeticion o concentracion.",
+    "question": "En que periodo se concentran los casos?"
+  }
+]

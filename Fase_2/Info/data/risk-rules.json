@@ -1,0 +1,44 @@
+{
+  "thresholds": {
+    "shortDescriptionWords": 8,
+    "genericDescriptionWords": 16,
+    "lowCompetitionParticipants": 2,
+    "highPercentile": 90,
+    "veryHighPercentile": 95,
+    "repeatProviderCount": 2,
+    "futureDateToleranceDays": 14
+  },
+  "weights": {
+    "amountHigh": 12,
+    "amountVeryHigh": 20,
+    "shortDescription": 14,
+    "genericDescription": 10,
+    "missingEntity": 9,
+    "missingProvider": 9,
+    "missingAmount": 9,
+    "missingDate": 7,
+    "missingModality": 8,
+    "repeatProvider": 12,
+    "lowCompetition": 10,
+    "sensitiveModality": 8,
+    "invalidDate": 8,
+    "sanctionSignal": 15
+  },
+  "genericTerms": [
+    "apoyo",
+    "servicio",
+    "suministro",
+    "mantenimiento",
+    "logistica",
+    "operacion",
+    "gestion",
+    "tecnico",
+    "general",
+    "integral"
+  ],
+  "sensitiveModalities": [
+    "contratacion directa",
+    "minima cuantia",
+    "seleccion abreviada"
+  ]
+}

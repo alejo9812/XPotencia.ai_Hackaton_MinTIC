@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>GobIA Auditor | Fase 2</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero panel">
+        <div class="hero-copy">
+          <span class="eyebrow">Fase 2 | GobIA Auditor</span>
+          <h1>GobIA Auditor</h1>
+          <p class="lead">
+            MVP para analizar contratos del SECOP II con score deterministico, señales explicables y un panel preparado para Dify Chatflow embebido.
+          </p>
+          <div class="status-row">
+            <span class="pill" id="statusSource">Fuente: cargando</span>
+            <span class="pill" id="statusIndicator">Indicador: cargando</span>
+            <span class="pill" id="statusMode">Modo: mock</span>
+            <span class="pill" id="statusCount">Contratos: 0</span>
+            <span class="pill" id="statusRisk">Riesgo: --</span>
+            <span class="pill" id="statusUpdated">Actualizado: --</span>
+          </div>
+        </div>
+
+        <div class="hero-actions no-print">
+          <button class="button secondary" id="refreshBtn" type="button">Recalcular</button>
+          <button class="button secondary" id="copyBtn" type="button">Copiar resumen</button>
+          <button class="button primary" id="printBtn" type="button">Imprimir PDF</button>
+        </div>
+      </header>
+
+      <section class="panel roadmap-panel">
+        <div class="panel-head">
+          <div>
+            <p class="section-kicker">Ruta de desarrollo</p>
+            <h2>Los siguientes 3 pasos ya quedan preparados</h2>
+          </div>
+          <span class="helper">Fase 2 aislada de Fase 1</span>
+        </div>
+        <div class="roadmap-grid">
+          <article class="roadmap-card">
+            <strong>1. Dify Chatflow embebido</strong>
+            <p>Panel conversacional para explicar el contrato seleccionado sin tocar la logica local.</p>
+          </article>
+          <article class="roadmap-card">
+            <strong>2. API de Dify segura</strong>
+            <p>Proxy o serverless para enviar contrato, score y señales sin exponer claves en el frontend.</p>
+          </article>
+          <article class="roadmap-card">
+            <strong>3. Informe ejecutivo</strong>
+            <p>Salida imprimible a PDF con hallazgos, preguntas de auditoria y recomendacion final.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="workspace">
+        <aside class="sidebar">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Fuentes</p>
+                <h2>Datos SECOP II</h2>
+              </div>
+            </div>
+            <div class="source-grid" id="sourceCards"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Filtros</p>
+                <h2>Configuracion del analisis</h2>
+              </div>
+            </div>
+
+            <form class="filter-form" id="filterForm">
+              <label>
+                <span>Modo de datos</span>
+                <select id="dataModeSelect">
+                  <option value="mock">Mock local</option>
+                  <option value="live">Live preview</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Indicador</span>
+                <select id="indicatorSelect"></select>
+              </label>
+
+              <label>
+                <span>Agrupar por</span>
+                <select id="groupSelect">
+                  <option value="entity">Entidad</option>
+                  <option value="provider">Proveedor</option>
+                  <option value="modality">Modalidad</option>
+                  <option value="department">Departamento</option>
+                  <option value="status">Estado</option>
+                  <option value="month">Mes</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Estado</span>
+                <select id="statusSelect">
+                  <option value="all">Todos</option>
+                  <option value="Adjudicado">Adjudicado</option>
+                  <option value="En evaluacion">En evaluacion</option>
+                  <option value="Terminado">Terminado</option>
+                  <option value="En proceso">En proceso</option>
+                  <option value="Registrado">Registrado</option>
+                  <option value="Presentada">Presentada</option>
+                  <option value="Vigente">Vigente</option>
+                </select>
+              </label>
+
+              <label>
+                <span>Buscar</span>
+                <input id="searchInput" type="search" placeholder="Entidad, proveedor, objeto..." />
+              </label>
+
+              <label>
+                <span>Top N: <strong id="topNValue">8</strong></span>
+                <input id="topNInput" type="range" min="3" max="12" step="1" value="8" />
+              </label>
+            </form>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Ingreso rapido</p>
+                <h2>Agregar contrato</h2>
+              </div>
+              <span class="helper">Se guarda en localStorage</span>
+            </div>
+
+            <form id="manualForm" class="manual-form">
+              <label>
+                <span>Fuente</span>
+                <select id="manualSourceSelect"></select>
+              </label>
+              <label>
+                <span>Entidad</span>
+                <input id="manualEntity" type="text" placeholder="Entidad contratante" required />
+              </label>
+              <label>
+                <span>Proveedor</span>
+                <input id="manualProvider" type="text" placeholder="Proveedor o contratista" required />
+              </label>
+              <label>
+                <span>Modalidad</span>
+                <input id="manualModality" type="text" placeholder="Contratacion Directa" required />
+              </label>
+              <div class="two-col">
+                <label>
+                  <span>Valor</span>
+                  <input id="manualAmount" type="number" min="0" step="1000" placeholder="980000000" required />
+                </label>
+                <label>
+                  <span>Fecha</span>
+                  <input id="manualDate" type="date" required />
+                </label>
+              </div>
+              <div class="two-col">
+                <label>
+                  <span>Departamento</span>
+                  <input id="manualDepartment" type="text" placeholder="Bogota D.C." />
+                </label>
+                <label>
+                  <span>Municipio</span>
+                  <input id="manualMunicipality" type="text" placeholder="Bogota" />
+                </label>
+              </div>
+              <div class="two-col">
+                <label>
+                  <span>Participantes</span>
+                  <input id="manualParticipants" type="number" min="0" step="1" value="1" />
+                </label>
+                <label>
+                  <span>Ofertas</span>
+                  <input id="manualOffers" type="number" min="0" step="1" value="1" />
+                </label>
+              </div>
+              <label>
+                <span>Estado</span>
+                <input id="manualStatus" type="text" placeholder="Adjudicado" />
+              </label>
+              <label>
+                <span>Descripcion</span>
+                <textarea id="manualDescription" rows="4" placeholder="Objeto o descripcion resumida" required></textarea>
+              </label>
+              <button class="button primary" type="submit">Agregar registro</button>
+              <p class="helper" id="manualResult">El nuevo caso queda disponible solo en esta sesion local.</p>
+            </form>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Metodologia</p>
+                <h2>Reglas visibles y explicables</h2>
+              </div>
+            </div>
+            <ul class="bullet-list" id="methodologyList"></ul>
+          </section>
+        </aside>
+
+        <section class="content">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Vista general</p>
+                <h2>Indicadores ejecutivos</h2>
+              </div>
+              <span class="helper" id="tableCount">0 resultados</span>
+            </div>
+            <div class="kpi-grid" id="kpiGrid"></div>
+          </section>
+
+          <section class="analysis-grid">
+            <article class="panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Grafica</p>
+                  <h2 id="chartTitle">Ranking de riesgo</h2>
+                </div>
+              </div>
+              <p class="helper" id="chartDescription"></p>
+              <div class="chart-series" id="chartSeries"></div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Tabla</p>
+                  <h2>Ranking de contratos</h2>
+                </div>
+                <span class="helper">Selecciona una fila para ver detalles</span>
+              </div>
+              <div class="table-wrap">
+                <table class="table" aria-label="Ranking de contratos">
+                  <thead>
+                    <tr>
+                      <th>Score</th>
+                      <th>Contrato</th>
+                      <th>Entidad / Proveedor</th>
+                      <th>Valor</th>
+                      <th>Señales</th>
+                      <th>Fecha</th>
+                    </tr>
+                  </thead>
+                  <tbody id="contractsTableBody"></tbody>
+                </table>
+              </div>
+            </article>
+          </section>
+
+          <section class="inspector-grid">
+            <article class="panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Contrato</p>
+                  <h2>Detalle seleccionado</h2>
+                </div>
+              </div>
+              <div id="contractDetail"></div>
+              <h3 class="subheading">Señales activas</h3>
+              <div id="signalList" class="signal-list"></div>
+              <h3 class="subheading">Preguntas de auditoria</h3>
+              <ul class="bullet-list" id="auditQuestions"></ul>
+            </article>
+
+          <article class="panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">IA explicativa</p>
+                  <h2>Dify Chatflow</h2>
+                </div>
+                <span class="helper">Primera integracion</span>
+              </div>
+              <div class="dify-config">
+                <form id="difyConfigForm" class="dify-config-form">
+                  <label class="dify-toggle">
+                    <input id="difyEnabledInput" type="checkbox" />
+                    <span>Conectar Dify Chatflow</span>
+                  </label>
+                  <label>
+                    <span>URL publica del chatflow</span>
+                    <input
+                      id="difyWebAppUrlInput"
+                      type="url"
+                      placeholder="https://udify.app/chatbot/TU_TOKEN"
+                    />
+                  </label>
+                  <div class="two-col">
+                    <label>
+                      <span>Titulo del panel</span>
+                      <input id="difyTitleInput" type="text" placeholder="GobIA Auditor" />
+                    </label>
+                    <label>
+                      <span>Altura del iframe</span>
+                      <input id="difyIframeHeightInput" type="number" min="420" step="20" value="760" />
+                    </label>
+                  </div>
+                  <div class="config-actions">
+                    <button class="button secondary" type="submit">Guardar conexion</button>
+                    <button class="button secondary" id="difyResetConfigBtn" type="button">Restaurar</button>
+                  </div>
+                  <p class="helper" id="difyConfigStatus"></p>
+                </form>
+              </div>
+              <div id="difyWidget"></div>
+              <div class="dify-followups">
+                <div class="panel-tag">Preguntas sugeridas</div>
+                <ul class="bullet-list" id="difyStarters"></ul>
+              </div>
+              <div class="dify-api-panel">
+                <div class="panel-tag">API segura</div>
+                <p class="dify-note">
+                  El navegador solo llama al proxy local <code>/api/dify/chat</code>. La clave de Dify vive en el servidor.
+                </p>
+                <div class="config-actions no-print">
+                  <button class="button primary" id="difyApiSendBtn" type="button">Enviar a Dify API</button>
+                  <button class="button secondary" id="difyApiCopyBtn" type="button">Copiar payload</button>
+                  <button class="button secondary" id="difyApiResetBtn" type="button">Nueva conversacion</button>
+                </div>
+                <p class="helper" id="difyApiStatus">Listo para enviar el contrato seleccionado al proxy local.</p>
+                <div id="difyApiResponse"></div>
+              </div>
+            </article>
+          </section>
+
+          <section class="panel report-panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Informe</p>
+                <h2>Informe ejecutivo listo para PDF</h2>
+              </div>
+              <div class="report-actions no-print">
+                <span class="helper">Vista optimizada para imprimir y presentar</span>
+                <button class="button secondary" id="downloadReportHtmlBtn" type="button">Descargar HTML</button>
+                <button class="button secondary" id="downloadReportMdBtn" type="button">Descargar MD</button>
+              </div>
+            </div>
+            <div id="executiveSummary" class="report-copy"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Indicadores</p>
+                <h2>Analisis y estudios</h2>
+              </div>
+            </div>
+            <div class="indicator-grid" id="indicatorCards"></div>
+          </section>
+
+          <footer class="footer-note">
+            Fase 2 vive en <strong>Fase_2/Info/</strong> como un proyecto independiente. Fase 1 y Fase 2 no comparten variables ni logica.
+          </footer>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

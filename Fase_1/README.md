@@ -4,6 +4,17 @@ Fase 1 es el punto de partida del proyecto: un prototipo local, autocontenible y
 
 La idea de esta fase no es solo "mostrar datos", sino dejar montada la base de trabajo para que despues podamos conectar fuentes reales, validar indicadores y convertir esto en un MVP serio para analisis y presentacion.
 
+## Acceso rapido
+
+- [Abrir la pagina de Fase 1](./info/index.html)
+- Servidor local: `http://localhost:4174`
+
+Para verla en el navegador desde la raiz del proyecto:
+
+```powershell
+py -3 -m http.server 4174 --directory Fase_1\info
+```
+
 ## Objetivo de la fase
 
 - Explorar una fuente de datos desde una interfaz clara.

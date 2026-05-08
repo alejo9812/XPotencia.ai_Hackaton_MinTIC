@@ -1,0 +1,12 @@
+{
+  "enabled": false,
+  "title": "GobIA Auditor",
+  "webAppUrl": "",
+  "iframeHeight": 760,
+  "apiProxyPath": "/api/dify/chat",
+  "apiUserId": "gobia-auditor-local",
+  "apiQuery": "Analiza el contrato seleccionado usando el contexto proporcionado por la aplicacion.",
+  "apiResponseMode": "blocking",
+  "intro": "Chatflow embebido para explicar contratos, señales de opacidad y preguntas de auditoria.",
+  "cta": "Cuando tengas el URL del chatflow, lo conectamos aqui sin tocar la logica local."
+}
