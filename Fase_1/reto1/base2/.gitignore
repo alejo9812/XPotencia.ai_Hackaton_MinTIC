@@ -1,0 +1,3 @@
+parquet/
+meta/logs/
+meta/download-*.log

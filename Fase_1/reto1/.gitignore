@@ -1,0 +1,12 @@
+# Artefactos generados del reto 1
+base1/reports/
+base2/parquet/
+base2/meta/logs/
+base2/EDA_base2.html
+base2/scripts/__pycache__/
+tools/secop-download/node_modules/
+tools/secop-download/output/
+
+# Archivos temporales comunes
+*.pyc
+__pycache__/

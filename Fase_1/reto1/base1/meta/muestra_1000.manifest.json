@@ -1,0 +1,13 @@
+{
+  "dataset": "jbjy-vk9h",
+  "format": "csv",
+  "baseUrl": "https://www.datos.gov.co/resource",
+  "where": null,
+  "order": "ultima_actualizacion DESC",
+  "limit": 1000,
+  "maxRows": 1000,
+  "outputPath": "D:\\Hackaton_MinTIC\\Fase_1\\reto1\\base1\\meta\\muestra_1000.csv",
+  "downloadedRows": 1000,
+  "startedAt": "2026-05-08T18:29:50.712Z",
+  "finishedAt": "2026-05-08T18:30:00.013Z"
+}

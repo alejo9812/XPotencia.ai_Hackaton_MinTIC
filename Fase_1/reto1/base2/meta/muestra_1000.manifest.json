@@ -1,0 +1,13 @@
+{
+  "dataset": "dmgg-8hin",
+  "format": "csv",
+  "baseUrl": "https://www.datos.gov.co/resource",
+  "where": null,
+  "order": "fecha_carga DESC",
+  "limit": 1000,
+  "maxRows": 1000,
+  "outputPath": "D:\\Hackaton_MinTIC\\Fase_1\\reto1\\base2\\meta\\muestra_1000.csv",
+  "downloadedRows": 1000,
+  "startedAt": "2026-05-08T18:26:13.089Z",
+  "finishedAt": "2026-05-08T18:26:15.959Z"
+}

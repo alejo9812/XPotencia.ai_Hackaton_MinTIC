@@ -1,0 +1,11 @@
+{
+  "name": "secop-download",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "download": "node download-secop.mjs"
+  },
+  "dependencies": {
+    "parquetjs-lite": "^0.8.7"
+  }
+}

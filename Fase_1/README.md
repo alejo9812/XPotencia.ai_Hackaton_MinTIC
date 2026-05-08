@@ -7,6 +7,7 @@ La idea de esta fase no es solo "mostrar datos", sino dejar montada la base de t
 ## Acceso rapido
 
 - [Abrir la pagina de Fase 1](./info/index.html)
+- [Ir al indice del reto 1](./reto1/README.md)
 - Servidor local: `http://localhost:4174`
 
 Para verla en el navegador desde la raiz del proyecto:
