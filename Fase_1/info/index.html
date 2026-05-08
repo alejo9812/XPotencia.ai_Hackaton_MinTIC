@@ -1,0 +1,1356 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Fase 1 | Open Data Sprint MVP</title>
+    <style>
+      :root {
+        --bg: #08111f;
+        --panel: #111a2e;
+        --panel-2: #16213a;
+        --text: #ecf2ff;
+        --muted: #98a9cb;
+        --accent: #6ee7ff;
+        --accent-2: #8b5cf6;
+        --good: #35d07f;
+        --warn: #fbbf24;
+        --bad: #fb7185;
+        --border: rgba(160, 180, 220, 0.18);
+        --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+      }
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        color: var(--text);
+        background:
+          radial-gradient(circle at top left, rgba(110, 231, 255, 0.16), transparent 30%),
+          radial-gradient(circle at top right, rgba(139, 92, 246, 0.18), transparent 28%),
+          linear-gradient(180deg, #06101b 0%, var(--bg) 100%);
+      }
+
+      main {
+        max-width: 1440px;
+        margin: 0 auto;
+        padding: 32px 20px 56px;
+      }
+
+      .hero {
+        display: grid;
+        gap: 18px;
+        padding: 28px;
+        border: 1px solid var(--border);
+        border-radius: 24px;
+        background: rgba(17, 26, 46, 0.9);
+        box-shadow: var(--shadow);
+      }
+
+      .hero-top {
+        display: flex;
+        gap: 20px;
+        align-items: flex-start;
+        justify-content: space-between;
+      }
+
+      .hero-copy {
+        max-width: 860px;
+      }
+
+      .badge {
+        display: inline-flex;
+        align-items: center;
+        gap: 8px;
+        width: fit-content;
+        padding: 8px 12px;
+        border-radius: 999px;
+        background: rgba(110, 231, 255, 0.12);
+        color: var(--accent);
+        font-size: 0.88rem;
+        font-weight: 700;
+        letter-spacing: 0.02em;
+      }
+
+      h1,
+      h2,
+      h3 {
+        margin: 0;
+      }
+
+      h1 {
+        margin-top: 14px;
+        font-size: clamp(2rem, 5vw, 3.6rem);
+        line-height: 1.04;
+      }
+
+      .lead {
+        margin: 14px 0 0;
+        max-width: 78ch;
+        color: var(--muted);
+        line-height: 1.65;
+        font-size: 1.02rem;
+      }
+
+      .hero-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        justify-content: flex-end;
+      }
+
+      .button {
+        appearance: none;
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        padding: 12px 16px;
+        background: var(--panel-2);
+        color: var(--text);
+        font: inherit;
+        cursor: pointer;
+        transition: transform 0.15s ease, border-color 0.15s ease, background 0.15s ease;
+      }
+
+      .button:hover {
+        transform: translateY(-1px);
+        border-color: rgba(110, 231, 255, 0.4);
+      }
+
+      .button.primary {
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+        color: #04111b;
+        font-weight: 700;
+        border-color: transparent;
+      }
+
+      .button.secondary {
+        background: rgba(255, 255, 255, 0.04);
+      }
+
+      .status-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+      }
+
+      .pill {
+        padding: 8px 12px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.05);
+        color: var(--text);
+        font-size: 0.9rem;
+      }
+
+      .shell {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: 360px minmax(0, 1fr);
+        margin-top: 18px;
+      }
+
+      .sidebar,
+      .content {
+        display: grid;
+        gap: 18px;
+      }
+
+      .panel {
+        border: 1px solid var(--border);
+        border-radius: 22px;
+        background: rgba(17, 26, 46, 0.84);
+        padding: 18px;
+        box-shadow: 0 18px 50px rgba(0, 0, 0, 0.16);
+      }
+
+      .panel-head {
+        display: flex;
+        align-items: flex-start;
+        justify-content: space-between;
+        gap: 16px;
+        margin-bottom: 14px;
+      }
+
+      .panel-head p,
+      .helper,
+      .muted,
+      .source-card p,
+      .indicator-card p,
+      .report p,
+      .note-list,
+      .data-methods li {
+        color: var(--muted);
+      }
+
+      .source-grid,
+      .indicator-grid {
+        display: grid;
+        gap: 10px;
+      }
+
+      .source-card,
+      .indicator-card {
+        display: grid;
+        gap: 6px;
+        padding: 14px;
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        background: var(--panel-2);
+        cursor: pointer;
+        transition: border-color 0.15s ease, transform 0.15s ease;
+      }
+
+      .source-card:hover,
+      .indicator-card:hover {
+        transform: translateY(-1px);
+        border-color: rgba(110, 231, 255, 0.34);
+      }
+
+      .source-card.active,
+      .indicator-card.active {
+        border-color: rgba(110, 231, 255, 0.72);
+        box-shadow: 0 0 0 1px rgba(110, 231, 255, 0.18) inset;
+      }
+
+      .source-card strong,
+      .indicator-card strong {
+        font-size: 0.98rem;
+      }
+
+      .source-meta,
+      .tag-row {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 8px;
+      }
+
+      .tag {
+        display: inline-flex;
+        align-items: center;
+        gap: 6px;
+        padding: 5px 10px;
+        border-radius: 999px;
+        border: 1px solid var(--border);
+        background: rgba(255, 255, 255, 0.04);
+        color: var(--muted);
+        font-size: 0.8rem;
+      }
+
+      .controls {
+        display: grid;
+        gap: 14px;
+      }
+
+      label {
+        display: grid;
+        gap: 8px;
+        color: var(--muted);
+        font-size: 0.92rem;
+      }
+
+      select,
+      input[type="range"],
+      input[type="text"],
+      input[type="number"],
+      input[type="date"],
+      textarea {
+        width: 100%;
+      }
+
+      select,
+      input[type="text"],
+      input[type="number"],
+      input[type="date"],
+      textarea {
+        border: 1px solid var(--border);
+        border-radius: 14px;
+        background: var(--panel-2);
+        color: var(--text);
+        padding: 12px;
+        font: inherit;
+      }
+
+      textarea {
+        min-height: 92px;
+        resize: vertical;
+      }
+
+      input[type="range"] {
+        accent-color: var(--accent);
+      }
+
+      .kpi-grid {
+        display: grid;
+        gap: 14px;
+        grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
+      }
+
+      .kpi-card {
+        background: var(--panel-2);
+        border: 1px solid var(--border);
+        border-radius: 18px;
+        padding: 16px;
+      }
+
+      .kpi-label {
+        color: var(--muted);
+        font-size: 0.8rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .kpi-value {
+        margin-top: 10px;
+        font-size: 1.55rem;
+        font-weight: 700;
+      }
+
+      .kpi-hint {
+        margin-top: 8px;
+        color: var(--muted);
+        font-size: 0.9rem;
+        line-height: 1.5;
+      }
+
+      .grid-2 {
+        display: grid;
+        gap: 18px;
+        grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      }
+
+      .bars {
+        display: grid;
+        gap: 12px;
+      }
+
+      .bar-row {
+        display: grid;
+        gap: 6px;
+      }
+
+      .bar-topline {
+        display: flex;
+        justify-content: space-between;
+        gap: 10px;
+        align-items: baseline;
+        font-size: 0.92rem;
+      }
+
+      .bar-track {
+        height: 14px;
+        border-radius: 999px;
+        background: rgba(255, 255, 255, 0.08);
+        overflow: hidden;
+      }
+
+      .bar-fill {
+        height: 100%;
+        border-radius: 999px;
+        background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      }
+
+      .table-wrap {
+        overflow-x: auto;
+      }
+
+      table {
+        width: 100%;
+        border-collapse: collapse;
+      }
+
+      th,
+      td {
+        padding: 12px 10px;
+        border-bottom: 1px solid var(--border);
+        text-align: left;
+        vertical-align: top;
+      }
+
+      th {
+        color: var(--muted);
+        font-size: 0.82rem;
+        text-transform: uppercase;
+        letter-spacing: 0.08em;
+      }
+
+      .score {
+        font-weight: 700;
+      }
+
+      .score.good {
+        color: var(--good);
+      }
+
+      .score.warn {
+        color: var(--warn);
+      }
+
+      .score.bad {
+        color: var(--bad);
+      }
+
+      .signals {
+        margin: 0;
+        padding-left: 18px;
+        color: var(--muted);
+      }
+
+      .report {
+        display: grid;
+        gap: 10px;
+        line-height: 1.6;
+      }
+
+      .report strong {
+        color: var(--text);
+      }
+
+      .study-grid {
+        display: grid;
+        gap: 12px;
+        grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      }
+
+      .study-card {
+        border: 1px solid var(--border);
+        border-radius: 16px;
+        padding: 14px;
+        background: rgba(255, 255, 255, 0.03);
+      }
+
+      .record-grid {
+        display: grid;
+        gap: 10px;
+        grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+      }
+
+      .form-actions {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 10px;
+        margin-top: 12px;
+      }
+
+      .data-methods {
+        margin: 0;
+        padding-left: 18px;
+        line-height: 1.6;
+      }
+
+      .footer-note {
+        margin-top: 8px;
+      }
+
+      @media (max-width: 1120px) {
+        .shell,
+        .grid-2 {
+          grid-template-columns: 1fr;
+        }
+
+        .hero-top {
+          flex-direction: column;
+        }
+
+        .hero-actions {
+          justify-content: flex-start;
+        }
+      }
+
+      @media print {
+        body {
+          background: #fff;
+          color: #111;
+        }
+
+        main {
+          max-width: none;
+          padding: 0;
+        }
+
+        .hero,
+        .sidebar,
+        .hero-actions,
+        .button,
+        .source-grid,
+        .indicator-grid,
+        .record-panel {
+          display: none !important;
+        }
+
+        .panel {
+          box-shadow: none;
+          background: #fff;
+          color: #111;
+          border-color: #d0d7e2;
+          break-inside: avoid;
+        }
+
+        .panel h2,
+        .panel h3,
+        .kpi-value,
+        .report strong,
+        .score {
+          color: #111;
+        }
+
+        .bar-fill {
+          background: #1f4ed8;
+        }
+
+        .table-wrap {
+          overflow: visible;
+        }
+
+        .shell {
+          grid-template-columns: 1fr;
+        }
+
+        .content {
+          display: grid;
+          gap: 16px;
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <main>
+      <section class="hero">
+        <div class="hero-top">
+          <div class="hero-copy">
+            <span class="badge">Fase 1 - borrador local en info/</span>
+            <h1>Open Data Sprint MVP</h1>
+            <p class="lead">
+              Un prototipo ordenado para explorar datos abiertos del Estado colombiano. Permite elegir una fuente,
+              cambiar el indicador, revisar listas y rankings, agregar registros manualmente y generar un informe listo
+              para imprimir a PDF.
+            </p>
+          </div>
+          <div class="hero-actions">
+            <button class="button primary" id="printBtn" type="button">Imprimir informe PDF</button>
+            <button class="button secondary" id="resetBtn" type="button">Restaurar muestra</button>
+          </div>
+        </div>
+        <div class="status-row" id="heroTags"></div>
+      </section>
+
+      <section class="shell">
+        <aside class="sidebar">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Fuentes de datos</h2>
+                <p>Selecciona la base que quieres estudiar hoy.</p>
+              </div>
+            </div>
+            <div class="source-grid" id="sourceGrid"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Settings</h2>
+                <p>Estos controles son los que conviene editar rapido en una demo.</p>
+              </div>
+            </div>
+            <div class="controls">
+              <label>
+                Fuente activa
+                <select id="sourceSelect"></select>
+              </label>
+              <label>
+                Indicador
+                <select id="indicatorSelect"></select>
+              </label>
+              <label>
+                Agrupar por
+                <select id="groupBySelect">
+                  <option value="entity">Entidad</option>
+                  <option value="provider">Proveedor</option>
+                  <option value="department">Departamento</option>
+                  <option value="modality">Modalidad</option>
+                  <option value="status">Estado</option>
+                </select>
+              </label>
+              <label>
+                Buscar en la lista
+                <input id="searchInput" type="text" placeholder="Entidad, proveedor, id..." />
+              </label>
+              <label>
+                Top N: <strong id="topNLabel">5</strong>
+                <input id="topNRange" type="range" min="3" max="12" value="5" />
+              </label>
+            </div>
+            <p class="helper footer-note">
+              El MVP prioriza configuracion rapida, lecturas claras y resultados faciles de explicar ante jurado.
+            </p>
+          </section>
+
+          <section class="panel record-panel">
+            <div class="panel-head">
+              <div>
+                <h2>Agregar informacion</h2>
+                <p>Sirve para cargar nuevas observaciones sin tocar el codigo.</p>
+              </div>
+            </div>
+            <form id="recordForm">
+              <div class="record-grid">
+                <label>
+                  Fuente
+                  <select id="recordSource"></select>
+                </label>
+                <label>
+                  ID
+                  <input id="recordId" type="text" placeholder="RC-001" required />
+                </label>
+                <label>
+                  Entidad
+                  <input id="recordEntity" type="text" placeholder="MinTIC" />
+                </label>
+                <label>
+                  Proveedor
+                  <input id="recordProvider" type="text" placeholder="Proveedor SAS" />
+                </label>
+                <label>
+                  Departamento
+                  <input id="recordDepartment" type="text" placeholder="Bogota" />
+                </label>
+                <label>
+                  Modalidad
+                  <input id="recordModality" type="text" placeholder="Licitacion publica" />
+                </label>
+                <label>
+                  Valor
+                  <input id="recordAmount" type="number" min="0" step="1" placeholder="250000000" />
+                </label>
+                <label>
+                  Fecha
+                  <input id="recordDate" type="date" />
+                </label>
+                <label>
+                  Participantes
+                  <input id="recordParticipants" type="number" min="0" step="1" placeholder="2" />
+                </label>
+                <label>
+                  Estado
+                  <input id="recordStatus" type="text" placeholder="Abierto" />
+                </label>
+              </div>
+              <label style="margin-top: 10px;">
+                Descripcion
+                <textarea id="recordDescription" placeholder="Resumen corto del registro"></textarea>
+              </label>
+              <div class="form-actions">
+                <button class="button primary" type="submit">Agregar registro</button>
+                <button class="button secondary" id="clearCustomBtn" type="button">Limpiar registros locales</button>
+              </div>
+            </form>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Ruta tecnica</h2>
+                <p>Repositorios y librerias utiles para pasar del borrador al MVP real.</p>
+              </div>
+            </div>
+            <ul class="data-methods">
+              <li><strong>pandas</strong> para leer CSV, Excel y tablas HTML.</li>
+              <li><strong>pdfplumber</strong> y <strong>Camelot</strong> para extraer tablas desde PDF.</li>
+              <li><strong>Scrapy</strong> para scraping web estructurado.</li>
+              <li><strong>ydata-profiling</strong> y <strong>Evidently</strong> para analisis y reportes de calidad.</li>
+              <li><strong>Metabase</strong>, <strong>Dash</strong> o <strong>Streamlit</strong> para dashboards y reportes compartibles.</li>
+            </ul>
+          </section>
+        </aside>
+
+        <section class="content">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>KPI de analisis</h2>
+                <p>Resumen rapido del dataset filtrado.</p>
+              </div>
+            </div>
+            <div class="kpi-grid" id="kpiGrid"></div>
+          </section>
+
+          <section class="grid-2">
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <h2 id="chartTitle">Top categorias</h2>
+                  <p id="chartDescription"></p>
+                </div>
+              </div>
+              <div class="bars" id="barChart"></div>
+            </section>
+
+            <section class="panel">
+              <div class="panel-head">
+                <div>
+                  <h2>Informe ejecutivo</h2>
+                  <p>Texto listo para copiar o imprimir a PDF.</p>
+                </div>
+              </div>
+              <div class="report" id="reportBox"></div>
+            </section>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Ranking de registros</h2>
+                <p>Ordenado por score o por la medida del indicador seleccionado.</p>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>Registro</th>
+                    <th>Entidad</th>
+                    <th>Proveedor</th>
+                    <th>Valor</th>
+                    <th>Score</th>
+                    <th>Señales</th>
+                  </tr>
+                </thead>
+                <tbody id="riskTable"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <h2>Indicadores y estudios</h2>
+                <p>Esta capa define la lectura de cada grafica para la presentacion.</p>
+              </div>
+            </div>
+            <div class="indicator-grid" id="indicatorGrid"></div>
+            <div class="study-grid" id="studyGrid" style="margin-top: 14px;"></div>
+          </section>
+        </section>
+      </section>
+    </main>
+
+    <script>
+      const STORAGE_KEY = "fase1.customRows.v1";
+
+      const DATA_SOURCES = [
+        {
+          id: "secop_contracts",
+          label: "SECOP II - Contratos",
+          datasetId: "jbjy-vk9h",
+          type: "JSON / CSV",
+          description: "Contratos, proveedores, valores, modalidad y estado.",
+          jsonUrl: "https://www.datos.gov.co/resource/jbjy-vk9h.json?$limit=5000",
+          csvUrl: "https://www.datos.gov.co/resource/jbjy-vk9h.csv?$limit=5000",
+          focus: "Riesgo, valor y concentracion",
+        },
+        {
+          id: "secop_processes",
+          label: "SECOP II - Procesos",
+          datasetId: "p6dx-8zbt",
+          type: "JSON / CSV",
+          description: "Procesos de contratacion y pluralidad de oferentes.",
+          jsonUrl: "https://www.datos.gov.co/resource/p6dx-8zbt.json?$limit=5000",
+          csvUrl: "https://www.datos.gov.co/resource/p6dx-8zbt.csv?$limit=5000",
+          focus: "Competencia y volumen",
+        },
+        {
+          id: "secop_bidders",
+          label: "SECOP II - Proponentes",
+          datasetId: "hgi6-6wh3",
+          type: "JSON / CSV",
+          description: "Participacion de proponentes por proceso.",
+          jsonUrl: "https://www.datos.gov.co/resource/hgi6-6wh3.json?$limit=5000",
+          csvUrl: "https://www.datos.gov.co/resource/hgi6-6wh3.csv?$limit=5000",
+          focus: "Pluralidad y competencia",
+        },
+        {
+          id: "secop_offers",
+          label: "SECOP II - Ofertas",
+          datasetId: "wi7w-2nvm",
+          type: "JSON / CSV",
+          description: "Ofertas enviadas por proceso.",
+          jsonUrl: "https://www.datos.gov.co/resource/wi7w-2nvm.json?$limit=5000",
+          csvUrl: "https://www.datos.gov.co/resource/wi7w-2nvm.csv?$limit=5000",
+          focus: "Competencia y mercado",
+        },
+        {
+          id: "secop_sanctions",
+          label: "SECOP II - Multas y sanciones",
+          datasetId: "it5q-hg94",
+          type: "JSON / CSV",
+          description: "Antecedentes de riesgo y sanciones.",
+          jsonUrl: "https://www.datos.gov.co/resource/it5q-hg94.json?$limit=5000",
+          csvUrl: "https://www.datos.gov.co/resource/it5q-hg94.csv?$limit=5000",
+          focus: "Riesgo reputacional",
+        },
+      ];
+
+      const INDICATORS = [
+        {
+          id: "risk",
+          label: "Riesgo simple",
+          description: "Detecta monto alto, campos vacios, descripcion corta y repeticion de proveedor.",
+          chartLabel: "Top categorias por riesgo",
+          study: "Ideal para una lectura ejecutiva rapida.",
+        },
+        {
+          id: "value",
+          label: "Valor total por categoria",
+          description: "Suma el valor contratado para ver concentracion monetaria.",
+          chartLabel: "Top categorias por valor",
+          study: "Sirve para detectar entidades o proveedores con mayor peso presupuestal.",
+        },
+        {
+          id: "count",
+          label: "Conteo de registros",
+          description: "Cuenta cuantas filas hay por categoria.",
+          chartLabel: "Top categorias por volumen",
+          study: "Ayuda a ver actividad alta o concentracion operacional.",
+        },
+        {
+          id: "quality",
+          label: "Calidad de datos",
+          description: "Promedia la completitud de campos criticos.",
+          chartLabel: "Top categorias por calidad",
+          study: "Permite detectar fuentes con datos incompletos o inconsistentes.",
+        },
+        {
+          id: "competition",
+          label: "Competencia / pluralidad",
+          description: "Usa participantes u ofertas para medir competencia en cada categoria.",
+          chartLabel: "Top categorias por competencia",
+          study: "Sirve para detectar procesos con baja participacion.",
+        },
+      ];
+
+      const BASE_ROWS = [
+        { source: "secop_contracts", id: "CT-001", entity: "Alcaldia de Bogota", provider: "TecnoData SAS", department: "Bogota", modality: "Licitacion publica", amount: 489000000, date: "2026-05-03", description: "Servicio de analitica y monitoreo de contratacion", status: "En ejecucion", participants: 3 },
+        { source: "secop_contracts", id: "CT-002", entity: "Alcaldia de Bogota", provider: "TecnoData SAS", department: "Bogota", modality: "Contrato directo", amount: 990000000, date: "2026-05-04", description: "Soporte integral sistema", status: "Adjudicado", participants: 1 },
+        { source: "secop_contracts", id: "CT-003", entity: "Gobernacion de Antioquia", provider: "Andes Labs", department: "Antioquia", modality: "Seleccion abreviada", amount: 215000000, date: "2026-05-02", description: "Plataforma de datos abiertos", status: "Abierto", participants: 2 },
+        { source: "secop_contracts", id: "CT-004", entity: "Ministerio de Salud", provider: "Salud Digital SAS", department: "Cundinamarca", modality: "Licitacion publica", amount: 1250000000, date: "2026-04-28", description: "Modernizacion interoperabilidad", status: "En ejecucion", participants: 4 },
+        { source: "secop_contracts", id: "CT-005", entity: "Ministerio de Salud", provider: "Salud Digital SAS", department: "Cundinamarca", modality: "Contrato directo", amount: 1800000000, date: "2026-05-05", description: "Servicio", status: "Adjudicado", participants: 1 },
+        { source: "secop_processes", id: "PR-101", entity: "Alcaldia de Medellin", provider: "Ciudad Analitica", department: "Antioquia", modality: "Concurso de meritos", amount: 330000000, date: "2026-05-01", description: "Revision de procesos", status: "Abierto", participants: 2 },
+        { source: "secop_processes", id: "PR-102", entity: "Alcaldia de Medellin", provider: "Ciudad Analitica", department: "Antioquia", modality: "Licitacion publica", amount: 910000000, date: "2026-05-06", description: "Auditoria y tablero de control", status: "Abierto", participants: 1 },
+        { source: "secop_processes", id: "PR-103", entity: "CAR Caribe", provider: "Ocean Data Group", department: "Atlantico", modality: "Seleccion abreviada", amount: 152000000, date: "2026-04-30", description: "Analisis ambiental", status: "En curso", participants: 4 },
+        { source: "secop_processes", id: "PR-104", entity: "MinTIC", provider: "GovIA Labs", department: "Bogota", modality: "Concurso de meritos", amount: 760000000, date: "2026-05-07", description: "Sprint de datos abiertos", status: "En curso", participants: 3 },
+        { source: "secop_bidders", id: "BD-201", entity: "MinTIC", provider: "GovIA Labs", department: "Bogota", modality: "Proponentes", amount: 0, date: "2026-05-01", description: "Proceso con pluralidad limitada", status: "1 proponente", participants: 1 },
+        { source: "secop_bidders", id: "BD-202", entity: "MinTIC", provider: "Data Bridge SAS", department: "Bogota", modality: "Proponentes", amount: 0, date: "2026-05-04", description: "Alta participacion", status: "4 proponentes", participants: 4 },
+        { source: "secop_bidders", id: "BD-203", entity: "IDEAM", provider: "Clima Data", department: "Bogota", modality: "Proponentes", amount: 0, date: "2026-05-03", description: "Competencia media", status: "2 proponentes", participants: 2 },
+        { source: "secop_offers", id: "OF-301", entity: "MinTIC", provider: "GovIA Labs", department: "Bogota", modality: "Ofertas", amount: 0, date: "2026-05-04", description: "Oferta entregada", status: "1 oferta", offers: 1 },
+        { source: "secop_offers", id: "OF-302", entity: "MinTIC", provider: "Data Bridge SAS", department: "Bogota", modality: "Ofertas", amount: 0, date: "2026-05-06", description: "Oferta entregada", status: "3 ofertas", offers: 3 },
+        { source: "secop_offers", id: "OF-303", entity: "Ministerio de Salud", provider: "Salud Digital SAS", department: "Cundinamarca", modality: "Ofertas", amount: 0, date: "2026-05-05", description: "Oferta entregada", status: "2 ofertas", offers: 2 },
+        { source: "secop_sanctions", id: "SN-401", entity: "Ministerio de Salud", provider: "Salud Digital SAS", department: "Cundinamarca", modality: "Sancion", amount: 0, date: "2026-05-05", description: "Sancion administrativa registrada", status: "Sancion", participants: 0 },
+        { source: "secop_sanctions", id: "SN-402", entity: "CAR Caribe", provider: "Ocean Data Group", department: "Atlantico", modality: "Sancion", amount: 0, date: "2026-04-27", description: "Multa por incumplimiento", status: "Multa", participants: 0 },
+      ];
+
+      const els = {
+        heroTags: document.getElementById("heroTags"),
+        sourceGrid: document.getElementById("sourceGrid"),
+        sourceSelect: document.getElementById("sourceSelect"),
+        indicatorSelect: document.getElementById("indicatorSelect"),
+        groupBySelect: document.getElementById("groupBySelect"),
+        searchInput: document.getElementById("searchInput"),
+        topNRange: document.getElementById("topNRange"),
+        topNLabel: document.getElementById("topNLabel"),
+        recordForm: document.getElementById("recordForm"),
+        recordSource: document.getElementById("recordSource"),
+        recordId: document.getElementById("recordId"),
+        recordEntity: document.getElementById("recordEntity"),
+        recordProvider: document.getElementById("recordProvider"),
+        recordDepartment: document.getElementById("recordDepartment"),
+        recordModality: document.getElementById("recordModality"),
+        recordAmount: document.getElementById("recordAmount"),
+        recordDate: document.getElementById("recordDate"),
+        recordParticipants: document.getElementById("recordParticipants"),
+        recordStatus: document.getElementById("recordStatus"),
+        recordDescription: document.getElementById("recordDescription"),
+        clearCustomBtn: document.getElementById("clearCustomBtn"),
+        printBtn: document.getElementById("printBtn"),
+        resetBtn: document.getElementById("resetBtn"),
+        kpiGrid: document.getElementById("kpiGrid"),
+        chartTitle: document.getElementById("chartTitle"),
+        chartDescription: document.getElementById("chartDescription"),
+        barChart: document.getElementById("barChart"),
+        reportBox: document.getElementById("reportBox"),
+        riskTable: document.getElementById("riskTable"),
+        indicatorGrid: document.getElementById("indicatorGrid"),
+        studyGrid: document.getElementById("studyGrid"),
+      };
+
+      const moneyFormat = new Intl.NumberFormat("es-CO", { maximumFractionDigits: 0 });
+
+      function loadCustomRows() {
+        try {
+          const raw = localStorage.getItem(STORAGE_KEY);
+          return raw ? JSON.parse(raw) : [];
+        } catch {
+          return [];
+        }
+      }
+
+      function saveCustomRows(rows) {
+        localStorage.setItem(STORAGE_KEY, JSON.stringify(rows));
+      }
+
+      let customRows = loadCustomRows();
+
+      function cleanText(value) {
+        return String(value ?? "").trim();
+      }
+
+      function parseAmount(value) {
+        const normalized = cleanText(value).replace(/[^\d.-]/g, "");
+        const parsed = Number(normalized);
+        return Number.isFinite(parsed) ? parsed : 0;
+      }
+
+      function parseDate(value) {
+        const text = cleanText(value);
+        if (!text) return "";
+        const date = new Date(text);
+        return Number.isNaN(date.getTime()) ? text : date.toISOString().slice(0, 10);
+      }
+
+      function computeCompleteness(row) {
+        const fields = ["entity", "provider", "department", "modality", "amount", "date", "description"];
+        const filled = fields.filter((field) => cleanText(row[field])).length;
+        return Math.round((filled / fields.length) * 100);
+      }
+
+      function normalizeRow(row) {
+        return {
+          ...row,
+          entity: cleanText(row.entity),
+          provider: cleanText(row.provider),
+          department: cleanText(row.department),
+          modality: cleanText(row.modality),
+          status: cleanText(row.status),
+          description: cleanText(row.description),
+          amount: parseAmount(row.amount),
+          date: parseDate(row.date),
+          participants: Number(row.participants ?? row.offers ?? 0) || 0,
+        };
+      }
+
+      function getIndicatorConfig(id) {
+        return INDICATORS.find((item) => item.id === id) || INDICATORS[0];
+      }
+
+      function getSourceConfig(id) {
+        return DATA_SOURCES.find((item) => item.id === id) || DATA_SOURCES[0];
+      }
+
+      function getRowsForSource(sourceId) {
+        return [...BASE_ROWS, ...customRows].filter((row) => row.source === sourceId).map(normalizeRow);
+      }
+
+      function scoreRow(row, providerCounts, avgAmount, maxAmount) {
+        const signals = [];
+        let score = 0;
+
+        if (row.amount >= avgAmount * 2) {
+          score += 30;
+          signals.push("monto alto");
+        } else if (row.amount >= maxAmount * 0.85) {
+          score += 20;
+          signals.push("monto muy alto");
+        } else if (row.amount >= avgAmount * 1.2) {
+          score += 10;
+          signals.push("monto por encima del promedio");
+        }
+
+        if (row.description.length < 20) {
+          score += 15;
+          signals.push("descripcion corta");
+        }
+
+        const missing = ["entity", "provider", "department", "modality", "amount", "date", "description"].filter((field) => !cleanText(row[field])).length;
+        if (missing > 0) {
+          score += missing * 10;
+          signals.push("campos incompletos");
+        }
+
+        if ((providerCounts.get(row.provider) || 0) > 1) {
+          score += 15;
+          signals.push("proveedor repetido");
+        }
+
+        if (row.participants && row.participants <= 1) {
+          score += 12;
+          signals.push("baja pluralidad");
+        }
+
+        if (/sanc|multa/i.test(row.status) || /sanc|multa/i.test(row.description)) {
+          score += 18;
+          signals.push("alerta reputacional");
+        }
+
+        return {
+          score: Math.min(100, score),
+          signals: signals.length ? signals : ["sin alertas fuertes"],
+        };
+      }
+
+      function getMetricValue(row, indicatorId) {
+        switch (indicatorId) {
+          case "value":
+            return row.amount;
+          case "count":
+            return 1;
+          case "quality":
+            return computeCompleteness(row);
+          case "competition":
+            return row.participants || row.offers || 0;
+          case "risk":
+          default:
+            return row.score;
+        }
+      }
+
+      function groupRows(rows, key, indicatorId) {
+        const map = new Map();
+
+        rows.forEach((row) => {
+          const label = cleanText(row[key]) || "Sin dato";
+          const current = map.get(label) || { label, total: 0, count: 0, completenessSum: 0, scoreSum: 0, competitionSum: 0 };
+          current.total += row.amount;
+          current.count += 1;
+          current.completenessSum += row.completeness;
+          current.scoreSum += row.score;
+          current.competitionSum += row.participants || row.offers || 0;
+          map.set(label, current);
+        });
+
+        return [...map.values()].sort((a, b) => {
+          const aValue = indicatorId === "value" ? a.total : indicatorId === "count" ? a.count : indicatorId === "quality" ? a.completenessSum / a.count : indicatorId === "competition" ? a.competitionSum / a.count : a.scoreSum / a.count;
+          const bValue = indicatorId === "value" ? b.total : indicatorId === "count" ? b.count : indicatorId === "quality" ? b.completenessSum / b.count : indicatorId === "competition" ? b.competitionSum / b.count : b.scoreSum / b.count;
+          return bValue - aValue || b.count - a.count;
+        });
+      }
+
+      function renderSelectOptions() {
+        els.sourceSelect.innerHTML = DATA_SOURCES.map((source) => `<option value="${source.id}">${source.label}</option>`).join("");
+        els.recordSource.innerHTML = DATA_SOURCES.map((source) => `<option value="${source.id}">${source.label}</option>`).join("");
+        els.indicatorSelect.innerHTML = INDICATORS.map((indicator) => `<option value="${indicator.id}">${indicator.label}</option>`).join("");
+      }
+
+      function renderSourceCards(activeSourceId) {
+        els.sourceGrid.innerHTML = DATA_SOURCES.map((source) => {
+          const active = source.id === activeSourceId ? "active" : "";
+          return `
+            <article class="source-card ${active}" data-source="${source.id}" role="button" tabindex="0">
+              <strong>${source.label}</strong>
+              <p>${source.description}</p>
+              <div class="source-meta">
+                <span class="tag">${source.datasetId}</span>
+                <span class="tag">${source.type}</span>
+              </div>
+              <div class="source-meta">
+                <span class="tag">${source.focus}</span>
+              </div>
+            </article>
+          `;
+        }).join("");
+
+        els.sourceGrid.querySelectorAll("[data-source]").forEach((card) => {
+          card.addEventListener("click", () => {
+            els.sourceSelect.value = card.getAttribute("data-source");
+            render();
+          });
+          card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              els.sourceSelect.value = card.getAttribute("data-source");
+              render();
+            }
+          });
+        });
+      }
+
+      function renderIndicatorCards(activeIndicatorId) {
+        els.indicatorGrid.innerHTML = INDICATORS.map((indicator) => {
+          const active = indicator.id === activeIndicatorId ? "active" : "";
+          return `
+            <article class="indicator-card ${active}" data-indicator="${indicator.id}" role="button" tabindex="0">
+              <strong>${indicator.label}</strong>
+              <p>${indicator.description}</p>
+              <div class="source-meta">
+                <span class="tag">${indicator.chartLabel}</span>
+              </div>
+            </article>
+          `;
+        }).join("");
+
+        els.indicatorGrid.querySelectorAll("[data-indicator]").forEach((card) => {
+          card.addEventListener("click", () => {
+            els.indicatorSelect.value = card.getAttribute("data-indicator");
+            render();
+          });
+          card.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              els.indicatorSelect.value = card.getAttribute("data-indicator");
+              render();
+            }
+          });
+        });
+      }
+
+      function renderHeroTags(sourceConfig, indicatorConfig, rows, filteredRows) {
+        const totalAmount = rows.reduce((sum, row) => sum + row.amount, 0);
+        els.heroTags.innerHTML = [
+          `Fuente activa: ${sourceConfig.label}`,
+          `Indicador: ${indicatorConfig.label}`,
+          `Registros visibles: ${filteredRows.length}`,
+          `Valor total: $${moneyFormat.format(totalAmount)}`,
+        ].map((tag) => `<span class="pill">${tag}</span>`).join("");
+      }
+
+      function renderKpis(rows, filteredRows) {
+        const totalAmount = rows.reduce((sum, row) => sum + row.amount, 0);
+        const averageAmount = rows.length ? Math.round(totalAmount / rows.length) : 0;
+        const missingCritical = rows.filter((row) => computeCompleteness(row) < 70).length;
+        const highRisk = rows.filter((row) => row.score >= 70).length;
+        const uniqueProviders = new Set(rows.map((row) => row.provider).filter(Boolean)).size;
+
+        els.kpiGrid.innerHTML = [
+          { label: "Registros", value: rows.length, hint: `Mostrando ${filteredRows.length} filas tras el filtro actual.` },
+          { label: "Valor total", value: `$${moneyFormat.format(totalAmount)}`, hint: "Suma de montos normalizados." },
+          { label: "Promedio", value: `$${moneyFormat.format(averageAmount)}`, hint: "Referencia para detectar valores altos." },
+          { label: "Proveedores", value: uniqueProviders, hint: "Cuenta unica de proveedores en la fuente." },
+          { label: "Baja calidad", value: missingCritical, hint: "Filas con completitud menor al 70%." },
+          { label: "Riesgo alto", value: highRisk, hint: "Filas con score igual o superior a 70." },
+        ].map((item) => `
+          <article class="kpi-card">
+            <div class="kpi-label">${item.label}</div>
+            <div class="kpi-value">${item.value}</div>
+            <div class="kpi-hint">${item.hint}</div>
+          </article>
+        `).join("");
+      }
+
+      function renderChart(rows, indicatorConfig, groupBy, topN) {
+        const grouped = groupRows(rows, groupBy, indicatorConfig.id).slice(0, topN);
+        const maxValue = Math.max(
+          ...grouped.map((item) => {
+            if (indicatorConfig.id === "value") return item.total;
+            if (indicatorConfig.id === "count") return item.count;
+            if (indicatorConfig.id === "quality") return item.completenessSum / item.count;
+            if (indicatorConfig.id === "competition") return item.competitionSum / item.count;
+            return item.scoreSum / item.count;
+          }),
+          1,
+        );
+
+        els.chartTitle.textContent = indicatorConfig.chartLabel;
+        els.chartDescription.textContent = indicatorConfig.study;
+
+        els.barChart.innerHTML = grouped.map((item) => {
+          let value;
+          if (indicatorConfig.id === "value") value = item.total;
+          else if (indicatorConfig.id === "count") value = item.count;
+          else if (indicatorConfig.id === "quality") value = Math.round(item.completenessSum / item.count);
+          else if (indicatorConfig.id === "competition") value = Math.round(item.competitionSum / item.count);
+          else value = Math.round(item.scoreSum / item.count);
+
+          const width = Math.max(6, Math.round((value / maxValue) * 100));
+          const label =
+            indicatorConfig.id === "value"
+              ? `$${moneyFormat.format(item.total)}`
+              : indicatorConfig.id === "count"
+                ? `${item.count}`
+                : indicatorConfig.id === "quality"
+                  ? `${Math.round(item.completenessSum / item.count)}%`
+                  : indicatorConfig.id === "competition"
+                    ? `${Math.round(item.competitionSum / item.count)}`
+                    : `${Math.round(item.scoreSum / item.count)}/100`;
+
+          return `
+            <div class="bar-row">
+              <div class="bar-topline">
+                <strong>${item.label}</strong>
+                <span>${label}</span>
+              </div>
+              <div class="bar-track"><div class="bar-fill" style="width:${width}%"></div></div>
+            </div>
+          `;
+        }).join("");
+
+        return grouped;
+      }
+
+      function renderReport(sourceConfig, indicatorConfig, rows, grouped, topRecord) {
+        const topCategory = grouped[0];
+        const avgAmount = rows.length ? Math.round(rows.reduce((sum, row) => sum + row.amount, 0) / rows.length) : 0;
+        const focusValue =
+          indicatorConfig.id === "value"
+            ? `$${moneyFormat.format(topCategory?.total || 0)}`
+            : indicatorConfig.id === "count"
+              ? `${topCategory?.count || 0}`
+              : indicatorConfig.id === "quality"
+                ? `${Math.round((topCategory?.completenessSum || 0) / (topCategory?.count || 1))}%`
+                : indicatorConfig.id === "competition"
+                  ? `${Math.round((topCategory?.competitionSum || 0) / (topCategory?.count || 1))}`
+                  : `${Math.round((topCategory?.scoreSum || 0) / (topCategory?.count || 1))}/100`;
+
+        els.reportBox.innerHTML = `
+          <p><strong>Fuente activa:</strong> ${sourceConfig.label} (${sourceConfig.datasetId})</p>
+          <p><strong>Indicador activo:</strong> ${indicatorConfig.label}</p>
+          <p><strong>Lectura principal:</strong> ${topCategory ? topCategory.label : "Sin datos"} concentra ${focusValue} en la vista actual.</p>
+          <p><strong>Mayor alerta:</strong> ${topRecord ? topRecord.id : "Sin registros"} con score ${topRecord ? topRecord.score : 0}/100 y señales ${topRecord ? topRecord.signals.join(", ") : "sin señales" }.</p>
+          <p><strong>Promedio del conjunto:</strong> $${moneyFormat.format(avgAmount)} por registro.</p>
+          <p><strong>Recomendacion:</strong> revisar registros con score alto, estandarizar campos vacios y usar el mismo patron de analisis para comparar entidades, proveedores o modalidades.</p>
+          <p><strong>PDF listo:</strong> usa el boton de imprimir para guardar este resumen como PDF.</p>
+        `;
+      }
+
+      function renderTable(rows, indicatorConfig) {
+        const sorted = [...rows].sort((a, b) => {
+          if (indicatorConfig.id === "value") return b.amount - a.amount;
+          if (indicatorConfig.id === "count") return b.participants - a.participants || b.amount - a.amount;
+          if (indicatorConfig.id === "quality") return b.completeness - a.completeness || b.amount - a.amount;
+          if (indicatorConfig.id === "competition") return (b.participants || b.offers || 0) - (a.participants || a.offers || 0);
+          return b.score - a.score || b.amount - a.amount;
+        });
+
+        els.riskTable.innerHTML = sorted.map((row) => {
+          const level = row.score >= 70 ? "bad" : row.score >= 40 ? "warn" : "good";
+          return `
+            <tr>
+              <td>
+                <strong>${row.id}</strong><br />
+                <span class="muted">${row.date || "Sin fecha"}</span>
+              </td>
+              <td>${row.entity || "Sin dato"}</td>
+              <td>${row.provider || "Sin dato"}</td>
+              <td>$${moneyFormat.format(row.amount)}</td>
+              <td><span class="score ${level}">${row.score}/100</span></td>
+              <td>
+                <ul class="signals">
+                  ${row.signals.map((signal) => `<li>${signal}</li>`).join("")}
+                </ul>
+              </td>
+            </tr>
+          `;
+        }).join("");
+      }
+
+      function buildFilteredRows(sourceId, search) {
+        const baseRows = getRowsForSource(sourceId);
+        if (!search) return baseRows;
+        return baseRows.filter((row) => [row.id, row.entity, row.provider, row.department, row.modality, row.status, row.description].join(" ").toLowerCase().includes(search));
+      }
+
+      function enrichRows(rows) {
+        const providerCounts = rows.reduce((map, row) => {
+          map.set(row.provider, (map.get(row.provider) || 0) + 1);
+          return map;
+        }, new Map());
+        const avgAmount = rows.length ? rows.reduce((sum, row) => sum + row.amount, 0) / rows.length : 0;
+        const maxAmount = Math.max(...rows.map((row) => row.amount), 1);
+
+        return rows.map((row) => {
+          const risk = scoreRow(row, providerCounts, avgAmount || 1, maxAmount);
+          return {
+            ...row,
+            completeness: computeCompleteness(row),
+            score: risk.score,
+            signals: risk.signals,
+          };
+        });
+      }
+
+      function render() {
+        const sourceId = els.sourceSelect.value || DATA_SOURCES[0].id;
+        const indicatorId = els.indicatorSelect.value || INDICATORS[0].id;
+        const groupBy = els.groupBySelect.value;
+        const topN = Number(els.topNRange.value);
+        const search = cleanText(els.searchInput.value).toLowerCase();
+
+        const sourceConfig = getSourceConfig(sourceId);
+        const indicatorConfig = getIndicatorConfig(indicatorId);
+        const filteredRows = buildFilteredRows(sourceId, search);
+        const enrichedRows = enrichRows(filteredRows);
+        const groupedRows = renderChart(enrichedRows, indicatorConfig, groupBy, topN);
+        const topRecord = [...enrichedRows].sort((a, b) => b.score - a.score || b.amount - a.amount)[0];
+
+        els.topNLabel.textContent = String(topN);
+
+        renderHeroTags(sourceConfig, indicatorConfig, enrichedRows, filteredRows);
+        renderKpis(enrichedRows, filteredRows);
+        renderReport(sourceConfig, indicatorConfig, enrichedRows, groupedRows, topRecord);
+        renderTable(enrichedRows.slice(0, Math.max(topN, 8)), indicatorConfig);
+        renderSourceCards(sourceId);
+        renderIndicatorCards(indicatorId);
+
+        els.studyGrid.innerHTML = INDICATORS.map((indicator) => `
+          <article class="study-card">
+            <strong>${indicator.label}</strong>
+            <p>${indicator.study}</p>
+            <div class="tag-row">
+              <span class="tag">${indicator.chartLabel}</span>
+            </div>
+          </article>
+        `).join("");
+      }
+
+      renderSelectOptions();
+
+      els.sourceSelect.value = DATA_SOURCES[0].id;
+      els.indicatorSelect.value = INDICATORS[0].id;
+
+      els.sourceSelect.addEventListener("change", render);
+      els.indicatorSelect.addEventListener("change", render);
+      els.groupBySelect.addEventListener("change", render);
+      els.searchInput.addEventListener("input", render);
+      els.topNRange.addEventListener("input", render);
+      els.printBtn.addEventListener("click", () => window.print());
+      els.resetBtn.addEventListener("click", () => {
+        customRows = [];
+        saveCustomRows(customRows);
+        render();
+      });
+      els.clearCustomBtn.addEventListener("click", () => {
+        customRows = [];
+        saveCustomRows(customRows);
+        render();
+      });
+
+      els.recordForm.addEventListener("submit", (event) => {
+        event.preventDefault();
+
+        const nextRow = {
+          source: els.recordSource.value,
+          id: cleanText(els.recordId.value),
+          entity: cleanText(els.recordEntity.value),
+          provider: cleanText(els.recordProvider.value),
+          department: cleanText(els.recordDepartment.value),
+          modality: cleanText(els.recordModality.value),
+          amount: parseAmount(els.recordAmount.value),
+          date: parseDate(els.recordDate.value),
+          participants: Number(els.recordParticipants.value) || 0,
+          status: cleanText(els.recordStatus.value),
+          description: cleanText(els.recordDescription.value),
+        };
+
+        if (!nextRow.id) return;
+
+        customRows = [...customRows, nextRow];
+        saveCustomRows(customRows);
+        els.recordForm.reset();
+        els.recordSource.value = els.sourceSelect.value;
+        render();
+      });
+
+      render();
+    </script>
+  </body>
+</html>
