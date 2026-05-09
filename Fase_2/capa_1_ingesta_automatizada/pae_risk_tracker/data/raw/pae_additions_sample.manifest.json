@@ -1,0 +1,23 @@
+{
+  "dataset": {
+    "key": "additions",
+    "id": "cb9c-h8sn",
+    "name": "SECOP II - Adiciones",
+    "role": "secondary",
+    "active": true,
+    "default_year_field": "fecharegistro",
+    "text_fields": [
+      "identificador",
+      "tipo",
+      "descripcion"
+    ],
+    "id_fields": {
+      "contract": "id_contrato"
+    }
+  },
+  "source_parquet": "d:\\Hackaton_MinTIC\\Fase_2\\pae_risk_tracker\\data\\processed\\pae_contracts_core.parquet",
+  "contract_count": 20,
+  "rows_fetched": 121,
+  "rows_kept": 21,
+  "batch_size": 25
+}

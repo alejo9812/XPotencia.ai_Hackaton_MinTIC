@@ -1,0 +1,214 @@
+{
+  "project": "PAE Risk Tracker",
+  "source": "datos.gov.co",
+  "core_dataset": "jbjy-vk9h",
+  "datasets": [
+    {
+      "key": "core_contracts",
+      "id": "jbjy-vk9h",
+      "name": "SECOP II - Contratos Electrónicos",
+      "role": "core",
+      "active": true,
+      "default_year_field": "fecha_de_firma",
+      "text_fields": [
+        "descripcion_del_proceso",
+        "tipo_de_contrato",
+        "modalidad_de_contratacion",
+        "justificacion_modalidad_de",
+        "condiciones_de_entrega"
+      ],
+      "id_fields": {
+        "contract": "id_contrato",
+        "process": "proceso_de_compra",
+        "entity_nit": "nit_entidad",
+        "supplier_name": "proveedor_adjudicado",
+        "supplier_doc": "documento_proveedor",
+        "url_process": "urlproceso"
+      }
+    },
+    {
+      "key": "processes",
+      "id": "p6dx-8zbt",
+      "name": "SECOP II - Procesos de Contratación",
+      "role": "secondary",
+      "active": true,
+      "default_year_field": "fecha_de_publicacion_del_proceso",
+      "text_fields": [
+        "nombre_del_procedimiento",
+        "descripcion_del_procedimiento",
+        "referencia_del_proceso",
+        "fase"
+      ],
+      "id_fields": {
+        "process": "id_del_proceso",
+        "entity_nit": "nit_entidad"
+      }
+    },
+    {
+      "key": "bidders",
+      "id": "hgi6-6wh3",
+      "name": "SECOP II - Proponentes por Proceso",
+      "role": "secondary",
+      "active": true,
+      "default_year_field": "fecha_publicaci_n",
+      "text_fields": [
+        "nombre_procedimiento",
+        "entidad_compradora",
+        "proveedor",
+        "nit_proveedor"
+      ],
+      "id_fields": {
+        "process": "id_procedimiento",
+        "entity_nit": "nit_entidad",
+        "supplier_doc": "nit_proveedor"
+      }
+    },
+    {
+      "key": "additions",
+      "id": "cb9c-h8sn",
+      "name": "SECOP II - Adiciones",
+      "role": "secondary",
+      "active": true,
+      "default_year_field": "fecharegistro",
+      "text_fields": [
+        "identificador",
+        "tipo",
+        "descripcion"
+      ],
+      "id_fields": {
+        "contract": "id_contrato"
+      }
+    },
+    {
+      "key": "payments",
+      "id": "uymx-8p3j",
+      "name": "SECOP II - Plan de pagos",
+      "role": "secondary",
+      "active": true,
+      "default_year_field": "fecha_de_emision",
+      "text_fields": [
+        "numero_de_factura",
+        "notas",
+        "estado"
+      ],
+      "id_fields": {
+        "contract": "id_del_contrato",
+        "payment": "id_de_pago"
+      }
+    },
+    {
+      "key": "invoices",
+      "id": "ibyt-yi2f",
+      "name": "SECOP II - Facturas",
+      "role": "secondary",
+      "active": true,
+      "default_year_field": "fecha_factura",
+      "text_fields": [
+        "numero_de_factura",
+        "notas",
+        "estado"
+      ],
+      "id_fields": {
+        "contract": "id_contrato",
+        "payment": "id_pago"
+      }
+    },
+    {
+      "key": "sanctions",
+      "id": "it5q-hg94",
+      "name": "SECOP II - Multas y Sanciones",
+      "role": "secondary",
+      "active": true,
+      "default_year_field": "fecha_evento",
+      "text_fields": [
+        "referencia_proceso",
+        "nombre_entidad_creadora",
+        "nombre_proveedor_objeto_de",
+        "descripcion_otro_tipo_de_sancion",
+        "tipo_de_sancion"
+      ],
+      "id_fields": {
+        "process": "id_proceso",
+        "contract": "id_contrato",
+        "entity_nit": "codigo_entidad_creadora",
+        "supplier_doc": "as_codigo_proveedor_objeto"
+      }
+    },
+    {
+      "key": "guarantees",
+      "id": "gjp9-cutm",
+      "name": "SECOP II - Garantías",
+      "role": "secondary",
+      "active": true,
+      "default_year_field": "fechadecreacionpoliza",
+      "text_fields": [
+        "aseguradora",
+        "asegurado",
+        "beneficiario",
+        "tipopoliza",
+        "subtipopoliza"
+      ],
+      "id_fields": {
+        "contract": "id_contrato"
+      }
+    },
+    {
+      "key": "suppliers",
+      "id": "qmzu-gj57",
+      "name": "SECOP II - Proveedores Registrados",
+      "role": "secondary",
+      "active": true,
+      "default_year_field": "fecha_creacion",
+      "text_fields": [
+        "nombre",
+        "nit",
+        "tipo_empresa",
+        "departamento",
+        "municipio"
+      ],
+      "id_fields": {
+        "supplier_name": "nombre",
+        "supplier_doc": "nit"
+      }
+    },
+    {
+      "key": "groups",
+      "id": "ceth-n4bn",
+      "name": "Grupos de Proveedores SECOP II",
+      "role": "secondary",
+      "active": true,
+      "default_year_field": "fecha_creaci_n_grupo",
+      "text_fields": [
+        "nombre_grupo",
+        "nit_grupo",
+        "tipo_empresa_grupo",
+        "departamento_grupo",
+        "minucipio_grupo"
+      ],
+      "id_fields": {
+        "supplier_name": "nombre_grupo",
+        "supplier_doc": "nit_grupo"
+      }
+    },
+    {
+      "key": "locations",
+      "id": "gra4-pcp2",
+      "name": "Ubicaciones ejecución contratos",
+      "role": "secondary",
+      "active": true,
+      "default_year_field": null,
+      "text_fields": [
+        "nombre_entidad",
+        "documento_proveedor",
+        "proveedor_adjudicado",
+        "ubicacion",
+        "localizaci_n"
+      ],
+      "id_fields": {
+        "contract": "id_contrato",
+        "entity_nit": "nit_entidad",
+        "supplier_doc": "documento_proveedor"
+      }
+    }
+  ]
+}

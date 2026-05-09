@@ -1,0 +1,64 @@
+{
+  "table_name": "pae_search_index",
+  "row_count": 3,
+  "record_type_counts": {
+    "addition": 1,
+    "contract": 1,
+    "process": 1
+  },
+  "source_tables": [
+    "pae_additions",
+    "pae_contracts_scored",
+    "pae_processes"
+  ],
+  "parquet_path": "D:\\Hackaton_MinTIC\\Fase_2\\pae_risk_tracker\\data\\processed\\pae_search_index.parquet",
+  "source_snapshot": {
+    "contract": {
+      "source": "duckdb:pae_contracts_enriched+pae_contracts_scored",
+      "row_count": 20,
+      "components": [
+        {
+          "source": "duckdb:pae_contracts_scored",
+          "table_name": "pae_contracts_scored",
+          "row_count": 1,
+          "path": "C:\\Users\\hmont\\AppData\\Local\\Temp\\pytest-of-hmont\\pytest-48\\test_materialize_search_index_0\\tracker.duckdb",
+          "mtime_ns": 1778340016799761600,
+          "size": 1585152
+        },
+        {
+          "source": "parquet:pae_contracts_enriched.parquet",
+          "table_name": "pae_contracts_enriched",
+          "row_count": 20,
+          "path": "D:\\Hackaton_MinTIC\\Fase_2\\pae_risk_tracker\\data\\processed\\pae_contracts_enriched.parquet",
+          "mtime_ns": 1778302967561570600,
+          "size": 45949
+        }
+      ]
+    },
+    "process": {
+      "source": "duckdb:pae_processes",
+      "table_name": "pae_processes",
+      "row_count": 1,
+      "path": "C:\\Users\\hmont\\AppData\\Local\\Temp\\pytest-of-hmont\\pytest-48\\test_materialize_search_index_0\\tracker.duckdb",
+      "mtime_ns": 1778340016799761600,
+      "size": 1585152
+    },
+    "addition": {
+      "source": "duckdb:pae_additions",
+      "table_name": "pae_additions",
+      "row_count": 1,
+      "path": "C:\\Users\\hmont\\AppData\\Local\\Temp\\pytest-of-hmont\\pytest-48\\test_materialize_search_index_0\\tracker.duckdb",
+      "mtime_ns": 1778340016799761600,
+      "size": 1585152
+    },
+    "expected_row_count": 22,
+    "source_tables": [
+      "duckdb:pae_contracts_enriched+pae_contracts_scored",
+      "duckdb:pae_processes",
+      "duckdb:pae_additions"
+    ],
+    "signature": "1f0fac9d59a1df926d7b94f5d5ac3b09e0e877f078a0e7a1de8eca02694aefe8"
+  },
+  "source_fingerprint": "1f0fac9d59a1df926d7b94f5d5ac3b09e0e877f078a0e7a1de8eca02694aefe8",
+  "generated_at": "2026-05-09T15:20:17.562939+00:00"
+}

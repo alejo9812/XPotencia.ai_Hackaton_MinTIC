@@ -1,0 +1,8 @@
+{
+  "provider": "mock",
+  "model": "mock",
+  "max_records_per_call": 10,
+  "prompt_version": "2026-05-09.mock-v1",
+  "temperature": 0,
+  "response_format": "json"
+}

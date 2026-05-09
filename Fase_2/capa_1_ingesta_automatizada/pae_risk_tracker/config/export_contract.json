@@ -1,0 +1,204 @@
+{
+  "name": "pae_risk_export_contract",
+  "version": "1.0.0",
+  "description": "Canonical export contract for the PAE risk tracker. It defines the minimum shared schema for API, agent and dashboard consumers.",
+  "source_of_truth": [
+    "pae_contracts_scored",
+    "pae_risk_ranking.json",
+    "pae_audit_cards.json"
+  ],
+  "fields": [
+    {
+      "name": "contract_id",
+      "type": "string",
+      "required": true,
+      "description": "Unique contract identifier.",
+      "source_aliases": ["contract_id", "id_contrato", "id_del_contrato"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "process_id",
+      "type": "string",
+      "required": true,
+      "description": "Public procurement process identifier.",
+      "source_aliases": ["process_id", "proceso_de_compra", "id_del_proceso"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "entity",
+      "type": "string",
+      "required": true,
+      "description": "Contracting entity name.",
+      "source_aliases": ["entity", "entity_name", "entidad", "nombre_entidad"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "entity_nit",
+      "type": "string",
+      "required": true,
+      "description": "Contracting entity tax identifier.",
+      "source_aliases": ["entity_nit", "nit_entidad", "codigo_entidad_creadora", "codigo_entidad"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "supplier",
+      "type": "string",
+      "required": true,
+      "description": "Awarded supplier or bidder name.",
+      "source_aliases": ["supplier", "supplier_name", "proveedor", "proveedor_adjudicado"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "supplier_nit",
+      "type": "string",
+      "required": true,
+      "description": "Supplier tax identifier.",
+      "source_aliases": ["supplier_nit", "supplier_doc", "supplier_doc_norm", "documento_proveedor", "nit_proveedor"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "department",
+      "type": "string",
+      "required": true,
+      "description": "Department where the contract was executed.",
+      "source_aliases": ["department", "departamento", "department_name"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "municipality",
+      "type": "string",
+      "required": true,
+      "description": "Municipality where the contract was executed.",
+      "source_aliases": ["municipality", "municipio", "municipality_name"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "object",
+      "type": "string",
+      "required": true,
+      "description": "Short description of the contract object.",
+      "source_aliases": ["object", "object_text", "objeto", "descripcion_del_proceso"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "modality",
+      "type": "string",
+      "required": true,
+      "description": "Procurement modality.",
+      "source_aliases": ["modality", "modality_text", "modalidad", "modalidad_de_contratacion"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "status",
+      "type": "string",
+      "required": true,
+      "description": "Current contract status or stage.",
+      "source_aliases": ["status", "estado", "estado_contrato"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "initial_value",
+      "type": "number",
+      "required": true,
+      "description": "Initial or reference contract value.",
+      "source_aliases": ["initial_value", "valor_inicial", "value_initial", "estimated_amount", "precio_base"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "final_value",
+      "type": "number",
+      "required": true,
+      "description": "Final or awarded contract value.",
+      "source_aliases": ["final_value", "valor_final", "value_final", "amount", "valor_total_adjudicacion"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "start_date",
+      "type": "string",
+      "required": true,
+      "description": "Contract start date or signature date.",
+      "source_aliases": ["start_date", "date", "fecha_de_firma", "fecha_de_inicio"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "end_date",
+      "type": "string",
+      "required": true,
+      "description": "Contract end date when available.",
+      "source_aliases": ["end_date", "fecha_de_fin", "fecha_de_terminacion"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "year",
+      "type": "integer",
+      "required": true,
+      "description": "Reference year used by the dataset.",
+      "source_aliases": ["year", "core_year", "process_year"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "month",
+      "type": "integer",
+      "required": true,
+      "description": "Reference month used by the dataset.",
+      "source_aliases": ["month", "signature_month", "contract_month"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "risk_score",
+      "type": "number",
+      "required": true,
+      "description": "Deterministic risk score from 0 to 100.",
+      "source_aliases": ["risk_score", "score"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "risk_level",
+      "type": "string",
+      "required": true,
+      "description": "Risk bucket derived from the score.",
+      "source_aliases": ["risk_level", "riskLevel"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "red_flags",
+      "type": "array",
+      "required": true,
+      "description": "List of activated red flag codes or objects.",
+      "source_aliases": ["red_flags", "red_flags_activadas", "activated_flags", "risk_flags"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "evidence",
+      "type": "object",
+      "required": true,
+      "description": "Evidence package that explains the score and the red flags.",
+      "source_aliases": ["evidence", "audit_evidence", "flag_evidence", "risk_flags_json"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "secop_url",
+      "type": "string",
+      "required": true,
+      "description": "Public SECOP URL for the contract or process.",
+      "source_aliases": ["secop_url", "url_secop", "url_process", "urlproceso"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "recommended_action",
+      "type": "string",
+      "required": true,
+      "description": "Deterministic review recommendation for the case.",
+      "source_aliases": ["recommended_action", "recommendedAction", "audit_recommendation", "recomendacion"],
+      "consumers": ["api", "agent", "dashboard"]
+    },
+    {
+      "name": "limitations",
+      "type": "string",
+      "required": true,
+      "description": "Known data or traceability limitations for the case.",
+      "source_aliases": ["limitations", "risk_limitations", "riskLimitations", "huecos_de_informacion"],
+      "consumers": ["api", "agent", "dashboard"]
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "dataset": {
+    "key": "core_contracts",
+    "id": "jbjy-vk9h",
+    "name": "SECOP II - Contratos Electrónicos",
+    "role": "core",
+    "active": true,
+    "default_year_field": "fecha_de_firma",
+    "text_fields": [
+      "descripcion_del_proceso",
+      "tipo_de_contrato",
+      "modalidad_de_contratacion",
+      "justificacion_modalidad_de",
+      "condiciones_de_entrega"
+    ],
+    "id_fields": {
+      "contract": "id_contrato",
+      "process": "proceso_de_compra",
+      "entity_nit": "nit_entidad",
+      "supplier_name": "proveedor_adjudicado",
+      "supplier_doc": "documento_proveedor",
+      "url_process": "urlproceso"
+    }
+  },
+  "years": [
+    2025,
+    2026
+  ],
+  "rows_fetched": 20,
+  "rows_kept": 20,
+  "cache_hits": 0,
+  "query_columns": [
+    "id_contrato",
+    "proceso_de_compra",
+    "nombre_entidad",
+    "nit_entidad",
+    "proveedor_adjudicado",
+    "documento_proveedor",
+    "descripcion_del_proceso",
+    "justificacion_modalidad_de",
+    "modalidad_de_contratacion",
+    "estado_contrato",
+    "fecha_de_firma",
+    "departamento",
+    "ciudad",
+    "urlproceso"
+  ],
+  "year_field": "fecha_de_firma",
+  "risk_dimensions": [
+    {
+      "id": "competition",
+      "label": "Competencia",
+      "weight": 20
+    },
+    {
+      "id": "supplier_concentration",
+      "label": "Concentración del proveedor",
+      "weight": 15
+    },
+    {
+      "id": "value_outlier",
+      "label": "Valor / sobrecosto relativo",
+      "weight": 15
+    },
+    {
+      "id": "execution",
+      "label": "Adiciones y prórrogas",
+      "weight": 15
+    },
+    {
+      "id": "paco_context",
+      "label": "Sanciones / PACO",
+      "weight": 15
+    },
+    {
+      "id": "traceability",
+      "label": "Opacidad documental",
+      "weight": 10
+    },
+    {
+      "id": "planning",
+      "label": "Planeación / modalidad",
+      "weight": 10
+    }
+  ]
+}

@@ -1,0 +1,50 @@
+{
+  "pack_name": "pae_data_pack",
+  "table_name": "paco_events",
+  "source_count": 1,
+  "rows_downloaded": 46351,
+  "rows_normalized": 46351,
+  "sources": [
+    {
+      "key": "disciplinary",
+      "name": "PACO - Antecedentes SIRI sanciones",
+      "url": "https://paco7public7info7prod.blob.core.windows.net/paco-pulic-info/antecedentes_SIRI_sanciones_Cleaned.zip",
+      "raw_path": "D:\\Hackaton_MinTIC\\Fase_2\\pae_risk_tracker\\data\\raw\\paco\\disciplinary.zip",
+      "processed_parquet": "D:\\Hackaton_MinTIC\\Fase_2\\pae_risk_tracker\\data\\processed\\paco\\paco_disciplinary.parquet",
+      "rows_downloaded": 46351,
+      "rows_normalized": 46351,
+      "sha256": "c4da1936d8fb4674a5212b2a2382c97c3a4479503e28be0e1514740912d88377",
+      "columns": [
+        "100002597",
+        "DISCIPLINARIO",
+        "SERVIDOR PÚBLICO",
+        "1",
+        "CÉDULA DE CIUDADANÍA",
+        "24626226",
+        "VELANDIA",
+        "MARQUEZ",
+        "OLGA",
+        "INES",
+        "DEFENSOR DE FAMILIA",
+        "RISARALDA",
+        "DOSQUEBRADAS",
+        "DESTITUCION",
+        "Unnamed: 14",
+        "Unnamed: 15",
+        "Unnamed: 16",
+        "PRIMERA",
+        "JEFE OFICINA DE CONTROL INTERNO DISCIPLINARIO",
+        "2004-06-24",
+        "PV-052-04",
+        "INSTITUTO COLOMBIANO DE BIENESTAR FAMILIAR -ICBF-",
+        "BOGOTA",
+        "BOGOTA.1",
+        "2004",
+        "6",
+        "24",
+        "nan AÑOS nan MESES nan DIAS"
+      ]
+    }
+  ],
+  "consolidated_parquet": "D:\\Hackaton_MinTIC\\Fase_2\\pae_risk_tracker\\data\\processed\\paco\\paco_events.parquet"
+}

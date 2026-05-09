@@ -1,0 +1,54 @@
+{
+  "pack_name": "pae_data_pack",
+  "description": "Local cache pack for SECOP II core samples and PACO official antecedents.",
+  "sources": [
+    {
+      "key": "disciplinary",
+      "name": "PACO - Antecedentes SIRI sanciones",
+      "url": "https://paco7public7info7prod.blob.core.windows.net/paco-pulic-info/antecedentes_SIRI_sanciones_Cleaned.zip",
+      "family": "paco",
+      "event_type": "disciplinary_sanction",
+      "enabled": true
+    },
+    {
+      "key": "penal",
+      "name": "PACO - Sanciones penales FGN",
+      "url": "https://paco7public7info7prod.blob.core.windows.net/paco-pulic-info/sanciones_penales_FGN.csv",
+      "family": "paco",
+      "event_type": "penal_sanction",
+      "enabled": true
+    },
+    {
+      "key": "fiscal",
+      "name": "PACO - Responsabilidades fiscales",
+      "url": "https://paco7public7info7prod.blob.core.windows.net/paco-pulic-info/responsabilidades_fiscales.csv",
+      "family": "paco",
+      "event_type": "fiscal_responsibility",
+      "enabled": true
+    },
+    {
+      "key": "contractual",
+      "name": "PACO - Multas SECOP",
+      "url": "https://paco7public7info7prod.blob.core.windows.net/paco-pulic-info/multas_SECOP_Cleaned.zip",
+      "family": "paco",
+      "event_type": "contractual_sanction",
+      "enabled": true
+    },
+    {
+      "key": "collusion",
+      "name": "PACO - Colusiones en contratacion",
+      "url": "https://paco7public7info7prod.blob.core.windows.net/paco-pulic-info/colusiones_en_contratacion_SIC.csv",
+      "family": "paco",
+      "event_type": "collusion_case",
+      "enabled": true
+    },
+    {
+      "key": "secop_ii_cleaned",
+      "name": "PACO - SECOP II Cleaned",
+      "url": "https://paco7public7info7prod.blob.core.windows.net/paco-pulic-info/SECOP_II_Cleaned.zip",
+      "family": "paco",
+      "event_type": "secop_history",
+      "enabled": false
+    }
+  ]
+}

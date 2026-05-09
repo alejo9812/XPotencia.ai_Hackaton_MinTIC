@@ -1,0 +1,2671 @@
+{
+  "datasets": {
+    "cb9c-h8sn": {
+      "cached": {},
+      "column_count": 5,
+      "columns": [
+        {
+          "dataTypeName": "text",
+          "description": "Identificador único del evento de modificación",
+          "fieldName": "identificador",
+          "name": "Identificador"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Identificador del contrato al que corresponde la modificación",
+          "fieldName": "id_contrato",
+          "name": "ID_Contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo de modificación, de acuerdo al impacto que tiene sobre el contrato",
+          "fieldName": "tipo",
+          "name": "Tipo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Descripción detallada de la justificación de la adición o modificación",
+          "fieldName": "descripcion",
+          "name": "Descripcion"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha en que se hace la modificación",
+          "fieldName": "fecharegistro",
+          "name": "FechaRegistro"
+        }
+      ],
+      "default_year_field": "fecharegistro",
+      "id_fields": {
+        "contract": "id_contrato"
+      },
+      "key": "additions",
+      "name": "SECOP II - Adiciones",
+      "resolved_column_names": [
+        "id_contrato",
+        "tipo",
+        "descripcion",
+        "fecharegistro"
+      ],
+      "resolved_columns": {
+        "amount": null,
+        "contract_id": "id_contrato",
+        "date": "fecharegistro",
+        "department": null,
+        "entity_name": null,
+        "entity_nit": null,
+        "modality": "tipo",
+        "municipality": null,
+        "object_text": "descripcion",
+        "process_id": null,
+        "process_reference": null,
+        "status": null,
+        "supplier_doc": null,
+        "supplier_name": null,
+        "url_process": null
+      },
+      "role": "secondary",
+      "sample_row": {
+        "descripcion": "ADICIONAR EL VALOR DEL CONTRATO DE PRESTACIoN DE SERVICIOS PROFESIONALES N° 066 DE 2018; EN LA SUMA DE QUINCE MILLONES SEISCIENTOS NOVENTA Y TRES MIL PESOS ($15693.000) M/CTE Y PRORROGAR EL PLAZO DE EJECUCIoN ESTABLECIDO EN EL CONTRATO DE PRESTACIoN DE SERVICIOS PROFESIONALES N° 066 DE 2018; EN TRES (3) MESES MaS; CONTADOS A PARTIR DEL DIECISeIS (16) DE SEPTIEMBRE DE 2018; ES DECIR QUE SU EJECUCIoN SERa HASTA EL QUINCE (15) DE DICIEMBRE DE 2018",
+        "fecharegistro": "2018-09-01T00:00:00.000",
+        "id_contrato": "CO1.PCCNTR.285227",
+        "identificador": "CO1.CTRMOD.499720",
+        "tipo": "MODIFICACION GENERAL"
+      },
+      "text_fields": [
+        "identificador",
+        "tipo",
+        "descripcion"
+      ]
+    },
+    "ceth-n4bn": {
+      "cached": {},
+      "column_count": 33,
+      "columns": [
+        {
+          "dataTypeName": "text",
+          "description": "Indica el codigo del grupo en la plataforma SECOP II",
+          "fieldName": "codigo_grupo",
+          "name": "Codigo grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre del Grupo, Union Temporal, Consorcio y otro",
+          "fieldName": "nombre_grupo",
+          "name": "Nombre Grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "NIT del grupo Conformado participante del grupo, tal como lo registró en la plataforma",
+          "fieldName": "nit_grupo",
+          "name": "NIT Grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica si el grupo esta registrado como entidad en la plataforma SECOPII",
+          "fieldName": "es_entidad",
+          "name": "Es Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica si el grupo esta registrado como proveedor en la plataforma SECOPII",
+          "fieldName": "es_proveedor",
+          "name": "Es proveedor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica si el grupo esta activo en la plataforma SECOPII",
+          "fieldName": "esta_activo",
+          "name": "Esta activo"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha en que fue creado el grupo",
+          "fieldName": "fecha_creaci_n_grupo",
+          "name": "Fecha Creación Grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el codigo de la categoría principal del grupo en la plataforma SECOPII",
+          "fieldName": "codigo_categor_a_principal_grupo",
+          "name": "Codigo categoría principal grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Es la descripción código categoría principal del grupo en la plataforma SECOPII",
+          "fieldName": "descripci_n_c_digo_categor_a_principal_grupo",
+          "name": "Descripción código categoría principal grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Numero de telefono del grupo",
+          "fieldName": "numero_tel_fono_grupo",
+          "name": "Numero teléfono grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el numero de FAX registrado por el grupo",
+          "fieldName": "numero_fax",
+          "name": "Numero fax grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el correo electrónico del grupo registrado en la plataforma SECOPII",
+          "fieldName": "correo_electronico_grupo",
+          "name": "Correo electronico grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Dirección fisica registrada por el grupo",
+          "fieldName": "direcci_n_grupo",
+          "name": "Dirección grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el pais al que pertenece el grupo",
+          "fieldName": "pais_grupo",
+          "name": "Pais grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el departamento al que pertenece el grupo",
+          "fieldName": "departamento_grupo",
+          "name": "Departamento grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el municipio al que pertenece el grupo",
+          "fieldName": "minucipio",
+          "name": "Minucipio grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Enlace del sitio web del grupo",
+          "fieldName": "sitio_web_grupo",
+          "name": "Sitio web grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo de Empresa que ha declarado el grupo de proveedores al momento de registrar la organización",
+          "fieldName": "tipo_empresa_grupo",
+          "name": "Tipo Empresa Grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre representante legal del grupo",
+          "fieldName": "nombre_representante_legal_grupo",
+          "name": "Nombre representante legal grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el tipo de documento del representante legal del grupo",
+          "fieldName": "tipo_doc_representante_legal_grupo",
+          "name": "Tipo doc representante legal grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el numero de documento del representante legal del grupo",
+          "fieldName": "numero_doc_representante_legal_grupo",
+          "name": "Numero doc representante legal grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Número del telefono del representante legal del grupo",
+          "fieldName": "telefono_representante_legal_grupo",
+          "name": "Telefono representante legal grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el correo electronico del representante legal del grupo",
+          "fieldName": "correo_representante_legal_grupo",
+          "name": "Correo representante legal grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica si el grupo es una pyme",
+          "fieldName": "es_mipyme",
+          "name": "Es Mipyme"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Codido de ubicación del grupo en la plataforma SECOPII",
+          "fieldName": "ubicaci_n_grupo",
+          "name": "Ubicación Grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Codigo de la empresa participante en la plataforma SECOPII",
+          "fieldName": "codigo_participante",
+          "name": "Codigo participante"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre del Proveedor que hace parte del Grupo Conformado",
+          "fieldName": "nombre_participante",
+          "name": "Nombre Participante"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "NIT del proveedor participante del grupo, tal como lo registró en la plataforma",
+          "fieldName": "nit_participante",
+          "name": "NIT Participante"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo de Empresa de la organización partícipe del grupo",
+          "fieldName": "tipo_empresa_participante",
+          "name": "Tipo Empresa Participante"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Codigo de ubicación de la empresa participante en la plataforma SECOPII",
+          "fieldName": "ubicaci_n_participante",
+          "name": "Ubicación Participante"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha en que la organización que hace parte del grupo fue creada",
+          "fieldName": "fecha_creaci_n_participante",
+          "name": "Fecha Creación Participante"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Porcentaje de participación de la organización en el grupo",
+          "fieldName": "participacion",
+          "name": "Participacion"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Define si la empresa del registro es la líder del grupo que compone",
+          "fieldName": "es_lider_del_grupo",
+          "name": "Es Lider del Grupo"
+        }
+      ],
+      "default_year_field": "fecha_creaci_n_grupo",
+      "id_fields": {
+        "supplier_doc": "nit_grupo",
+        "supplier_name": "nombre_grupo"
+      },
+      "key": "groups",
+      "name": "Grupos de Proveedores SECOP II",
+      "resolved_column_names": [
+        "nombre_grupo",
+        "nit_grupo",
+        "departamento_grupo"
+      ],
+      "resolved_columns": {
+        "amount": null,
+        "contract_id": null,
+        "date": null,
+        "department": "departamento_grupo",
+        "entity_name": null,
+        "entity_nit": null,
+        "modality": null,
+        "municipality": null,
+        "object_text": null,
+        "process_id": null,
+        "process_reference": null,
+        "status": null,
+        "supplier_doc": "nit_grupo",
+        "supplier_name": "nombre_grupo",
+        "url_process": null
+      },
+      "role": "secondary",
+      "sample_row": {
+        "codigo_categor_a_principal_grupo": "No Definido",
+        "codigo_grupo": "707995049",
+        "codigo_participante": "700354020",
+        "correo_electronico_grupo": "No Provisto",
+        "correo_representante_legal_grupo": "nubia.a@jobwear.net",
+        "departamento_grupo": "No Provisto",
+        "descripci_n_c_digo_categor_a_principal_grupo": "No Definido",
+        "direcci_n_grupo": "No Provisto",
+        "es_entidad": "No",
+        "es_lider_del_grupo": "Verdadero",
+        "es_mipyme": "NO",
+        "es_proveedor": "No",
+        "esta_activo": "Si",
+        "fecha_creaci_n_grupo": "2019-11-09T00:00:00.000",
+        "fecha_creaci_n_participante": "2015-10-07T00:00:00.000",
+        "minucipio": "No Provisto",
+        "nit_grupo": "No Definido",
+        "nit_participante": "860045541",
+        "nombre_grupo": "UNIoN TEMPORAL VESTUARIO 2019",
+        "nombre_participante": "COLOMBIANA DE TEXTILES POR MAYOR S.A",
+        "nombre_representante_legal_grupo": "CARLOS ALBERTO DIAZ ROZO",
+        "numero_doc_representante_legal_grupo": "No Definido",
+        "numero_fax": "No Provisto",
+        "numero_tel_fono_grupo": "No Provisto",
+        "pais_grupo": "CO",
+        "participacion": "60",
+        "sitio_web_grupo": "No Provisto",
+        "telefono_representante_legal_grupo": "3102221433",
+        "tipo_doc_representante_legal_grupo": "No Definido",
+        "tipo_empresa_grupo": "UNIoN TEMPORAL",
+        "tipo_empresa_participante": "SOCIEDAD ANoNIMA ABIERTA COLOMBIANA",
+        "ubicaci_n_grupo": "No definido",
+        "ubicaci_n_participante": "CO"
+      },
+      "text_fields": [
+        "nombre_grupo",
+        "nit_grupo",
+        "tipo_empresa_grupo",
+        "departamento_grupo",
+        "minucipio_grupo"
+      ]
+    },
+    "gjp9-cutm": {
+      "cached": {},
+      "column_count": 14,
+      "columns": [
+        {
+          "dataTypeName": "text",
+          "description": "Identificador del contrato, con el que se realiza la garantía",
+          "fieldName": "id_contrato",
+          "name": "ID Contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre de la Aseguradora, con la que se tramita la garantia",
+          "fieldName": "aseguradora",
+          "name": "Aseguradora"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Numero de póliza, con la que se tramita la garantía ",
+          "fieldName": "numeropoliza",
+          "name": "NumeroPoliza"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre del titular de la póliza , tipo  persona natural o jurídica ",
+          "fieldName": "asegurado",
+          "name": "Asegurado"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre de la persona beneficiada en la garantía, tipo natural o jurídica",
+          "fieldName": "beneficiario",
+          "name": "Beneficiario"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Fecha, en la que se crea la póliza ",
+          "fieldName": "fechadecreacionpoliza",
+          "name": "FechaDeCreacionPoliza"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Fecha, en la que se envía la póliza",
+          "fieldName": "fechaenviopoliza",
+          "name": "FechaEnvioPoliza"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Fecha, en la que finaliza la póliza ",
+          "fieldName": "fechafinpoliza",
+          "name": "FechaFinPoliza"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "",
+          "fieldName": "ladopoliza",
+          "name": "LadoPoliza"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Estado en la que se encuentra la póliza ",
+          "fieldName": "estado",
+          "name": "Estado"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Objeto con la  que se ejecuta la póliza, ejemplo contrato de seguro",
+          "fieldName": "tipopoliza",
+          "name": "TipoPoliza"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "",
+          "fieldName": "subtipopoliza",
+          "name": "SubTipoPoliza"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor, de la póliza ",
+          "fieldName": "valor",
+          "name": "Valor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Fecha, con la que se crea la garantía en la plataforma ",
+          "fieldName": "fecha_de_creacion",
+          "name": "Fecha de Creacion"
+        }
+      ],
+      "default_year_field": "fechadecreacionpoliza",
+      "id_fields": {
+        "contract": "id_contrato"
+      },
+      "key": "guarantees",
+      "name": "SECOP II - Garantías",
+      "resolved_column_names": [
+        "id_contrato",
+        "estado",
+        "valor"
+      ],
+      "resolved_columns": {
+        "amount": "valor",
+        "contract_id": "id_contrato",
+        "date": null,
+        "department": null,
+        "entity_name": null,
+        "entity_nit": null,
+        "modality": null,
+        "municipality": null,
+        "object_text": null,
+        "process_id": null,
+        "process_reference": null,
+        "status": "estado",
+        "supplier_doc": null,
+        "supplier_name": null,
+        "url_process": null
+      },
+      "role": "secondary",
+      "sample_row": {},
+      "text_fields": [
+        "aseguradora",
+        "asegurado",
+        "beneficiario",
+        "tipopoliza",
+        "subtipopoliza"
+      ]
+    },
+    "gra4-pcp2": {
+      "cached": {},
+      "column_count": 13,
+      "columns": [
+        {
+          "dataTypeName": "text",
+          "description": "Nombre de la Entidad que publica el contrato",
+          "fieldName": "nombre_entidad",
+          "name": "Nombre Entidad"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Codigo de la entidad en la plataforma SECOP II",
+          "fieldName": "codigo_entidad",
+          "name": "Codigo Entidad"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "NIT de la entidad",
+          "fieldName": "nit_entidad",
+          "name": "Nit Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Ubicación fisica de la entidad",
+          "fieldName": "localizaci_n",
+          "name": "Localización"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Codigo del proveedor en la plataforma SECOP II",
+          "fieldName": "codigo_proveedor",
+          "name": "Codigo Proveedor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo de documento del proveedor",
+          "fieldName": "tipodocproveedor",
+          "name": "TipoDocProveedor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Número de documento del proveedor",
+          "fieldName": "documento_proveedor",
+          "name": "Documento Proveedor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre del proveedor adjudicado",
+          "fieldName": "proveedor_adjudicado",
+          "name": "Proveedor Adjudicado"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "ID del contrato en la plataforma SECOP II",
+          "fieldName": "id_contrato",
+          "name": "ID Contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "ID del proceso de compra en la plataforma SECOP II",
+          "fieldName": "proceso_de_compra",
+          "name": "Proceso de Compra"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Referencia del contrato en la plataforma SECOP II",
+          "fieldName": "referencia_del_contrato",
+          "name": "Referencia del Contrato"
+        },
+        {
+          "dataTypeName": "url",
+          "description": "URL del proceso de compra",
+          "fieldName": "urlproceso",
+          "name": "URLProceso"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Ubicación de ejecución del contrato",
+          "fieldName": "ubicacion",
+          "name": "Ubicacion"
+        }
+      ],
+      "default_year_field": null,
+      "id_fields": {
+        "contract": "id_contrato",
+        "entity_nit": "nit_entidad",
+        "supplier_doc": "documento_proveedor"
+      },
+      "key": "locations",
+      "name": "Ubicaciones ejecución contratos",
+      "resolved_column_names": [
+        "nombre_entidad",
+        "nit_entidad",
+        "localizaci_n",
+        "documento_proveedor",
+        "proveedor_adjudicado",
+        "id_contrato",
+        "proceso_de_compra",
+        "referencia_del_contrato",
+        "urlproceso",
+        "ubicacion"
+      ],
+      "resolved_columns": {
+        "amount": null,
+        "contract_id": "id_contrato",
+        "date": null,
+        "department": "localizaci_n",
+        "entity_name": "nombre_entidad",
+        "entity_nit": "nit_entidad",
+        "modality": null,
+        "municipality": "ubicacion",
+        "object_text": null,
+        "process_id": "proceso_de_compra",
+        "process_reference": "referencia_del_contrato",
+        "status": null,
+        "supplier_doc": "documento_proveedor",
+        "supplier_name": "proveedor_adjudicado",
+        "url_process": "urlproceso"
+      },
+      "role": "secondary",
+      "sample_row": {
+        "codigo_entidad": "706570116",
+        "codigo_proveedor": "713777951",
+        "documento_proveedor": "4520388",
+        "id_contrato": "CO1.PCCNTR.3507216",
+        "localizaci_n": "COLOMBIA;  RISARALDA ;  LA VIRGINIA",
+        "nit_entidad": "891480027",
+        "nombre_entidad": "ALCALDIA MUNICIPAL LA VIRGINIA RISARALDA",
+        "proceso_de_compra": "CO1.BDOS.2762083",
+        "proveedor_adjudicado": "WALTER MURILLO BONILLA",
+        "referencia_del_contrato": "AM-CPS-110-2022",
+        "tipodocproveedor": "Cédula de Ciudadanía",
+        "ubicacion": "COLOMBIA»RISARALDA»LA VIRGINIA",
+        "urlproceso": {
+          "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.2779077&isFromPublicArea=True&isModal=true&asPopupView=true"
+        }
+      },
+      "text_fields": [
+        "nombre_entidad",
+        "documento_proveedor",
+        "proveedor_adjudicado",
+        "ubicacion",
+        "localizaci_n"
+      ]
+    },
+    "hgi6-6wh3": {
+      "cached": {},
+      "column_count": 9,
+      "columns": [
+        {
+          "dataTypeName": "text",
+          "description": null,
+          "fieldName": "id_procedimiento",
+          "name": "ID Procedimiento"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "",
+          "fieldName": "fecha_publicaci_n",
+          "name": "Fecha Publicación"
+        },
+        {
+          "dataTypeName": "text",
+          "description": null,
+          "fieldName": "nombre_procedimiento",
+          "name": "Nombre Procedimiento"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "",
+          "fieldName": "nit_entidad",
+          "name": "NIT Entidad"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "",
+          "fieldName": "codigo_entidad",
+          "name": "Codigo Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": null,
+          "fieldName": "entidad_compradora",
+          "name": "Entidad Compradora"
+        },
+        {
+          "dataTypeName": "text",
+          "description": null,
+          "fieldName": "proveedor",
+          "name": "Proveedor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": null,
+          "fieldName": "nit_proveedor",
+          "name": "NIT Proveedor"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Identificador único de la plataforma SECOP II, del Proveedor",
+          "fieldName": "codigo_proveedor",
+          "name": "Codigo Proveedor"
+        }
+      ],
+      "default_year_field": "fecha_publicaci_n",
+      "id_fields": {
+        "entity_nit": "nit_entidad",
+        "process": "id_procedimiento",
+        "supplier_doc": "nit_proveedor"
+      },
+      "key": "bidders",
+      "name": "SECOP II - Proponentes por Proceso",
+      "resolved_column_names": [
+        "id_procedimiento",
+        "nit_entidad",
+        "entidad_compradora",
+        "proveedor",
+        "nit_proveedor"
+      ],
+      "resolved_columns": {
+        "amount": null,
+        "contract_id": null,
+        "date": null,
+        "department": null,
+        "entity_name": "entidad_compradora",
+        "entity_nit": "nit_entidad",
+        "modality": null,
+        "municipality": null,
+        "object_text": null,
+        "process_id": "id_procedimiento",
+        "process_reference": null,
+        "status": null,
+        "supplier_doc": "nit_proveedor",
+        "supplier_name": "proveedor",
+        "url_process": null
+      },
+      "role": "secondary",
+      "sample_row": {
+        "codigo_entidad": "702962226",
+        "codigo_proveedor": "700150014",
+        "entidad_compradora": "ESM BATALLoN ASPC NO. 6",
+        "fecha_publicaci_n": "2026-02-11T00:00:00.000",
+        "id_procedimiento": "CO1.REQ.10159505",
+        "nit_entidad": "901541245",
+        "nit_proveedor": "830501223",
+        "nombre_procedimiento": "SUMINISTRO DE PAÑALES DESECHABLES Y PAÑITOS HuMEDOS ESM-BAS06",
+        "proveedor": "INTERCOMERCIAL MEDICA"
+      },
+      "text_fields": [
+        "nombre_procedimiento",
+        "entidad_compradora",
+        "proveedor",
+        "nit_proveedor"
+      ]
+    },
+    "ibyt-yi2f": {
+      "cached": {},
+      "column_count": 15,
+      "columns": [
+        {
+          "dataTypeName": "text",
+          "description": "Referencia al contrato al que corresponde el pago",
+          "fieldName": "id_contrato",
+          "name": "ID Contrato"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Identificador de la secuencia de pagos",
+          "fieldName": "id_pago",
+          "name": "ID Pago"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Número de la factura emitida por el proveedor",
+          "fieldName": "numero_de_factura",
+          "name": "Numero de Factura"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Fecha de emisión de la factura",
+          "fieldName": "fecha_factura",
+          "name": "Fecha Factura"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor Neto de la factura",
+          "fieldName": "valor_neto",
+          "name": "Valor Neto"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor total de la factura",
+          "fieldName": "valor_total",
+          "name": "Valor Total"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Notas hechas al registro de la factura",
+          "fieldName": "notas",
+          "name": "Notas"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Fecha de entrega de la factura a la entidad",
+          "fieldName": "fecha_de_entrega",
+          "name": "Fecha de entrega"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Número de radicación de la entidad, al momento de recibir la factura",
+          "fieldName": "radicado",
+          "name": "Radicado"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Fehca estimada por la entidad para el pago de la factura",
+          "fieldName": "fecha_estiamda_de_pago",
+          "name": "Fecha estiamda de pago"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor a pagar por parte de la entidad",
+          "fieldName": "valor_a_pagar",
+          "name": "Valor a Pagar"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Estado de la factura",
+          "fieldName": "estado",
+          "name": "Estado"
+        },
+        {
+          "dataTypeName": "checkbox",
+          "description": "",
+          "fieldName": "pago_confirmado",
+          "name": "Pago confirmado"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Usuario que aprueba el pago",
+          "fieldName": "usuario_pago",
+          "name": "Usuario Pago"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Código de la entidad en la plataforma SECOPII",
+          "fieldName": "codigo_entidad",
+          "name": "Codigo Entidad"
+        }
+      ],
+      "default_year_field": "fecha_factura",
+      "id_fields": {
+        "contract": "id_contrato",
+        "payment": "id_pago"
+      },
+      "key": "invoices",
+      "name": "SECOP II - Facturas",
+      "resolved_column_names": [
+        "id_contrato",
+        "fecha_factura",
+        "valor_total",
+        "notas",
+        "estado",
+        "codigo_entidad"
+      ],
+      "resolved_columns": {
+        "amount": "valor_total",
+        "contract_id": "id_contrato",
+        "date": "fecha_factura",
+        "department": null,
+        "entity_name": null,
+        "entity_nit": "codigo_entidad",
+        "modality": null,
+        "municipality": null,
+        "object_text": "notas",
+        "process_id": null,
+        "process_reference": null,
+        "status": "estado",
+        "supplier_doc": null,
+        "supplier_name": null,
+        "url_process": null
+      },
+      "role": "secondary",
+      "sample_row": {
+        "codigo_entidad": "712009646",
+        "estado": "Pagado",
+        "fecha_de_entrega": "2021-08-21 16:57:47.0000000",
+        "fecha_estiamda_de_pago": "2021-08-30 23:00:00.0000000",
+        "fecha_factura": "2021-08-21 17:24:00.0000000",
+        "id_contrato": "CO1.PCCNTR.2248096",
+        "id_pago": "7",
+        "notas": "SEXTO PAGO CONTRATO 090 DE 2021 CORRESPONDIENTE AL PERÍODO DEL 22 DE JULIO DE 2021 AL 21 DE AGOSTO DE 2021",
+        "numero_de_factura": "JG554",
+        "pago_confirmado": true,
+        "radicado": "007",
+        "usuario_pago": "CONTABILIDAD ALCALDIA DE IBAGUE",
+        "valor_a_pagar": "21338100.000000",
+        "valor_neto": "17931177.000000",
+        "valor_total": "21338100.000000"
+      },
+      "text_fields": [
+        "numero_de_factura",
+        "notas",
+        "estado"
+      ]
+    },
+    "it5q-hg94": {
+      "cached": {},
+      "column_count": 17,
+      "columns": [
+        {
+          "dataTypeName": "text",
+          "description": "Identificador del Proceso de Compra Pública generado por la plataforma",
+          "fieldName": "id_proceso",
+          "name": "ID Proceso"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Identificador del Proceso de Compra Pública generado por la Entidad",
+          "fieldName": "referencia_proceso",
+          "name": "Referencia Proceso"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Identificador del Contrato generado por la plataforma",
+          "fieldName": "id_contrato",
+          "name": "ID Contrato"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Código, en la plataforma, de la Entidad Creadora que Publica la Sanción",
+          "fieldName": "codigo_entidad_creadora",
+          "name": "Codigo Entidad Creadora"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre de la Entidad Creadora que Publica la Sanción",
+          "fieldName": "nombre_entidad_creadora",
+          "name": "Nombre Entidad Creadora"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Código, en la plataforma,  del Proveedor Objeto de la Multa",
+          "fieldName": "as_codigo_proveedor_objeto",
+          "name": " Codigo Proveedor Objeto de la Multa"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre del Proveedor Objeto de la Multa",
+          "fieldName": "nombre_proveedor_objeto_de",
+          "name": "Nombre Proveedor Objeto de la Multa"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor de la multa",
+          "fieldName": "valor",
+          "name": "Valor"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor Pagado por el proveedor a la fecha",
+          "fieldName": "valor_pagado",
+          "name": "Valor Pagado"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha del evento que genera la sanción o multa",
+          "fieldName": "fecha_evento",
+          "name": "Fecha Evento"
+        },
+        {
+          "dataTypeName": "checkbox",
+          "description": "Indica si el evento requiere de la activación de los procesos de garantía definidos en el proceso de compra pública",
+          "fieldName": "aplico_garantias",
+          "name": "Aplico Garantias"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Numero de Acto, que genera la sanción ",
+          "fieldName": "numero_de_acto",
+          "name": "Numero de Acto"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo de Sanción, generado por la multa",
+          "fieldName": "tipo_de_sancion",
+          "name": "Tipo de Sancion"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Descripción, Otro Tipo De Sanción, que genera la multa. Ejemplo: Incumplimiento",
+          "fieldName": "descripcion_otro_tipo_de",
+          "name": "Descripcion Otro Tipo De Sancion"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Estado, generado por la sanción o multa",
+          "fieldName": "estado",
+          "name": "Estado"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo, de sanción que genera la multa",
+          "fieldName": "tipo",
+          "name": "Tipo"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Numero de Versión, que genera la sanción ",
+          "fieldName": "numero_de_version",
+          "name": "Numero de Version"
+        }
+      ],
+      "default_year_field": "fecha_evento",
+      "id_fields": {
+        "contract": "id_contrato",
+        "entity_nit": "codigo_entidad_creadora",
+        "process": "id_proceso",
+        "supplier_doc": "as_codigo_proveedor_objeto"
+      },
+      "key": "sanctions",
+      "name": "SECOP II - Multas y Sanciones",
+      "resolved_column_names": [
+        "id_proceso",
+        "referencia_proceso",
+        "id_contrato",
+        "codigo_entidad_creadora",
+        "nombre_entidad_creadora",
+        "as_codigo_proveedor_objeto",
+        "nombre_proveedor_objeto_de",
+        "valor",
+        "fecha_evento",
+        "estado",
+        "tipo"
+      ],
+      "resolved_columns": {
+        "amount": "valor",
+        "contract_id": "id_contrato",
+        "date": "fecha_evento",
+        "department": null,
+        "entity_name": "nombre_entidad_creadora",
+        "entity_nit": "codigo_entidad_creadora",
+        "modality": "tipo",
+        "municipality": null,
+        "object_text": "tipo",
+        "process_id": "id_proceso",
+        "process_reference": "referencia_proceso",
+        "status": "estado",
+        "supplier_doc": "as_codigo_proveedor_objeto",
+        "supplier_name": "nombre_proveedor_objeto_de",
+        "url_process": null
+      },
+      "role": "secondary",
+      "sample_row": {
+        "aplico_garantias": true,
+        "as_codigo_proveedor_objeto": "11291853",
+        "codigo_entidad_creadora": "700533144",
+        "descripcion_otro_tipo_de": "No definido",
+        "estado": "Publicado por el administrador de la plataforma",
+        "fecha_evento": "2025-09-08T00:00:00.000",
+        "id_contrato": "No definido",
+        "id_proceso": "CO1.BDOS.5786919",
+        "nombre_entidad_creadora": "FONDO DE PRESTACIONES ECONOMICAS CESANTIAS Y PENSIONES",
+        "nombre_proveedor_objeto_de": "DIANA CAROLINA CHAVEZ GARCIA",
+        "numero_de_acto": "RESOLUCIÓN No. SFA - 00192 del 08 de septiembre de 2025",
+        "numero_de_version": "3",
+        "referencia_proceso": "CD_080 DE 2024",
+        "tipo": "Incapacidad",
+        "tipo_de_sancion": "Clausula Penal",
+        "valor": "1080000",
+        "valor_pagado": "1080000"
+      },
+      "text_fields": [
+        "referencia_proceso",
+        "nombre_entidad_creadora",
+        "nombre_proveedor_objeto_de",
+        "descripcion_otro_tipo_de_sancion",
+        "tipo_de_sancion"
+      ]
+    },
+    "jbjy-vk9h": {
+      "cached": {},
+      "column_count": 84,
+      "columns": [
+        {
+          "dataTypeName": "text",
+          "description": "Nombre de la entidad del estado que publica el contrato",
+          "fieldName": "nombre_entidad",
+          "name": "Nombre Entidad"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "NIT de la entidad del estado que publica el contrato",
+          "fieldName": "nit_entidad",
+          "name": "Nit Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Departamento en el cual se registró la entidad del estado que publica el contrato",
+          "fieldName": "departamento",
+          "name": "Departamento"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Ciudad en el cual se registró la entidad del estado que publica el contrato",
+          "fieldName": "ciudad",
+          "name": "Ciudad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Ubicación completa de la entidad del estado que publica el contrato",
+          "fieldName": "localizaci_n",
+          "name": "Localización"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Orden entidad del estado que publica el contrato",
+          "fieldName": "orden",
+          "name": "Orden"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Sector entidad del estado que publica el contrato",
+          "fieldName": "sector",
+          "name": "Sector"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Rama del estado de la entidad que publica el contrato",
+          "fieldName": "rama",
+          "name": "Rama"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Define si la entidad es descentralizada o centralizada",
+          "fieldName": "entidad_centralizada",
+          "name": "Entidad Centralizada"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Identificador del proceso de compra publicado",
+          "fieldName": "proceso_de_compra",
+          "name": "Proceso de Compra"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Identificador del contrato firmado, generado por la plataforma",
+          "fieldName": "id_contrato",
+          "name": "ID Contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Identificador del contrato firmado, generado por la entidad del estado",
+          "fieldName": "referencia_del_contrato",
+          "name": "Referencia del Contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Estado del contrato, frente a su ejecución, firma o liquidación",
+          "fieldName": "estado_contrato",
+          "name": "Estado Contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Codigo UNSPSC de la categoría principal para el contrato",
+          "fieldName": "codigo_de_categoria_principal",
+          "name": "Codigo de Categoria Principal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Descripción del objeto del proceso de compra",
+          "fieldName": "descripcion_del_proceso",
+          "name": "Descripcion del Proceso"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo de contrato de acuerdo a su marco jurídico",
+          "fieldName": "tipo_de_contrato",
+          "name": "Tipo de Contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Modalidad de contratación de acuerdo al modelo de selección",
+          "fieldName": "modalidad_de_contratacion",
+          "name": "Modalidad de Contratacion"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Justificación de la modalidad, el escenario bajo el cual se toma la decisión de definir una u otra modalidad de contratación",
+          "fieldName": "justificacion_modalidad_de",
+          "name": "Justificacion Modalidad de Contratacion"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de firma del contrato electronico",
+          "fieldName": "fecha_de_firma",
+          "name": "Fecha de Firma"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de inicio de las responsabilidades contractuales",
+          "fieldName": "fecha_de_inicio_del_contrato",
+          "name": "Fecha de Inicio del Contrato"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de fin de las responsabilidades contractuales",
+          "fieldName": "fecha_de_fin_del_contrato",
+          "name": "Fecha de Fin del Contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Condiciones bajo las cuales se entrega el producto o servicio",
+          "fieldName": "condiciones_de_entrega",
+          "name": "Condiciones de Entrega"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo de documento del proveedor adjudicado",
+          "fieldName": "tipodocproveedor",
+          "name": "TipoDocProveedor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Número de documento del proveedor adjudicado",
+          "fieldName": "documento_proveedor",
+          "name": "Documento Proveedor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre del proveedor adjudicado",
+          "fieldName": "proveedor_adjudicado",
+          "name": "Proveedor Adjudicado"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Determina el proveedor es un grupo de entidades, existe un conjunto de datos de CCE que contiene la conformación de los grupos",
+          "fieldName": "es_grupo",
+          "name": "Es Grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Determina si la empresa es una Pyme",
+          "fieldName": "es_pyme",
+          "name": "Es Pyme"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Determina si el contrato tiene habilitada la opción de pago de adelantos",
+          "fieldName": "habilita_pago_adelantado",
+          "name": "Habilita Pago Adelantado"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Determina si el contrato ha sido liquidado",
+          "fieldName": "liquidaci_n",
+          "name": "Liquidación"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Determina si el contrato tiene compromisos de cumplimiento a obligaciones ambientales",
+          "fieldName": "obligaci_n_ambiental",
+          "name": "Obligación Ambiental"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Determina si el contrato tiene compromisos de cumplimiento a obligaciones posteriores a la entrega del producto o prestación del servicio",
+          "fieldName": "obligaciones_postconsumo",
+          "name": "Obligaciones Postconsumo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Determina si el contrato ha sido reversado",
+          "fieldName": "reversion",
+          "name": "Reversion"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Origen de los Recursos, a nivel presupuestal",
+          "fieldName": "origen_de_los_recursos",
+          "name": "Origen de los Recursos"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Destino del gasto, a nivel presupuestal",
+          "fieldName": "destino_gasto",
+          "name": "Destino Gasto"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor total del contrato",
+          "fieldName": "valor_del_contrato",
+          "name": "Valor del Contrato"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor del pago por adelantado",
+          "fieldName": "valor_de_pago_adelantado",
+          "name": "Valor de pago adelantado"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor Facturado a la fecha",
+          "fieldName": "valor_facturado",
+          "name": "Valor Facturado"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor Pendiente de Pago a la fecha",
+          "fieldName": "valor_pendiente_de_pago",
+          "name": "Valor Pendiente de Pago"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor Pagado a la fecha",
+          "fieldName": "valor_pagado",
+          "name": "Valor Pagado"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor Amortizado a la fecha",
+          "fieldName": "valor_amortizado",
+          "name": "Valor Amortizado"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor Pendiente de Amortizacion a la fecha",
+          "fieldName": "valor_pendiente_de",
+          "name": "Valor Pendiente de Amortizacion"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor Pendiente de Ejecucion a la fecha",
+          "fieldName": "valor_pendiente_de_ejecucion",
+          "name": "Valor Pendiente de Ejecucion"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Saldo del CDP asignado al proceso y al contrato",
+          "fieldName": "saldo_cdp",
+          "name": "Saldo CDP"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Saldo actual para la vigencia del CDP asignado al proceso y al contrato",
+          "fieldName": "saldo_vigencia",
+          "name": "Saldo Vigencia"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Determina si el proceso está asociado a algún evento de acuerdo de paz",
+          "fieldName": "espostconflicto",
+          "name": "EsPostConflicto"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Días adicionados al contrato electrónico",
+          "fieldName": "dias_adicionados",
+          "name": "Dias adicionados"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Pilares del acuerdo de paz, si el contrato es post conflicto",
+          "fieldName": "puntos_del_acuerdo",
+          "name": "Puntos del Acuerdo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Pilares del acuerdo de paz",
+          "fieldName": "pilares_del_acuerdo",
+          "name": "Pilares del Acuerdo"
+        },
+        {
+          "dataTypeName": "url",
+          "description": "URL del proceso de compra en la plataforma SECOP II",
+          "fieldName": "urlproceso",
+          "name": "URLProceso"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre del representante legal de la entidad",
+          "fieldName": "nombre_representante_legal",
+          "name": "Nombre Representante Legal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nacionalidad del representante legal de la entidad",
+          "fieldName": "nacionalidad_representante_legal",
+          "name": "Nacionalidad Representante Legal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Dirección de domicilio del representante legal de la entidad",
+          "fieldName": "domicilio_representante_legal",
+          "name": "Domicilio Representante Legal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo de identificación del representante legal de la entidad",
+          "fieldName": "tipo_de_identificaci_n_representante_legal",
+          "name": "Tipo de Identificación Representante Legal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Numero de identificación del representante legal de la entidad",
+          "fieldName": "identificaci_n_representante_legal",
+          "name": "Identificación Representante Legal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Género sexual del representante legal de la entidad",
+          "fieldName": "g_nero_representante_legal",
+          "name": "Género Representante Legal"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor de origen de los recursos que corresponde al Presupuesto General de la Nacion – PGN",
+          "fieldName": "presupuesto_general_de_la_nacion_pgn",
+          "name": "Presupuesto General de la Nacion – PGN"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor de origen de los recursos que corresponde al Sistema General de Participaciones",
+          "fieldName": "sistema_general_de_participaciones",
+          "name": "Sistema General de Participaciones"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor de origen de los recursos que corresponde al Sistema General de Regalías",
+          "fieldName": "sistema_general_de_regal_as",
+          "name": "Sistema General de Regalías"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Indica el valor de recursos de la entidad en el contrato electronico",
+          "fieldName": "recursos_propios_alcald_as_gobernaciones_y_resguardos_ind_genas_",
+          "name": "Recursos Propios (Alcaldías, Gobernaciones y Resguardos Indígenas)"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor de origen de los recursos que corresponde a Recursos de Credito",
+          "fieldName": "recursos_de_credito",
+          "name": "Recursos de Credito"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor de origen de los recursos que corresponde a Recursos Propios",
+          "fieldName": "recursos_propios",
+          "name": "Recursos Propios"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de última actualización del contrato electronico",
+          "fieldName": "ultima_actualizacion",
+          "name": "Ultima Actualizacion"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Codigo de la entidad en la plataforma SECOPII",
+          "fieldName": "codigo_entidad",
+          "name": "Codigo Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Codigo del proveedor edn la plataforma SECOPII",
+          "fieldName": "codigo_proveedor",
+          "name": "Codigo Proveedor"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de inicio de liquidación del contrato electrónico",
+          "fieldName": "fecha_inicio_liquidacion",
+          "name": "Fecha Inicio Liquidacion"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de fin de liquidación del contrato electrónico",
+          "fieldName": "fecha_fin_liquidacion",
+          "name": "Fecha Fin Liquidacion"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Objeto del contrato electrónico",
+          "fieldName": "objeto_del_contrato",
+          "name": "Objeto del Contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Describe la duración del contrato en el tiempo",
+          "fieldName": "duraci_n_del_contrato",
+          "name": "Duración del contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el nombre del banco en donde se consignaran los pagos del contrato",
+          "fieldName": "nombre_del_banco",
+          "name": "Nombre del banco"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo de cuenta en la que se se consignaran los pago del contrato",
+          "fieldName": "tipo_de_cuenta",
+          "name": "Tipo de cuenta"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Numero de cuenta en donde se haran los pagos del contrato",
+          "fieldName": "n_mero_de_cuenta",
+          "name": "Número de cuenta"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica si el contrato puede ser o no prorrogado",
+          "fieldName": "el_contrato_puede_ser_prorrogado",
+          "name": "El contrato puede ser prorrogado"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Infica la fecha de notificación de la prorrogación del contrato",
+          "fieldName": "fecha_de_notificaci_n_de_prorrogaci_n",
+          "name": "Fecha de notificación de prorrogación"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Describe el nombre del ordenador del gasto de la entidad compradora",
+          "fieldName": "nombre_ordenador_del_gasto",
+          "name": "Nombre ordenador del gasto"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el tipo de documento del ordenador del gasto de la entidad compradora",
+          "fieldName": "tipo_de_documento_ordenador_del_gasto",
+          "name": "Tipo de documento Ordenador del gasto"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el número de documento del ordenador del gasto",
+          "fieldName": "n_mero_de_documento_ordenador_del_gasto",
+          "name": "Número de documento Ordenador del gasto"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Describe el nombre del supervisor de la entidad compradora",
+          "fieldName": "nombre_supervisor",
+          "name": "Nombre supervisor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el tipo de documento del supervisor de la entidad compradora",
+          "fieldName": "tipo_de_documento_supervisor",
+          "name": "Tipo de documento supervisor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el número de documento del supervisor",
+          "fieldName": "n_mero_de_documento_supervisor",
+          "name": "Número de documento supervisor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Describe el nombre del Ordenador de Pago de la entidad compradora",
+          "fieldName": "nombre_ordenador_de_pago",
+          "name": "Nombre Ordenador de Pago"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el tipo de documento del Ordenador de Pago de la entidad compradora",
+          "fieldName": "tipo_de_documento_ordenador_de_pago",
+          "name": "Tipo de documento Ordenador de Pago"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el número de documento del Ordenador de Pago",
+          "fieldName": "n_mero_de_documento_ordenador_de_pago",
+          "name": "Número de documento Ordenador de Pago"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica si se utilizaron documentos tipo en el contrato",
+          "fieldName": "documentos_tipo",
+          "name": "Documentos Tipo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Descripción de los documentos tipo utilizados",
+          "fieldName": "descripcion_documentos_tipo",
+          "name": "Descripcion Documentos Tipo"
+        }
+      ],
+      "default_year_field": "fecha_de_firma",
+      "id_fields": {
+        "contract": "id_contrato",
+        "entity_nit": "nit_entidad",
+        "process": "proceso_de_compra",
+        "supplier_doc": "documento_proveedor",
+        "supplier_name": "proveedor_adjudicado",
+        "url_process": "urlproceso"
+      },
+      "key": "core_contracts",
+      "name": "SECOP II - Contratos Electrónicos",
+      "resolved_column_names": [
+        "nombre_entidad",
+        "nit_entidad",
+        "departamento",
+        "ciudad",
+        "proceso_de_compra",
+        "id_contrato",
+        "referencia_del_contrato",
+        "estado_contrato",
+        "descripcion_del_proceso",
+        "modalidad_de_contratacion",
+        "fecha_de_firma",
+        "documento_proveedor",
+        "proveedor_adjudicado",
+        "urlproceso"
+      ],
+      "resolved_columns": {
+        "amount": null,
+        "contract_id": "id_contrato",
+        "date": "fecha_de_firma",
+        "department": "departamento",
+        "entity_name": "nombre_entidad",
+        "entity_nit": "nit_entidad",
+        "modality": "modalidad_de_contratacion",
+        "municipality": "ciudad",
+        "object_text": "descripcion_del_proceso",
+        "process_id": "proceso_de_compra",
+        "process_reference": "referencia_del_contrato",
+        "status": "estado_contrato",
+        "supplier_doc": "documento_proveedor",
+        "supplier_name": "proveedor_adjudicado",
+        "url_process": "urlproceso"
+      },
+      "role": "core",
+      "sample_row": {
+        "ciudad": "No Definido",
+        "codigo_de_categoria_principal": "V1.50161509",
+        "codigo_entidad": "701224107",
+        "codigo_proveedor": "700658065",
+        "condiciones_de_entrega": "Como acordado previamente",
+        "departamento": "Distrito Capital de Bogotá",
+        "descripcion_del_proceso": "Contratar a monto agotable por el sistema de precios unitarios; sin formula de reajuste el suministro de elementos de aseo y limpieza e insumos de cafetería y restaurante; para los Parques Nacionales Naturales de  Amacayacu; Cahuinarí; Río Puré y Yaigojé Apaporis",
+        "descripcion_documentos_tipo": "No definido",
+        "destino_gasto": "Funcionamiento",
+        "dias_adicionados": "0",
+        "documento_proveedor": "830130048",
+        "documentos_tipo": "No",
+        "domicilio_representante_legal": "No Definido",
+        "duraci_n_del_contrato": "No definido",
+        "el_contrato_puede_ser_prorrogado": "Si",
+        "entidad_centralizada": "Centralizada",
+        "es_grupo": "No",
+        "es_pyme": "Si",
+        "espostconflicto": "No",
+        "estado_contrato": "Cerrado",
+        "fecha_de_fin_del_contrato": "2019-12-31T00:00:00.000",
+        "fecha_de_firma": "2019-06-19T00:00:00.000",
+        "fecha_de_inicio_del_contrato": "2019-06-18T00:00:00.000",
+        "fecha_de_notificaci_n_de_prorrogaci_n": "2019-11-18T00:00:00.000",
+        "fecha_fin_liquidacion": "2021-01-03T00:00:00.000",
+        "fecha_inicio_liquidacion": "2019-06-18T00:00:00.000",
+        "g_nero_representante_legal": "No Definido",
+        "habilita_pago_adelantado": "No Definido",
+        "id_contrato": "CO1.PCCNTR.1000001",
+        "identificaci_n_representante_legal": "8301300481",
+        "justificacion_modalidad_de": "Presupuesto inferior al 10% de la menor cuantía",
+        "liquidaci_n": "Si",
+        "localizaci_n": "Colombia, Bogotá, No Definido",
+        "modalidad_de_contratacion": "Mínima cuantía",
+        "n_mero_de_cuenta": "130006182",
+        "n_mero_de_documento_ordenador_de_pago": "No definido",
+        "n_mero_de_documento_ordenador_del_gasto": "51698201",
+        "n_mero_de_documento_supervisor": "15888923",
+        "nacionalidad_representante_legal": "CO",
+        "nit_entidad": "900005502",
+        "nombre_del_banco": "BBVA",
+        "nombre_entidad": "PARQUES NACIONALES NATURALES DE COLOMBIA - DIRECCION  TERRITORIAL AMAZONIA",
+        "nombre_ordenador_de_pago": "No definido",
+        "nombre_ordenador_del_gasto": "DIANACASTELLANOS",
+        "nombre_representante_legal": "INDUSTRIAS GUERRERO Y CIA SAS",
+        "nombre_supervisor": "ARTEMIO CANO TABARES",
+        "objeto_del_contrato": "Contratar a monto agotable por el sistema de precios unitarios; sin formula de reajuste el suministro de elementos de aseo y limpieza e insumos de cafetería y restaurante; para los Parques Nacionales Naturales de  Amacayacu; Cahuinarí; Río Puré y Yaigojé Apaporis",
+        "obligaci_n_ambiental": "No",
+        "obligaciones_postconsumo": "No",
+        "orden": "Territorial",
+        "origen_de_los_recursos": "Distribuido",
+        "pilares_del_acuerdo": "No aplica",
+        "proceso_de_compra": "CO1.BDOS.848814",
+        "proveedor_adjudicado": "INDUSTRIAS GUERRERO Y COMPAÑIA S.A.S.",
+        "puntos_del_acuerdo": "No aplica",
+        "rama": "Ejecutivo",
+        "recursos_propios_alcald_as_gobernaciones_y_resguardos_ind_genas_": "0",
+        "referencia_del_contrato": "DTAM NACION-CS NO. 020-2019",
+        "reversion": "No",
+        "saldo_cdp": "17897916",
+        "saldo_vigencia": "0",
+        "sector": "Ambiente y Desarrollo Sostenible",
+        "tipo_de_contrato": "Suministros",
+        "tipo_de_cuenta": "Corriente",
+        "tipo_de_documento_ordenador_de_pago": "No definido",
+        "tipo_de_documento_ordenador_del_gasto": "Cédula de Ciudadanía",
+        "tipo_de_documento_supervisor": "Cédula de Ciudadanía",
+        "tipo_de_identificaci_n_representante_legal": "NIT",
+        "tipodocproveedor": "NIT",
+        "ultima_actualizacion": "2020-12-30T00:00:00.000",
+        "urlproceso": {
+          "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.846428&isFromPublicArea=True&isModal=true&asPopupView=true"
+        },
+        "valor_amortizado": "0",
+        "valor_de_pago_adelantado": "0",
+        "valor_del_contrato": "17897916",
+        "valor_facturado": "17896237",
+        "valor_pagado": "17896237",
+        "valor_pendiente_de": "0",
+        "valor_pendiente_de_ejecucion": "1679",
+        "valor_pendiente_de_pago": "1679"
+      },
+      "text_fields": [
+        "descripcion_del_proceso",
+        "tipo_de_contrato",
+        "modalidad_de_contratacion",
+        "justificacion_modalidad_de",
+        "condiciones_de_entrega",
+        "proveedor_adjudicado",
+        "nombre_entidad"
+      ]
+    },
+    "p6dx-8zbt": {
+      "cached": {},
+      "column_count": 59,
+      "columns": [
+        {
+          "dataTypeName": "text",
+          "description": "Nombre de la Entidad que publica el proceso de compra pública",
+          "fieldName": "entidad",
+          "name": "Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "NIT de la Entidad que publicó el proceso",
+          "fieldName": "nit_entidad",
+          "name": "Nit Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Departamento en el cual está registrada la entidad\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "fieldName": "departamento_entidad",
+          "name": "Departamento Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Ciudad en la cual está registrada la entidad\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "fieldName": "ciudad_entidad",
+          "name": "Ciudad Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Orden de la Entidad (Nacional, Regional)\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "fieldName": "ordenentidad",
+          "name": "OrdenEntidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Identifica si la entidad es o no centralizada\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "fieldName": "codigo_pci",
+          "name": "Entidad Centralizada"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Identificador Único del Proceso, valor generado por la plataforma\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "fieldName": "id_del_proceso",
+          "name": "ID del Proceso"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Identificador del Proceso, valor generado por la Entidad\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "fieldName": "referencia_del_proceso",
+          "name": "Referencia del Proceso"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Codigo de Unidad - Sub Unidad Contratación\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "fieldName": "ppi",
+          "name": "PCI"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Identificador del Portafolio al cual corresponde el proceso de compra\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "fieldName": "id_del_portafolio",
+          "name": "ID del Portafolio"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre dado al proceso de compra por la Entidad\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "fieldName": "nombre_del_procedimiento",
+          "name": "Nombre del Procedimiento"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Primera definición de las características principales del proceso\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t\t",
+          "fieldName": "descripci_n_del_procedimiento",
+          "name": "Descripción del Procedimiento"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Fase en la que actualmente se encuentra el proceso",
+          "fieldName": "fase",
+          "name": "Fase"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de la publicación inicial del proceso de compra",
+          "fieldName": "fecha_de_publicacion_del",
+          "name": "Fecha de Publicacion del Proceso"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de la última publicación hecha para el proceso de compra",
+          "fieldName": "fecha_de_ultima_publicaci",
+          "name": "Fecha de Ultima Publicación"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de publicación, dentro del proceso, de la fase de Planeación en Precalificación",
+          "fieldName": "fecha_de_publicacion_fase",
+          "name": "Fecha de Publicacion (Fase Planeacion Precalificacion)"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de publicación, dentro del proceso, de la fase de Selección en Precalificación",
+          "fieldName": "fecha_de_publicacion_fase_1",
+          "name": "Fecha de Publicacion (Fase Seleccion Precalificacion)"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de publicación, dentro del proceso, de la fase de Manifestación de Interés",
+          "fieldName": "fecha_de_publicacion",
+          "name": "Fecha de Publicacion (Manifestacion de Interes)"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de publicación, dentro del proceso, de la fase Borrador",
+          "fieldName": "fecha_de_publicacion_fase_2",
+          "name": "Fecha de Publicacion (Fase Borrador)"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de publicación, dentro del proceso, de la fase Selección",
+          "fieldName": "fecha_de_publicacion_fase_3",
+          "name": "Fecha de Publicacion (Fase Seleccion)"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Precio Base, proyectado, del proceso de Compra",
+          "fieldName": "precio_base",
+          "name": "Precio Base"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Modalidad de selección bajo la cual se desarrolla el proceso de Compra",
+          "fieldName": "modalidad_de_contratacion",
+          "name": "Modalidad de Contratacion"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "En caso de requerirse, Justificación para la modalidad de selección elegida para el proceso de compra",
+          "fieldName": "justificaci_n_modalidad_de",
+          "name": "Justificación Modalidad de Contratación"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor de la Duración estimada del proceso de compra pública",
+          "fieldName": "duracion",
+          "name": "Duracion"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Unidad que aplica a la Duración estimada del proceso de compra pública",
+          "fieldName": "unidad_de_duracion",
+          "name": "Unidad de Duracion"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha asignada para la recepción de respuestas por parte de los proveedores, dentro del proceso de compra",
+          "fieldName": "fecha_de_recepcion_de",
+          "name": "Fecha de Recepcion de Respuestas"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha Estimada para la Apertura de las respuestas ",
+          "fieldName": "fecha_de_apertura_de_respuesta",
+          "name": "Fecha de Apertura de Respuesta"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha Real para la Apertura de las respuestas ",
+          "fieldName": "fecha_de_apertura_efectiva",
+          "name": "Fecha de Apertura Efectiva"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Cuidad en la que aparece registrada la unidad de contratación de la Entidad",
+          "fieldName": "ciudad_de_la_unidad_de",
+          "name": "Ciudad de la Unidad de Contratación"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre de la unidad de contratación de la Entidad",
+          "fieldName": "nombre_de_la_unidad_de",
+          "name": "Nombre de la Unidad de Contratación"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Número de Proveedores invitados a participar del proceso, en total",
+          "fieldName": "proveedores_invitados",
+          "name": "Proveedores Invitados"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Proveedores con Invitación a participar hecha de forma directa",
+          "fieldName": "proveedores_con_invitacion",
+          "name": "Proveedores con Invitacion Directa"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Número de Visualizaciones hechas a través de la herramienta, del Proceso de Compra",
+          "fieldName": "visualizaciones_del",
+          "name": "Visualizaciones del Procedimiento"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Proveedores que Manifestaron Interés en el proceso a través de la plataforma",
+          "fieldName": "proveedores_que_manifestaron",
+          "name": "Proveedores que Manifestaron Interes"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Respuestas hechas al procedimiento, tanto de proveedores como de la misma entidad",
+          "fieldName": "respuestas_al_procedimiento",
+          "name": "Respuestas al Procedimiento"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Número de Respuestas hechas por entes externos",
+          "fieldName": "respuestas_externas",
+          "name": "Respuestas Externas"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Número de Respuestas hechas de forma directa en las ofertas",
+          "fieldName": "conteo_de_respuestas_a_ofertas",
+          "name": "Conteo de Respuestas a Ofertas"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Proveedores Únicos que han redactado respuestas en el proceso",
+          "fieldName": "proveedores_unicos_con",
+          "name": "Proveedores Unicos con Respuestas"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Número de lotes de articulos solicitados dentro del proceso",
+          "fieldName": "numero_de_lotes",
+          "name": "Numero de Lotes"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Estado actual de desarrollo del procedimiento de compra pública",
+          "fieldName": "estado_del_procedimiento",
+          "name": "Estado del Procedimiento"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Identificador del Estado del procedimiento",
+          "fieldName": "id_estado_del_procedimiento",
+          "name": "ID Estado del Procedimiento"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Determina si el proceso fue adjudicado",
+          "fieldName": "adjudicado",
+          "name": "Adjudicado"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Identificador de la adjudicación",
+          "fieldName": "id_adjudicacion",
+          "name": "ID Adjudicacion"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Código, en la plataforma, del proveedor adjudicado",
+          "fieldName": "codigoproveedor",
+          "name": "CodigoProveedor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Departamento en el que está registrado el proveedor adjudicado",
+          "fieldName": "departamento_proveedor",
+          "name": "Departamento Proveedor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Ciudad en la que está registrado el proveedor adjudicado",
+          "fieldName": "ciudad_proveedor",
+          "name": "Ciudad Proveedor"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha en la que se hizo la adjudicación del proceso para el proveedor seleccionado",
+          "fieldName": "fecha_adjudicacion",
+          "name": "Fecha Adjudicacion"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor total Adjudicado",
+          "fieldName": "valor_total_adjudicacion",
+          "name": "Valor Total Adjudicacion"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre del Usuario que ejecutó la accion de adjudicación",
+          "fieldName": "nombre_del_adjudicador",
+          "name": "Nombre del Adjudicador"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre del Proveedor Adjudicado ",
+          "fieldName": "nombre_del_proveedor",
+          "name": "Nombre del Proveedor Adjudicado"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "NIT del Proveedor Adjudicado",
+          "fieldName": "nit_del_proveedor_adjudicado",
+          "name": "NIT del Proveedor Adjudicado"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Codigo UNSPSC de la categoría principal del producto o servicio adquirido en proceso de compra",
+          "fieldName": "codigo_principal_de_categoria",
+          "name": "Codigo Principal de Categoria"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Estado actual de Apertura de información del proceso",
+          "fieldName": "estado_de_apertura_del_proceso",
+          "name": "Estado de Apertura del Proceso"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo de Contrato definido para el proceso de compra",
+          "fieldName": "tipo_de_contrato",
+          "name": "Tipo de Contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Subtipo de Contrato definido para el proceso de compra",
+          "fieldName": "subtipo_de_contrato",
+          "name": "Subtipo de Contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Identificador de las categorías UNSPSC adicionales, incluidas en el producto o servicio adquirido en proceso de compra",
+          "fieldName": "categorias_adicionales",
+          "name": "Categorias Adicionales"
+        },
+        {
+          "dataTypeName": "url",
+          "description": "URL, en la plataforma, en la que se puede consultar el proceso de compra",
+          "fieldName": "urlproceso",
+          "name": "URLProceso"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Código de la entidad en la plataforma SECOPII",
+          "fieldName": "codigo_entidad",
+          "name": "Codigo Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Resumen del estado del proceso de compra pública",
+          "fieldName": "estado_resumen",
+          "name": "Estado Resumen"
+        }
+      ],
+      "default_year_field": "fecha_de_publicacion_del_proceso",
+      "id_fields": {
+        "entity_nit": "nit_entidad",
+        "process": "id_del_proceso"
+      },
+      "key": "processes",
+      "name": "SECOP II - Procesos de Contratación",
+      "resolved_column_names": [
+        "entidad",
+        "nit_entidad",
+        "departamento_entidad",
+        "ciudad_entidad",
+        "id_del_proceso",
+        "referencia_del_proceso",
+        "nombre_del_procedimiento",
+        "modalidad_de_contratacion",
+        "urlproceso"
+      ],
+      "resolved_columns": {
+        "amount": null,
+        "contract_id": null,
+        "date": null,
+        "department": "departamento_entidad",
+        "entity_name": "entidad",
+        "entity_nit": "nit_entidad",
+        "modality": "modalidad_de_contratacion",
+        "municipality": "ciudad_entidad",
+        "object_text": "nombre_del_procedimiento",
+        "process_id": "id_del_proceso",
+        "process_reference": "referencia_del_proceso",
+        "status": null,
+        "supplier_doc": null,
+        "supplier_name": null,
+        "url_process": "urlproceso"
+      },
+      "role": "secondary",
+      "sample_row": {
+        "adjudicado": "No",
+        "categorias_adicionales": "No definido",
+        "ciudad_de_la_unidad_de": "Bogotá",
+        "ciudad_entidad": "Bogotá",
+        "ciudad_proveedor": "No Definido",
+        "codigo_entidad": "700474109",
+        "codigo_pci": "Centralizada",
+        "codigo_principal_de_categoria": "V1.80111500",
+        "codigoproveedor": "No Definido",
+        "conteo_de_respuestas_a_ofertas": "0",
+        "departamento_entidad": "Distrito Capital de Bogotá",
+        "departamento_proveedor": "No Definido",
+        "descripci_n_del_procedimiento": "TS_MERCADO_2022_GEIH_TH Prestación de servicios profesionales para procesar la información de la GEIH para el análisis de resultados y generación de nuevos indicadores de migración laboral y series de mercado laboral desestacionalizadas.",
+        "duracion": "344",
+        "entidad": "DEPARTAMENTO ADMINISTRATIVO NACIONAL DE ESTADISTICA (DANE)",
+        "estado_de_apertura_del_proceso": "Abierto",
+        "estado_del_procedimiento": "Seleccionado",
+        "estado_resumen": "Presentación de oferta",
+        "fase": "Presentación de oferta",
+        "fecha_de_publicacion_del": "2022-01-18T00:00:00.000",
+        "fecha_de_publicacion_fase_3": "2022-01-18T00:00:00.000",
+        "fecha_de_ultima_publicaci": "2022-01-18T00:00:00.000",
+        "id_adjudicacion": "No Adjudicado",
+        "id_del_portafolio": "CO1.BDOS.2503732",
+        "id_del_proceso": "CO1.REQ.2577563",
+        "id_estado_del_procedimiento": "70",
+        "justificaci_n_modalidad_de": "Servicios profesionales y apoyo a la gestión",
+        "modalidad_de_contratacion": "Contratación directa",
+        "nit_del_proveedor_adjudicado": "No Definido",
+        "nit_entidad": "899999027",
+        "nombre_de_la_unidad_de": "SECRETARIA GENERAL - DANE CENTRAL",
+        "nombre_del_adjudicador": "No Adjudicado",
+        "nombre_del_procedimiento": "TS_MERCADO_2022_GEIH_TH Prestación de servicios profesionales para procesar la información de la GEIH para el análisis de resultados y generación de nuevos indicadores de migración laboral y series de",
+        "nombre_del_proveedor": "No Definido",
+        "numero_de_lotes": "0",
+        "ordenentidad": "Nacional",
+        "ppi": "700474109",
+        "precio_base": "57333333",
+        "proveedores_con_invitacion": "0",
+        "proveedores_invitados": "0",
+        "proveedores_que_manifestaron": "0",
+        "proveedores_unicos_con": "0",
+        "referencia_del_proceso": "EDP-545-2022",
+        "respuestas_al_procedimiento": "0",
+        "respuestas_externas": "0",
+        "subtipo_de_contrato": "No Definido",
+        "tipo_de_contrato": "Prestación de servicios",
+        "unidad_de_duracion": "día(s)",
+        "urlproceso": {
+          "url": "https://community.secop.gov.co/Public/Tendering/OpportunityDetail/Index?noticeUID=CO1.NTC.2597221"
+        },
+        "valor_total_adjudicacion": "0",
+        "visualizaciones_del": "0"
+      },
+      "text_fields": [
+        "nombre_del_procedimiento",
+        "descripcion_del_procedimiento",
+        "referencia_del_proceso",
+        "fase"
+      ]
+    },
+    "qmzu-gj57": {
+      "cached": {},
+      "column_count": 25,
+      "columns": [
+        {
+          "dataTypeName": "text",
+          "description": "Es el codigo del proveedor en la plataforma SECOPII",
+          "fieldName": "codigo",
+          "name": "Codigo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre del Proveedor, como se registró en SECOP II",
+          "fieldName": "nombre",
+          "name": "Nombre"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Numero de Identificación con el que figura el proveedor en SECOP II",
+          "fieldName": "nit",
+          "name": "NIT"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica si el proveedor tambien es una entidad compradora en SECOPII",
+          "fieldName": "es_entidad",
+          "name": "Es Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica si la entidad pertenece a un grupo",
+          "fieldName": "es_grupo",
+          "name": "Es grupo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica si el proveedor esta activo en el SECOPII",
+          "fieldName": "esta_activa",
+          "name": "Esta Activa"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha en la que se hizo el primer registro del proveedor",
+          "fieldName": "fecha_creacion",
+          "name": "Fecha Creación"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Codigo UNSPSC principal del proveedor",
+          "fieldName": "codigo_categoria_principal",
+          "name": "Codigo Categoria Principal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Descripción UNSPSC principal del proveedor",
+          "fieldName": "descripcion_categoria_principal",
+          "name": "Descripcion Categoria Principal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el número de telefono del proveedor",
+          "fieldName": "telefono",
+          "name": "Telefono"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el número de fax reportado por por el proveedor",
+          "fieldName": "fax",
+          "name": "Fax"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica la dirección de correo electronico del proveedor",
+          "fieldName": "correo",
+          "name": "Correo"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Dirección fisica registrada or el proveedor",
+          "fieldName": "direccion",
+          "name": "Direccion"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "País de origen del Proveedor",
+          "fieldName": "pais",
+          "name": "Pais"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "En caso de Ser un proveedor colombiano, indica el departamento al que corresponde la ubicación principal del Proveedor",
+          "fieldName": "departamento",
+          "name": "Departamento"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "En caso de Ser un proveedor colombiano, indica el Municipio al que corresponde la ubicación principal del Proveedor",
+          "fieldName": "municipio",
+          "name": "Municipio"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el enlace del sitio web del proveedor",
+          "fieldName": "sitio_web",
+          "name": "Sitio web"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo de Empresa que declara el proveedor al registrarse ",
+          "fieldName": "tipo_empresa",
+          "name": "Tipo Empresa"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el nombre del representa nte legal del proveedor",
+          "fieldName": "nombre_representante_legal",
+          "name": "Nombre representante legal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el tipo de documento del representante legal del proveedor",
+          "fieldName": "tipo_doc_representante_legal",
+          "name": "Tipo doc representante legal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el número de documento del representante legal del proveedor",
+          "fieldName": "n_mero_doc_representante_legal",
+          "name": "Número doc representante legal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el número telefonico del representante legal del proveedor",
+          "fieldName": "telefono_representante_legal",
+          "name": "Telefono representante legal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el correo electronico del representante legal del proveedor",
+          "fieldName": "correo_representante_legal",
+          "name": "Correo representante legal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Determina si el proveedor se registro como pequeña empresa",
+          "fieldName": "espyme",
+          "name": "EsPyme"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica el codigo de ubicación del proveedor en la plataforma SECOPII",
+          "fieldName": "ubicacion",
+          "name": "Ubicación"
+        }
+      ],
+      "default_year_field": "fecha_creacion",
+      "id_fields": {
+        "supplier_doc": "nit",
+        "supplier_name": "nombre"
+      },
+      "key": "suppliers",
+      "name": "SECOP II - Proveedores Registrados",
+      "resolved_column_names": [
+        "nombre",
+        "nit",
+        "departamento",
+        "municipio"
+      ],
+      "resolved_columns": {
+        "amount": null,
+        "contract_id": null,
+        "date": null,
+        "department": "departamento",
+        "entity_name": null,
+        "entity_nit": null,
+        "modality": null,
+        "municipality": "municipio",
+        "object_text": null,
+        "process_id": null,
+        "process_reference": null,
+        "status": null,
+        "supplier_doc": "nit",
+        "supplier_name": "nombre",
+        "url_process": null
+      },
+      "role": "secondary",
+      "sample_row": {
+        "codigo": "716947601",
+        "codigo_categoria_principal": "No Definido",
+        "correo": "CT726251@GMAIL.COM",
+        "correo_representante_legal": "montoyatorres2903@gmail.com",
+        "departamento": "ANTIOQUIA",
+        "descripcion_categoria_principal": "No Definido",
+        "direccion": "CALLE 103 #  72 59",
+        "es_entidad": "No",
+        "es_grupo": "No",
+        "espyme": "NO",
+        "esta_activa": "Si",
+        "fax": "No Provisto",
+        "fecha_creacion": "2022-01-28T00:00:00.000",
+        "municipio": "MEDELLiN",
+        "n_mero_doc_representante_legal": "1000445203",
+        "nit": "1000445203",
+        "nombre": "MARIA CAMILA MONTOYA TORRES",
+        "nombre_representante_legal": "Maria Camila Montoya Torres",
+        "pais": "CO",
+        "sitio_web": "No Provisto",
+        "telefono": "3046092944",
+        "telefono_representante_legal": "3046092944",
+        "tipo_doc_representante_legal": "Cédula de Ciudadanía",
+        "tipo_empresa": "PERSONA NATURAL COLOMBIANA",
+        "ubicacion": "CO-ANT-05001"
+      },
+      "text_fields": [
+        "nombre",
+        "nit",
+        "tipo_empresa",
+        "departamento",
+        "municipio"
+      ]
+    },
+    "uymx-8p3j": {
+      "cached": {},
+      "column_count": 34,
+      "columns": [
+        {
+          "dataTypeName": "text",
+          "description": "ID del contrato en SECOPII",
+          "fieldName": "id_del_contrato",
+          "name": "Id del Contrato"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "ID del pago dentro del contrato",
+          "fieldName": "id_de_pago",
+          "name": "ID de pago"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Número de factura o ID del pago",
+          "fieldName": "numero_de_factura",
+          "name": "Numero de factura"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de emisión de la factura o pago",
+          "fieldName": "fecha_de_emision",
+          "name": "Fecha de emision"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de recepción del pago",
+          "fieldName": "fecha_de_recepcion",
+          "name": "Fecha de recepcion"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor neto del pago",
+          "fieldName": "valor_neto_de_la_factura",
+          "name": "Valor neto de la factura"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor total del pago",
+          "fieldName": "valor_total_de_la_factura",
+          "name": "Valor total de la factura"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor a pagar",
+          "fieldName": "valor_a_pagar",
+          "name": "Valor a pagar"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Estado del pago",
+          "fieldName": "estado",
+          "name": "Estado"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Indica si el proveedor esta obligado a facturar electronicamente",
+          "fieldName": "obligado_a_facturar_electr",
+          "name": "Obligado a facturar electrónicamente"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Codigo Unico de Fatura Electronica",
+          "fieldName": "cufe",
+          "name": "CUFE"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de emisión del pago",
+          "fieldName": "fecha_de_emisi_n",
+          "name": "Fecha de emisión"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de vencimiento del pago",
+          "fieldName": "fecha_de_vencimiento",
+          "name": "Fecha de vencimiento"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor neto a pagar",
+          "fieldName": "valor_neto",
+          "name": "Valor neto"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Valor total a pagar",
+          "fieldName": "valor_total",
+          "name": "Valor total"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Notas del pago",
+          "fieldName": "notas",
+          "name": "Notas"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de entrega original del pago",
+          "fieldName": "fecha_de_entrega_original",
+          "name": "Fecha de Entrega original"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Número del radicación del pago",
+          "fieldName": "n_mero_de_radicaci_n",
+          "name": "Número de radicación"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de recepción original del pago",
+          "fieldName": "fecha_de_recepci_n_original",
+          "name": "Fecha de recepción original"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha estimada para efectuar el pago",
+          "fieldName": "fecha_estimada_de_pago",
+          "name": "Fecha estimada de pago"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Compromiso presupuestal del contrato",
+          "fieldName": "compromiso_presupuestal",
+          "name": "Compromiso presupuestal"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Plan de recepción del contrato",
+          "fieldName": "plan_de_recepci_n",
+          "name": "Plan de recepción"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha real en la que se ejecutó el pago",
+          "fieldName": "fecha_real_de_pago",
+          "name": "Fecha real de pago"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Quien aprueba el pago",
+          "fieldName": "aprobado_por",
+          "name": "Aprobado por"
+        },
+        {
+          "dataTypeName": "number",
+          "description": "Codigo de la Entidad compradora en SECOPII",
+          "fieldName": "codigo_entidad",
+          "name": "Codigo Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "NIT Entidad compradora en SECOPII",
+          "fieldName": "nit_entidad",
+          "name": "NIT Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre Entidad compradora en SECOPII",
+          "fieldName": "nombre_entidad",
+          "name": "Nombre Entidad"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Numero de contato en SECOPII",
+          "fieldName": "referencia_contrato",
+          "name": "Referencia Contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre del supervisor del contrato",
+          "fieldName": "nombre_supervisor",
+          "name": "Nombre supervisor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Tipo de documento del supervisor del contrato",
+          "fieldName": "tipo_documento_supervisor",
+          "name": "Tipo documento supervisor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Documento del supervisor del contrato",
+          "fieldName": "documento_supervisor",
+          "name": "Documento supervisor"
+        },
+        {
+          "dataTypeName": "calendar_date",
+          "description": "Fecha de inicio del contrato",
+          "fieldName": "fecha_inicio_contrato",
+          "name": "Fecha inicio contrato"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Nombre del proveedor que ejecuta el contrato",
+          "fieldName": "nombre_proveedor",
+          "name": "Nombre proveedor"
+        },
+        {
+          "dataTypeName": "text",
+          "description": "Documento del proveedor que ejecuta el contrato",
+          "fieldName": "documento_proveedor",
+          "name": "Documento proveedor"
+        }
+      ],
+      "default_year_field": "fecha_de_emision",
+      "id_fields": {
+        "contract": "id_del_contrato",
+        "payment": "id_de_pago"
+      },
+      "key": "payments",
+      "name": "SECOP II - Plan de pagos",
+      "resolved_column_names": [
+        "id_del_contrato",
+        "fecha_de_emision",
+        "estado",
+        "valor_total",
+        "notas",
+        "nit_entidad",
+        "nombre_entidad",
+        "documento_proveedor"
+      ],
+      "resolved_columns": {
+        "amount": "valor_total",
+        "contract_id": "id_del_contrato",
+        "date": "fecha_de_emision",
+        "department": null,
+        "entity_name": "nombre_entidad",
+        "entity_nit": "nit_entidad",
+        "modality": null,
+        "municipality": null,
+        "object_text": "notas",
+        "process_id": null,
+        "process_reference": null,
+        "status": "estado",
+        "supplier_doc": "documento_proveedor",
+        "supplier_name": null,
+        "url_process": null
+      },
+      "role": "secondary",
+      "sample_row": {
+        "aprobado_por": "No definido",
+        "codigo_entidad": "700000011",
+        "compromiso_presupuestal": "No definido",
+        "cufe": "No definido",
+        "documento_proveedor": "900350029",
+        "documento_supervisor": "No definido",
+        "estado": "PENDIENTE REGISTRO",
+        "fecha_inicio_contrato": "2019-07-02T00:00:00.000",
+        "id_de_pago": "1",
+        "id_del_contrato": "CO1.PCCNTR.1018102",
+        "n_mero_de_radicaci_n": "No definido",
+        "nit_entidad": "800211401",
+        "nombre_entidad": "VORTAL COMPRADOR (ENTIDAD DE SISTEMA)",
+        "nombre_proveedor": "VORTAL PROVEEDOR1 LEGAL (ENTIDAD DE SISTEMA)",
+        "nombre_supervisor": "No definido",
+        "notas": "No definido",
+        "numero_de_factura": "No definido",
+        "obligado_a_facturar_electr": "No definido",
+        "plan_de_recepci_n": "No definido",
+        "referencia_contrato": "CO1.PCCNTR.1018102",
+        "tipo_documento_supervisor": "No definido",
+        "valor_a_pagar": "0.000000",
+        "valor_neto": "0.000000",
+        "valor_neto_de_la_factura": "0.000000",
+        "valor_total": "0.000000",
+        "valor_total_de_la_factura": "0.000000"
+      },
+      "text_fields": [
+        "numero_de_factura",
+        "notas",
+        "estado"
+      ]
+    }
+  },
+  "generated_at": "2026-05-09T04:55:42.526602+00:00",
+  "project": "PAE Risk Tracker"
+}

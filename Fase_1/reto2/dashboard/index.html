@@ -1,0 +1,189 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="dark" />
+    <title>Reto 2 | Dashboard SECOP II</title>
+    <link rel="stylesheet" href="./styles.css" />
+    <script type="module" src="./app.js"></script>
+  </head>
+  <body>
+    <main class="page-shell">
+      <header class="hero panel">
+        <div class="hero-copy">
+          <span class="eyebrow">Reto 2 | SECOP II</span>
+          <h1>Dashboard de respuestas, EDA y calidad de datos</h1>
+          <p class="lead">
+            Lectura ejecutiva sobre la base oficial de SECOP II. Este tablero resume volumen,
+            Pymes, concentración, modalidad preferida, anomalías financieras y alertas de calidad.
+          </p>
+          <div class="status-row" id="statusRow">
+            <span class="pill">Cargando datos...</span>
+          </div>
+        </div>
+
+        <aside class="hero-side">
+          <div class="hero-metric" id="paretoMetric">--</div>
+          <div class="hero-metric-note" id="paretoNote">Concentración del valor en el 20% superior de entidades</div>
+          <div class="hero-actions no-print">
+            <a class="button primary" href="./api/summary.json" target="_blank" rel="noreferrer">Abrir API</a>
+            <button class="button secondary" id="refreshBtn" type="button">Recargar</button>
+            <button class="button secondary" id="printBtn" type="button">Imprimir PDF</button>
+          </div>
+        </aside>
+      </header>
+
+      <div class="shell">
+        <aside class="sidebar">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Fuente oficial</p>
+                <h2>SECOP II - Contratos Electrónicos</h2>
+              </div>
+            </div>
+            <div class="fact-card">
+              <div class="fact-label">Dataset</div>
+              <div class="fact-value" id="datasetName">--</div>
+              <div class="fact-meta" id="datasetId">--</div>
+            </div>
+            <div class="fact-list" id="sourceFacts"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Lectura rápida</p>
+                <h2>Lo que sí sabemos</h2>
+              </div>
+            </div>
+            <ul class="bullet-list" id="keyTakeaways"></ul>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Accesos</p>
+                <h2>Endpoint y dashboard</h2>
+              </div>
+            </div>
+            <div class="link-grid">
+              <a class="link-card" href="./api/summary.json" target="_blank" rel="noreferrer">
+                <strong>API local</strong>
+                <span>/api/summary.json</span>
+              </a>
+              <a class="link-card" href="./index.html">
+                <strong>Dashboard</strong>
+                <span>Vista local del reto 2</span>
+              </a>
+            </div>
+            <p class="helper">
+              Abre este tablero desde <code>http://127.0.0.1:4176</code> para consumir la API local.
+            </p>
+          </section>
+        </aside>
+
+        <section class="content">
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Vista general</p>
+                <h2>Indicadores ejecutivos</h2>
+              </div>
+              <span class="helper" id="lastUpdated">Datos oficiales SECOP II</span>
+            </div>
+            <div class="kpi-grid" id="kpiGrid"></div>
+          </section>
+
+          <section class="analysis-grid">
+            <article class="panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Gráfica</p>
+                  <h2>Top departamentos</h2>
+                </div>
+                <span class="helper">Número de contratos</span>
+              </div>
+              <div class="bars" id="departmentBars"></div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Gráfica</p>
+                  <h2>Entidades con más valor</h2>
+                </div>
+                <span class="helper">Valor ejecutado</span>
+              </div>
+              <div class="bars" id="entityBars"></div>
+            </article>
+          </section>
+
+          <section class="analysis-grid">
+            <article class="panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Gráfica</p>
+                  <h2>Tipos de contrato</h2>
+                </div>
+                <span class="helper">Conteo de registros</span>
+              </div>
+              <div class="bars" id="contractBars"></div>
+            </article>
+
+            <article class="panel">
+              <div class="panel-head">
+                <div>
+                  <p class="section-kicker">Hallazgos</p>
+                  <h2>Calidad y límites</h2>
+                </div>
+                <span class="helper">Interpretación para el jurado</span>
+              </div>
+              <div class="quality-cards" id="qualityCards"></div>
+            </article>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Formulario</p>
+                <h2>Respuestas para copiar</h2>
+              </div>
+              <span class="helper">Q1 - Q20</span>
+            </div>
+            <div class="question-grid" id="questions"></div>
+          </section>
+
+          <section class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Top 3</p>
+                <h2>Valores anómalos financieros</h2>
+              </div>
+            </div>
+            <div class="table-wrap">
+              <table>
+                <thead>
+                  <tr>
+                    <th>#</th>
+                    <th>Entidad</th>
+                    <th>Monto</th>
+                    <th>Tipo</th>
+                    <th>Modalidad</th>
+                    <th>Veredicto</th>
+                  </tr>
+                </thead>
+                <tbody id="anomaliesTable"></tbody>
+              </table>
+            </div>
+          </section>
+
+          <footer class="footer-note">
+            Este dashboard se construyó para el reto 2 con una estética más ejecutiva, más cercana al frontend del reto 1.
+          </footer>
+        </section>
+      </div>
+    </main>
+  </body>
+</html>

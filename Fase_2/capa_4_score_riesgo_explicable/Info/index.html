@@ -1,0 +1,418 @@
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <meta name="color-scheme" content="light" />
+    <title>Agente de IA para Detección de Opacidad en Contratos Públicos PAE</title>
+    <link rel="stylesheet" href="./css/dashboard-opacidad-pae.css" />
+    <script type="module" src="./js/dashboard-opacidad-pae.js"></script>
+  </head>
+  <body>
+    <main class="dashboard-shell">
+      <header class="hero panel">
+        <div class="hero-copy">
+          <span class="eyebrow">Fase 2 | Ruta prioritaria del MVP</span>
+          <h1>Agente de IA para Detección de Opacidad en Contratos Públicos PAE</h1>
+          <p class="hero-lead">
+            Consulta, análisis y seguimiento de contratos públicos del Programa de Alimentación Escolar. La información del proyecto es de
+            Alejandro Montes. Las alertas generadas son indicadores preliminares de riesgo y no constituyen afirmaciones de corrupción.
+          </p>
+          <div class="status-row">
+            <span class="pill" id="statusSource">Datos: cargando</span>
+            <span class="pill" id="statusUpdated">Última actualización: --</span>
+            <span class="pill" id="statusContracts">Contratos analizados: --</span>
+            <span class="pill" id="statusPeriod">Periodo: --</span>
+          </div>
+        </div>
+
+        <div class="hero-actions" aria-label="Controles rapidos">
+          <label class="hero-control">
+            <span>Año</span>
+            <select id="periodSelect"></select>
+          </label>
+          <button class="button secondary" id="refreshBtn" type="button">Actualizar</button>
+          <button class="button secondary" id="exportCsvBtn" type="button">Exportar CSV</button>
+          <button class="button primary" id="printBtn" type="button">Imprimir</button>
+        </div>
+      </header>
+
+      <section class="panel context-panel">
+        <div class="section-head">
+          <div>
+            <span class="eyebrow eyebrow--soft">Ruta prioritaria</span>
+            <h2>Columna vertebral del MVP</h2>
+          </div>
+          <p class="section-helper">
+            Esta interfaz HTML es la ruta prioritaria de integración de la Fase 2. Los demás módulos deben entregar
+            <code>contracts</code>, <code>selected_contract</code>, <code>report</code>, <code>dashboard_metrics</code>,
+            <code>red_flags</code>, <code>risk_patterns</code>, <code>connections</code> y <code>chatbot_context</code>.
+          </p>
+        </div>
+        <div class="context-grid">
+          <article class="context-card">
+            <strong>1. Abrir el HTML principal</strong>
+            <p>El usuario entra por esta página única y ve el encabezado del proyecto con el nombre de Alejandro Montes.</p>
+          </article>
+          <article class="context-card">
+            <strong>2. Buscar y filtrar</strong>
+            <p>Se usa la búsqueda principal y el filtro obligatorio de departamento para acotar el universo de contratos.</p>
+          </article>
+          <article class="context-card">
+            <strong>3. Seleccionar contrato</strong>
+            <p>La tabla prioriza contratos con mayor riesgo, red flags, valor, proveedor repetido y baja pluralidad de oferentes.</p>
+          </article>
+          <article class="context-card">
+            <strong>4. Reporte y chatbot</strong>
+            <p>La vista lateral construye el informe, el dashboard del contrato y el chatbot contextual solo con datos disponibles.</p>
+          </article>
+        </div>
+      </section>
+
+      <div class="workspace">
+        <section class="main-column">
+          <section class="panel search-panel">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow eyebrow--soft">Búsqueda</span>
+                <h2>Buscar y priorizar contratos PAE</h2>
+              </div>
+              <div class="search-actions">
+                <span class="section-helper" id="resultsCount">0 contratos filtrados</span>
+                <button class="button primary" id="searchBtn" type="submit" form="searchForm">Buscar</button>
+                <button class="button secondary" id="resetFiltersBtn" type="button">Limpiar filtros</button>
+              </div>
+            </div>
+
+            <form id="searchForm">
+              <div class="filters-grid">
+                <label class="filter-field filter-field--wide">
+                  <span>Buscar contrato PAE, proveedor, entidad o palabra clave...</span>
+                  <input
+                    id="searchQuery"
+                    type="search"
+                    placeholder="ID del contrato, objeto, proveedor, entidad, municipio o departamento..."
+                    autocomplete="off"
+                    spellcheck="false"
+                  />
+                </label>
+                <label class="filter-field">
+                  <span>Departamento</span>
+                  <select id="departmentFilter"></select>
+                </label>
+                <label class="filter-field">
+                  <span>Municipio</span>
+                  <select id="municipalityFilter"></select>
+                </label>
+                <label class="filter-field">
+                  <span>Entidad contratante</span>
+                  <select id="entityFilter"></select>
+                </label>
+                <label class="filter-field">
+                  <span>Proveedor</span>
+                  <select id="supplierFilter"></select>
+                </label>
+                <label class="filter-field filter-field--wide">
+                  <span>Objeto contractual</span>
+                  <input id="objectFilter" type="text" placeholder="Descripcion del objeto" autocomplete="off" />
+                </label>
+                <label class="filter-field">
+                  <span>Modalidad</span>
+                  <select id="modalityFilter"></select>
+                </label>
+                <label class="filter-field">
+                  <span>Nivel de riesgo</span>
+                  <select id="riskLevelFilter">
+                    <option value="all">Todos</option>
+                    <option value="Bajo">Bajo</option>
+                    <option value="Medio">Medio</option>
+                    <option value="Alto">Alto</option>
+                    <option value="Critico">Critico</option>
+                  </select>
+                </label>
+                <label class="filter-field">
+                  <span>Red flag</span>
+                  <select id="redFlagFilter"></select>
+                </label>
+                <label class="filter-field">
+                  <span>Score minimo</span>
+                  <input id="scoreMinFilter" type="number" min="0" max="100" step="1" placeholder="0" />
+                </label>
+                <label class="filter-field">
+                  <span>Score maximo</span>
+                  <input id="scoreMaxFilter" type="number" min="0" max="100" step="1" placeholder="100" />
+                </label>
+                <label class="filter-field">
+                  <span>Valor minimo</span>
+                  <input id="valueMinFilter" type="number" min="0" step="1000" placeholder="0" />
+                </label>
+                <label class="filter-field">
+                  <span>Valor maximo</span>
+                  <input id="valueMaxFilter" type="number" min="0" step="1000" placeholder="5000000000" />
+                </label>
+                <label class="filter-field">
+                  <span>Fecha desde</span>
+                  <input id="dateFromFilter" type="date" />
+                </label>
+                <label class="filter-field">
+                  <span>Fecha hasta</span>
+                  <input id="dateToFilter" type="date" />
+                </label>
+              </div>
+
+              <div class="table-shell-frame" id="tableShell">
+                <div id="contractsTableBody"></div>
+                <div id="tablePagination"></div>
+              </div>
+            </form>
+          </section>
+
+          <section class="panel kpi-panel">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow eyebrow--soft">KPI</span>
+                <h2>Resumen ejecutivo del universo filtrado</h2>
+              </div>
+              <p class="section-helper">Los indicadores se recalculan al aplicar filtros y búsquedas.</p>
+            </div>
+            <div class="kpi-grid" id="kpiGrid"></div>
+          </section>
+
+          <section class="panel chart-panel">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow eyebrow--soft">Riesgo</span>
+                <h2>Distribucion del score de riesgo</h2>
+              </div>
+              <p class="section-helper">Umbrales editables desde la configuracion local del dashboard.</p>
+            </div>
+            <div class="chart-grid chart-grid--risk">
+              <article class="chart-card">
+                <div class="chart-card__head">
+                  <h3>Dona de riesgo</h3>
+                  <p>Clasificacion por nivel.</p>
+                </div>
+                <div id="riskDonut"></div>
+              </article>
+              <article class="chart-card">
+                <div class="chart-card__head">
+                  <h3>Histograma</h3>
+                  <p>Frecuencia de scores de 0 a 100.</p>
+                </div>
+                <div id="riskHistogram"></div>
+                <div id="riskThresholdNotes" class="threshold-notes"></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel chart-panel">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow eyebrow--soft">Red flags</span>
+                <h2>Señales de alerta de opacidad</h2>
+              </div>
+              <p class="section-helper" id="redFlagSummary"></p>
+            </div>
+            <div class="chart-grid chart-grid--flags">
+              <article class="chart-card">
+                <div class="chart-card__head">
+                  <h3>Frecuencia de red flags</h3>
+                  <p>Top alertas en el universo filtrado.</p>
+                </div>
+                <div id="redFlagBarChart"></div>
+              </article>
+              <article class="chart-card">
+                <div class="chart-card__head">
+                  <h3>Mapa de calor</h3>
+                  <p>Red flags por departamento.</p>
+                </div>
+                <div id="redFlagHeatmap"></div>
+              </article>
+            </div>
+            <article class="table-card">
+              <div class="table-card__head">
+                <h3>Resumen de red flags</h3>
+                <p>Cantidad afectada y severidad.</p>
+              </div>
+              <div class="table-wrap">
+                <table class="summary-table">
+                  <thead>
+                    <tr>
+                      <th>Red flag</th>
+                      <th>Descripcion</th>
+                      <th>Casos</th>
+                      <th>Severidad</th>
+                    </tr>
+                  </thead>
+                  <tbody id="redFlagTableBody"></tbody>
+                </table>
+              </div>
+            </article>
+          </section>
+
+          <section class="panel chart-panel">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow eyebrow--soft">Comparaciones</span>
+                <h2>Análisis comparativo y concentración</h2>
+              </div>
+              <p class="section-helper">Entidades, proveedores, modalidades, tiempo y valor.</p>
+            </div>
+            <div class="comparison-grid">
+              <article class="chart-card">
+                <div class="chart-card__head">
+                  <h3>Riesgo por departamento</h3>
+                  <p>Promedio de score en cada territorio.</p>
+                </div>
+                <div id="deptRiskChart"></div>
+              </article>
+              <article class="chart-card">
+                <div class="chart-card__head">
+                  <h3>Riesgo por entidad</h3>
+                  <p>Entidades con mayor promedio de riesgo.</p>
+                </div>
+                <div id="entityRiskChart"></div>
+              </article>
+              <article class="chart-card">
+                <div class="chart-card__head">
+                  <h3>Top entidades con mas alertas</h3>
+                  <p>Acumulacion de red flags por entidad.</p>
+                </div>
+                <div id="entityAlertsChart"></div>
+              </article>
+              <article class="chart-card">
+                <div class="chart-card__head">
+                  <h3>Modalidades</h3>
+                  <p>Distribucion por modalidad contractual.</p>
+                </div>
+                <div id="modalityChart"></div>
+              </article>
+              <article class="chart-card">
+                <div class="chart-card__head">
+                  <h3>Concentracion de alertas</h3>
+                  <p>Proveedores con mayor acumulacion de red flags.</p>
+                </div>
+                <div id="supplierChart"></div>
+              </article>
+              <article class="chart-card chart-card--wide">
+                <div class="chart-card__head">
+                  <h3>Evolucion temporal</h3>
+                  <p>Contratos y alertas por mes.</p>
+                </div>
+                <div id="timelineChart"></div>
+              </article>
+              <article class="chart-card chart-card--wide">
+                <div class="chart-card__head">
+                  <h3>Valor vs score</h3>
+                  <p>Dispersión entre monto contratado y riesgo.</p>
+                </div>
+                <div id="scatterChart"></div>
+              </article>
+              <article class="chart-card">
+                <div class="chart-card__head">
+                  <h3>Presion de adiciones</h3>
+                  <p>Contratos con mayor variación de valor.</p>
+                </div>
+                <div id="additionChart"></div>
+              </article>
+              <article class="chart-card">
+                <div class="chart-card__head">
+                  <h3>Top 10 de riesgo</h3>
+                  <p>Contratos priorizados automaticamente.</p>
+                </div>
+                <div id="topContractsChart"></div>
+              </article>
+            </div>
+          </section>
+
+          <section class="panel map-panel">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow eyebrow--soft">Mapa</span>
+                <h2>Vista geográfica preparada</h2>
+              </div>
+              <p class="section-helper">Sin mapa pesado. El espacio queda listo para GeoJSON o una capa territorial ligera.</p>
+            </div>
+            <div class="map-placeholder">
+              <div class="map-placeholder__copy">
+                <strong>Preparado para mapa por departamento o municipio.</strong>
+                <p>Mientras tanto se muestra un ranking de territorios con mayor presion de alertas para mantener el dashboard liviano.</p>
+              </div>
+              <ul class="map-list" id="mapDepartmentList"></ul>
+            </div>
+          </section>
+
+          <section class="panel process-panel">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow eyebrow--soft">Flujo</span>
+                <h2>Flujo de análisis</h2>
+              </div>
+              <p class="section-helper">La explicacion ayuda a usuarios no tecnicos a entender el pipeline.</p>
+            </div>
+            <div class="timeline-grid" id="processTimeline"></div>
+          </section>
+
+          <section class="panel impact-panel">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow eyebrow--soft">Impacto</span>
+                <h2>Valor operativo de la priorización</h2>
+              </div>
+              <p class="section-helper">Resumen de ahorro de tiempo y foco de revisión.</p>
+            </div>
+            <div class="impact-grid" id="impactGrid"></div>
+          </section>
+
+          <section class="panel chatbot-panel">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow eyebrow--soft">Chatbot</span>
+                <h2>Asistente contextual sobre el informe</h2>
+              </div>
+              <p class="section-helper" id="chatStatus">Selecciona un contrato para activar el chat.</p>
+            </div>
+            <div class="chatbot-shell">
+              <div id="chatTranscript" class="chat-transcript" aria-live="polite"></div>
+              <div id="chatQuickActions" class="chat-quick-actions"></div>
+              <form id="chatForm" class="chat-composer">
+                <textarea
+                  id="chatInput"
+                  name="query"
+                  placeholder="Selecciona un contrato para activar el chatbot..."
+                  rows="4"
+                  autocomplete="off"
+                  spellcheck="false"
+                  disabled
+                ></textarea>
+                <div class="chat-actions">
+                  <p class="section-helper">
+                    El chat solo responde sobre el contrato seleccionado, el reporte visible, las red flags, los patrones y las
+                    conexiones disponibles.
+                  </p>
+                  <button id="chatSendBtn" class="button primary" type="submit" disabled>Preguntar</button>
+                </div>
+              </form>
+            </div>
+          </section>
+        </section>
+
+        <aside class="sidebar-column">
+          <section class="panel detail-panel">
+            <div class="section-head">
+              <div>
+                <span class="eyebrow eyebrow--soft">Reporte</span>
+                <h2>Reporte del contrato seleccionado</h2>
+              </div>
+              <p class="section-helper">Cuando no hay seleccion, la vista muestra un estado vacio explicito.</p>
+            </div>
+            <div id="detailPanel"></div>
+          </section>
+        </aside>
+      </div>
+
+      <div id="loadingState" class="loading-state hidden">Cargando datos preprocesados y configuracion...</div>
+      <div id="errorState" class="hidden"></div>
+    </main>
+  </body>
+</html>

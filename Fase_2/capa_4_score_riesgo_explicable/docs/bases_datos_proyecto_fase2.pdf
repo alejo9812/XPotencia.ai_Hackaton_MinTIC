@@ -1,0 +1,792 @@
+%PDF-1.4
+%“Œ‹ž ReportLab Generated PDF document (opensource)
+1 0 obj
+<<
+/F1 2 0 R /F2 3 0 R /F3 4 0 R
+>>
+endobj
+2 0 obj
+<<
+/BaseFont /Helvetica /Encoding /WinAnsiEncoding /Name /F1 /Subtype /Type1 /Type /Font
+>>
+endobj
+3 0 obj
+<<
+/BaseFont /Helvetica-Bold /Encoding /WinAnsiEncoding /Name /F2 /Subtype /Type1 /Type /Font
+>>
+endobj
+4 0 obj
+<<
+/BaseFont /Courier /Encoding /WinAnsiEncoding /Name /F3 /Subtype /Type1 /Type /Font
+>>
+endobj
+5 0 obj
+<<
+/Contents 13 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+6 0 obj
+<<
+/Contents 14 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+7 0 obj
+<<
+/Contents 15 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+8 0 obj
+<<
+/Contents 16 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+9 0 obj
+<<
+/Contents 17 0 R /MediaBox [ 0 0 595.2756 841.8898 ] /Parent 12 0 R /Resources <<
+/Font 1 0 R /ProcSet [ /PDF /Text /ImageB /ImageC /ImageI ]
+>> /Rotate 0 /Trans <<
+
+>> 
+  /Type /Page
+>>
+endobj
+10 0 obj
+<<
+/PageMode /UseNone /Pages 12 0 R /Type /Catalog
+>>
+endobj
+11 0 obj
+<<
+/Author (Codex) /CreationDate (D:20260509100055-05'00') /Creator (\(unspecified\)) /Keywords () /ModDate (D:20260509100055-05'00') /Producer (ReportLab PDF Library - \(opensource\)) 
+  /Subject (\(unspecified\)) /Title (Bases de datos del proyecto Fase 2) /Trapped /False
+>>
+endobj
+12 0 obj
+<<
+/Count 5 /Kids [ 5 0 R 6 0 R 7 0 R 8 0 R 9 0 R ] /Type /Pages
+>>
+endobj
+13 0 obj
+<<
+/Length 2434
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 8 Tf 9.6 TL ET
+.282353 .396078 .505882 rg
+BT 1 0 0 1 40 22 Tm (PAE Risk Tracker - Bases de datos del proyecto Fase 2) Tj T* ET
+BT 1 0 0 1 523.6996 22 Tm (Pagina 1) Tj T* ET
+Q
+q
+1 0 0 1 46 767.8898 cm
+q
+.062745 .164706 .262745 rg
+BT 1 0 0 1 0 4 Tm /F2 24 Tf 28 TL 48.2258 0 Td (Bases de datos del proyecto Fase 2) Tj T* -48.2258 0 Td ET
+Q
+Q
+q
+1 0 0 1 46 715.8898 cm
+q
+.2 .305882 .407843 rg
+BT 1 0 0 1 0 31 Tm /F1 11 Tf 14 TL 4.308295 0 Td (Documento tecnico para entender que datos usa el proyecto, el chat y el agente. La version actual no) Tj T* -4.308295 0 Td -0.113427 Tw (usa bases separadas por componente: todos leen la misma capa local DuckDB y los mismos artefactos) Tj T* 0 Tw 214.3423 0 Td (de trazabilidad.) Tj T* -214.3423 0 Td ET
+Q
+Q
+q
+1 0 0 1 46 692.8898 cm
+q
+.282353 .396078 .505882 rg
+BT 1 0 0 1 0 2.5 Tm /F1 8.5 Tf 11 TL (Generado el 2026-05-09 a partir de la snapshot local del repositorio.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 682.8898 cm
+Q
+q
+1 0 0 1 46 654.8898 cm
+q
+.062745 .164706 .262745 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (1. Resumen ejecutivo) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 636.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 El proyecto centraliza la persistencia en una base analitica local DuckDB.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 617.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 Las fuentes originales llegan desde SECOP II, PACO y archivos de muestra del repositorio.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 599.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 La capa procesada materializa contratos, adiciones, procesos, antecedentes y el indice de busqueda.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 580.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 El chat y el agente consumen el mismo indice unificado para responder con evidencia y trazabilidad.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 562.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 La validacion documental y los reportes de auditoria salen del mismo entorno de datos.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 552.3898 cm
+Q
+q
+1 0 0 1 46 529.3898 cm
+q
+.141176 .231373 .32549 rg
+BT 1 0 0 1 0 3 Tm /F2 12 Tf 15 TL (Flujo resumido:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 504.3898 cm
+q
+.062745 .164706 .262745 rg
+BT 1 0 0 1 36 12.5 Tm /F3 8.5 Tf 10.5 TL -0.106912 Tw (Fuentes web y muestras locales -> raw -> processed -> DuckDB -> search index -> API / chat /) Tj T* 0 Tw (agente -> outputs) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+14 0 obj
+<<
+/Length 3697
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 8 Tf 9.6 TL ET
+.282353 .396078 .505882 rg
+BT 1 0 0 1 40 22 Tm (PAE Risk Tracker - Bases de datos del proyecto Fase 2) Tj T* ET
+BT 1 0 0 1 523.6996 22 Tm (Pagina 2) Tj T* ET
+Q
+q
+1 0 0 1 46 777.8898 cm
+q
+.062745 .164706 .262745 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (2. Capas de almacenamiento) Tj T* ET
+Q
+Q
+q
+1 0 0 1 76.6378 642.3898 cm
+q
+.85098 .886275 .92549 rg
+n 0 129.5 442 -18.5 re f*
+1 1 1 rg
+n 0 111 442 -18.5 re f*
+.972549 .980392 .988235 rg
+n 0 92.5 442 -18.5 re f*
+1 1 1 rg
+n 0 74 442 -18.5 re f*
+.972549 .980392 .988235 rg
+n 0 55.5 442 -18.5 re f*
+1 1 1 rg
+n 0 37 442 -18.5 re f*
+.972549 .980392 .988235 rg
+n 0 18.5 442 -18.5 re f*
+.062745 .164706 .262745 rg
+BT /F2 8.5 Tf 10.5 TL ET
+BT 1 0 0 1 5 117 Tm (Capa) Tj T* ET
+BT 1 0 0 1 85 117 Tm (Archivos) Tj T* ET
+BT 1 0 0 1 137 117 Tm (Tamano total) Tj T* ET
+BT 1 0 0 1 211 117 Tm (Para que se usa) Tj T* ET
+0 0 0 rg
+BT /F1 8.5 Tf 10.5 TL ET
+BT 1 0 0 1 5 98.5 Tm (data/raw) Tj T* ET
+BT 1 0 0 1 85 98.5 Tm (10) Tj T* ET
+BT 1 0 0 1 137 98.5 Tm (2.7 MB) Tj T* ET
+BT 1 0 0 1 211 98.5 Tm (Origenes publicos y muestras) Tj T* ET
+BT 1 0 0 1 5 80 Tm (data/processed) Tj T* ET
+BT 1 0 0 1 85 80 Tm (15) Tj T* ET
+BT 1 0 0 1 137 80 Tm (10.3 MB) Tj T* ET
+BT 1 0 0 1 211 80 Tm (Capas normalizadas y derivadas) Tj T* ET
+BT 1 0 0 1 5 61.5 Tm (data/duckdb) Tj T* ET
+BT 1 0 0 1 85 61.5 Tm (1) Tj T* ET
+BT 1 0 0 1 137 61.5 Tm (20.5 MB) Tj T* ET
+BT 1 0 0 1 211 61.5 Tm (Base analitica local) Tj T* ET
+BT 1 0 0 1 5 43 Tm (data/cache) Tj T* ET
+BT 1 0 0 1 85 43 Tm (9) Tj T* ET
+BT 1 0 0 1 137 43 Tm (201.6 KB) Tj T* ET
+BT 1 0 0 1 211 43 Tm (Caches tecnicos y manifests) Tj T* ET
+BT 1 0 0 1 5 24.5 Tm (data/outputs) Tj T* ET
+BT 1 0 0 1 85 24.5 Tm (9) Tj T* ET
+BT 1 0 0 1 137 24.5 Tm (465.8 KB) Tj T* ET
+BT 1 0 0 1 211 24.5 Tm (Ranking, auditoria y diagnosticos) Tj T* ET
+BT 1 0 0 1 5 6 Tm (data/validation) Tj T* ET
+BT 1 0 0 1 85 6 Tm (2) Tj T* ET
+BT 1 0 0 1 137 6 Tm (32.0 KB) Tj T* ET
+BT 1 0 0 1 211 6 Tm (Reportes y snapshots de validacion) Tj T* ET
+q
+1 J
+1 j
+.737255 .8 .862745 RG
+.35 w
+n 0 129.5 m 442 129.5 l S
+n 0 0 m 442 0 l S
+n 0 0 m 0 129.5 l S
+n 442 0 m 442 129.5 l S
+n 0 111 m 442 111 l S
+n 0 92.5 m 442 92.5 l S
+n 0 74 m 442 74 l S
+n 0 55.5 m 442 55.5 l S
+n 0 37 m 442 37 l S
+n 0 18.5 m 442 18.5 l S
+n 80 0 m 80 129.5 l S
+n 132 0 m 132 129.5 l S
+n 206 0 m 206 129.5 l S
+Q
+Q
+Q
+q
+1 0 0 1 46 632.3898 cm
+Q
+q
+1 0 0 1 46 609.3898 cm
+q
+.141176 .231373 .32549 rg
+BT 1 0 0 1 0 3 Tm /F2 12 Tf 15 TL (Detalle por capa) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 578.3898 cm
+q
+BT 1 0 0 1 0 15.5 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 data/raw: contiene los insumos de origen, por ejemplo los archivos PACO descargados y las muestras PAE con sus) Tj T* (manifestos.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 559.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 data/processed: contiene los parquet ya normalizados y el indice de busqueda materializado.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 541.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 data/duckdb: contiene el archivo unico de consulta analitica que usan la API, el chat y el agente.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 522.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 data/cache: guarda metadatos, manifests y respuestas cacheadas de Socrata / trazabilidad.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 504.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 data/outputs: guarda rankings, fichas de auditoria, diagnosticos y checkpoints de integracion.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 485.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 data/validation: guarda reportes de catalogo de fuentes y deja listo el espacio para snapshots de validacion.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+15 0 obj
+<<
+/Length 6133
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 8 Tf 9.6 TL ET
+.282353 .396078 .505882 rg
+BT 1 0 0 1 40 22 Tm (PAE Risk Tracker - Bases de datos del proyecto Fase 2) Tj T* ET
+BT 1 0 0 1 523.6996 22 Tm (Pagina 3) Tj T* ET
+Q
+q
+1 0 0 1 46 777.8898 cm
+q
+.062745 .164706 .262745 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (3. DuckDB principal y tablas) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 746.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 15.5 Tm /F1 9.5 Tf 12.5 TL (El archivo principal es data/duckdb/pae_risk_tracker.duckdb. No hay una base separada para el chat ni otra para el) Tj T* (agente: ambos consultan la misma base local.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 79.6378 428.3898 cm
+q
+.85098 .886275 .92549 rg
+n 0 314.5 436 -18.5 re f*
+1 1 1 rg
+n 0 296 436 -18.5 re f*
+.972549 .980392 .988235 rg
+n 0 277.5 436 -18.5 re f*
+1 1 1 rg
+n 0 259 436 -18.5 re f*
+.972549 .980392 .988235 rg
+n 0 240.5 436 -18.5 re f*
+1 1 1 rg
+n 0 222 436 -18.5 re f*
+.972549 .980392 .988235 rg
+n 0 203.5 436 -18.5 re f*
+1 1 1 rg
+n 0 185 436 -18.5 re f*
+.972549 .980392 .988235 rg
+n 0 166.5 436 -18.5 re f*
+1 1 1 rg
+n 0 148 436 -18.5 re f*
+.972549 .980392 .988235 rg
+n 0 129.5 436 -18.5 re f*
+1 1 1 rg
+n 0 111 436 -18.5 re f*
+.972549 .980392 .988235 rg
+n 0 92.5 436 -18.5 re f*
+1 1 1 rg
+n 0 74 436 -18.5 re f*
+.972549 .980392 .988235 rg
+n 0 55.5 436 -18.5 re f*
+1 1 1 rg
+n 0 37 436 -18.5 re f*
+.972549 .980392 .988235 rg
+n 0 18.5 436 -18.5 re f*
+.062745 .164706 .262745 rg
+BT /F2 8.5 Tf 10.5 TL ET
+BT 1 0 0 1 5 302 Tm (Grupo) Tj T* ET
+BT 1 0 0 1 77 302 Tm (Tabla) Tj T* ET
+BT 1 0 0 1 207 302 Tm (Filas) Tj T* ET
+BT 1 0 0 1 259 302 Tm (Rol dentro del proyecto) Tj T* ET
+0 0 0 rg
+BT /F1 8.5 Tf 10.5 TL ET
+BT 1 0 0 1 5 283.5 Tm (PAE base) Tj T* ET
+BT 1 0 0 1 77 283.5 Tm (pae_contracts_core) Tj T* ET
+BT 1 0 0 1 207 283.5 Tm (20) Tj T* ET
+BT 1 0 0 1 259 283.5 Tm (Contrato base unificado) Tj T* ET
+BT 1 0 0 1 5 265 Tm (PAE base) Tj T* ET
+BT 1 0 0 1 77 265 Tm (pae_contracts_enriched) Tj T* ET
+BT 1 0 0 1 207 265 Tm (N/D) Tj T* ET
+BT 1 0 0 1 259 265 Tm (Contrato enriquecido con contexto) Tj T* ET
+BT 1 0 0 1 5 246.5 Tm (PAE base) Tj T* ET
+BT 1 0 0 1 77 246.5 Tm (pae_contracts_scored) Tj T* ET
+BT 1 0 0 1 207 246.5 Tm (20) Tj T* ET
+BT 1 0 0 1 259 246.5 Tm (Contrato puntuado para riesgo) Tj T* ET
+BT 1 0 0 1 5 228 Tm (PAE busqueda) Tj T* ET
+BT 1 0 0 1 77 228 Tm (pae_search_index) Tj T* ET
+BT 1 0 0 1 207 228 Tm (63) Tj T* ET
+BT 1 0 0 1 259 228 Tm (Indice unificado para chat y agente) Tj T* ET
+BT 1 0 0 1 5 209.5 Tm (PAE base) Tj T* ET
+BT 1 0 0 1 77 209.5 Tm (pae_additions) Tj T* ET
+BT 1 0 0 1 207 209.5 Tm (21) Tj T* ET
+BT 1 0 0 1 259 209.5 Tm (Adiciones y modificaciones) Tj T* ET
+BT 1 0 0 1 5 191 Tm (PACO) Tj T* ET
+BT 1 0 0 1 77 191 Tm (paco_events) Tj T* ET
+BT 1 0 0 1 207 191 Tm (58.029) Tj T* ET
+BT 1 0 0 1 259 191 Tm (Eventos de contexto y antecedentes) Tj T* ET
+BT 1 0 0 1 5 172.5 Tm (PACO) Tj T* ET
+BT 1 0 0 1 77 172.5 Tm (paco_contractual) Tj T* ET
+BT 1 0 0 1 207 172.5 Tm (1.713) Tj T* ET
+BT 1 0 0 1 259 172.5 Tm (Subconjunto contractual) Tj T* ET
+BT 1 0 0 1 5 154 Tm (PACO) Tj T* ET
+BT 1 0 0 1 77 154 Tm (paco_collusion) Tj T* ET
+BT 1 0 0 1 207 154 Tm (103) Tj T* ET
+BT 1 0 0 1 259 154 Tm (Alertas por colusion) Tj T* ET
+BT 1 0 0 1 5 135.5 Tm (PACO) Tj T* ET
+BT 1 0 0 1 77 135.5 Tm (paco_disciplinary) Tj T* ET
+BT 1 0 0 1 207 135.5 Tm (46.351) Tj T* ET
+BT 1 0 0 1 259 135.5 Tm (Alertas disciplinarias) Tj T* ET
+BT 1 0 0 1 5 117 Tm (PACO) Tj T* ET
+BT 1 0 0 1 77 117 Tm (paco_fiscal) Tj T* ET
+BT 1 0 0 1 207 117 Tm (5.960) Tj T* ET
+BT 1 0 0 1 259 117 Tm (Alertas fiscales) Tj T* ET
+BT 1 0 0 1 5 98.5 Tm (PACO) Tj T* ET
+BT 1 0 0 1 77 98.5 Tm (paco_penal) Tj T* ET
+BT 1 0 0 1 207 98.5 Tm (3.902) Tj T* ET
+BT 1 0 0 1 259 98.5 Tm (Alertas penales) Tj T* ET
+BT 1 0 0 1 5 80 Tm (Trazabilidad) Tj T* ET
+BT 1 0 0 1 77 80 Tm (source_catalog_runs) Tj T* ET
+BT 1 0 0 1 207 80 Tm (2) Tj T* ET
+BT 1 0 0 1 259 80 Tm (Ejecuciones del catalogo de fuentes) Tj T* ET
+BT 1 0 0 1 5 61.5 Tm (Trazabilidad) Tj T* ET
+BT 1 0 0 1 77 61.5 Tm (source_catalog_checks) Tj T* ET
+BT 1 0 0 1 207 61.5 Tm (36) Tj T* ET
+BT 1 0 0 1 259 61.5 Tm (Verificaciones por fuente) Tj T* ET
+BT 1 0 0 1 5 43 Tm (Validacion) Tj T* ET
+BT 1 0 0 1 77 43 Tm (validation_runs) Tj T* ET
+BT 1 0 0 1 207 43 Tm (N/D) Tj T* ET
+BT 1 0 0 1 259 43 Tm (No presente en la snapshot actual) Tj T* ET
+BT 1 0 0 1 5 24.5 Tm (Validacion) Tj T* ET
+BT 1 0 0 1 77 24.5 Tm (validation_observations) Tj T* ET
+BT 1 0 0 1 207 24.5 Tm (N/D) Tj T* ET
+BT 1 0 0 1 259 24.5 Tm (No presente en la snapshot actual) Tj T* ET
+BT 1 0 0 1 5 6 Tm (Validacion) Tj T* ET
+BT 1 0 0 1 77 6 Tm (validation_registry) Tj T* ET
+BT 1 0 0 1 207 6 Tm (N/D) Tj T* ET
+BT 1 0 0 1 259 6 Tm (No presente en la snapshot actual) Tj T* ET
+q
+1 J
+1 j
+.737255 .8 .862745 RG
+.35 w
+n 0 314.5 m 436 314.5 l S
+n 0 0 m 436 0 l S
+n 0 0 m 0 314.5 l S
+n 436 0 m 436 314.5 l S
+n 0 296 m 436 296 l S
+n 0 277.5 m 436 277.5 l S
+n 0 259 m 436 259 l S
+n 0 240.5 m 436 240.5 l S
+n 0 222 m 436 222 l S
+n 0 203.5 m 436 203.5 l S
+n 0 185 m 436 185 l S
+n 0 166.5 m 436 166.5 l S
+n 0 148 m 436 148 l S
+n 0 129.5 m 436 129.5 l S
+n 0 111 m 436 111 l S
+n 0 92.5 m 436 92.5 l S
+n 0 74 m 436 74 l S
+n 0 55.5 m 436 55.5 l S
+n 0 37 m 436 37 l S
+n 0 18.5 m 436 18.5 l S
+n 72 0 m 72 314.5 l S
+n 202 0 m 202 314.5 l S
+n 254 0 m 254 314.5 l S
+Q
+Q
+Q
+q
+1 0 0 1 46 420.3898 cm
+Q
+q
+1 0 0 1 46 401.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 Las tablas PAE concentran el contrato base, el contrato puntuado, las adiciones y el indice unificado de busqueda.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 383.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 Las tablas PACO aportan contexto de antecedentes y alertas por tipos de hallazgo.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 364.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 source_catalog_runs y source_catalog_checks registran la trazabilidad de las fuentes ya revisadas.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 333.8898 cm
+q
+BT 1 0 0 1 0 15.5 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 validation_runs, validation_observations y validation_registry no aparecen en la snapshot actual; el servicio de) Tj T* (validacion las crea cuando ejecuta una corrida persistida.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+16 0 obj
+<<
+/Length 3365
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 8 Tf 9.6 TL ET
+.282353 .396078 .505882 rg
+BT 1 0 0 1 40 22 Tm (PAE Risk Tracker - Bases de datos del proyecto Fase 2) Tj T* ET
+BT 1 0 0 1 523.6996 22 Tm (Pagina 4) Tj T* ET
+Q
+q
+1 0 0 1 46 777.8898 cm
+q
+.062745 .164706 .262745 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (4. Como lo usa el chat) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 759.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 El chat no mantiene una base propia. Consulta la misma base DuckDB y el mismo indice de busqueda.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 740.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 Primero intenta responder con pae_search_index porque alli estan unificados contratos, procesos y adiciones.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 722.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 Si necesita mas contexto, cae a pae_contracts_scored o pae_contracts_core para ver el detalle del contrato.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 703.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 Para trazabilidad, combina la respuesta con los reportes de validacion y los manifests de los datos procesados.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 685.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 La salida del chat debe quedar explicable: la respuesta trae evidencia y no solo un texto generado.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 675.3898 cm
+Q
+q
+1 0 0 1 46 652.3898 cm
+q
+.141176 .231373 .32549 rg
+BT 1 0 0 1 0 3 Tm /F2 12 Tf 15 TL (En terminos practicos:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 627.3898 cm
+q
+.062745 .164706 .262745 rg
+BT 1 0 0 1 36 12.5 Tm /F3 8.5 Tf 10.5 TL (Pregunta del usuario -> busqueda sobre pae_search_index -> recuperacion de evidencia ->) Tj T* (validacion contextual -> respuesta final con soporte.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 617.3898 cm
+Q
+q
+1 0 0 1 46 589.3898 cm
+q
+.062745 .164706 .262745 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (5. Como lo usa el agente) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 570.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 El agente construye un plan de consulta y luego decide si usa el indice unificado o el contrato base.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 539.8898 cm
+q
+BT 1 0 0 1 0 15.5 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 Cuando la consulta es sobre opacidad o criterios, primero busca conocimiento en la capa local del repositorio y luego) Tj T* (cruza con la evidencia guardada.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 521.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 Para preguntas generales, asegura el indice de busqueda y consulta la misma base DuckDB.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 502.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 El agente usa observaciones de validacion, criterios de opacidad y evidencia de contrato para priorizar la respuesta.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 484.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 Si el indice no esta listo, el agente puede caer al contrato base para no quedarse sin resultados.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 474.3898 cm
+Q
+q
+1 0 0 1 46 451.3898 cm
+q
+.141176 .231373 .32549 rg
+BT 1 0 0 1 0 3 Tm /F2 12 Tf 15 TL (En terminos practicos:) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 426.3898 cm
+q
+.062745 .164706 .262745 rg
+BT 1 0 0 1 36 12.5 Tm /F3 8.5 Tf 10.5 TL -0.137458 Tw (Pregunta del interventor -> plan -> indice unificado o contrato base -> evidencia -> resumen) Tj T* 0 Tw (explicable -> preguntas de auditoria.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+17 0 obj
+<<
+/Length 3199
+>>
+stream
+1 0 0 1 0 0 cm  BT /F1 12 Tf 14.4 TL ET
+q
+BT /F1 8 Tf 9.6 TL ET
+.282353 .396078 .505882 rg
+BT 1 0 0 1 40 22 Tm (PAE Risk Tracker - Bases de datos del proyecto Fase 2) Tj T* ET
+BT 1 0 0 1 523.6996 22 Tm (Pagina 5) Tj T* ET
+Q
+q
+1 0 0 1 46 777.8898 cm
+q
+.062745 .164706 .262745 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (6. Validacion, cache y trazabilidad) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 746.8898 cm
+q
+BT 1 0 0 1 0 15.5 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 data/cache/schema_cache.json guarda metadatos de esquemas y ayuda a no recalcular descubrimientos ya) Tj T* (conocidos.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 728.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 data/cache/traceability_manifest.json resume la huella de trazabilidad del indice y de los or\355genes.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 709.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 data/cache/socrata/ contiene respuestas cacheadas por hash para consultas repetidas a fuentes publicas.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 691.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 data/validation/reports/ contiene reportes de catalogo de fuentes; la snapshot actual ya tiene dos JSON de control.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 672.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 data/validation/snapshots/ esta preparada para guardar instantaneas, pero en esta snapshot esta vacia.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 660.8898 cm
+Q
+q
+1 0 0 1 46 629.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 15.5 Tm /F1 9.5 Tf 12.5 TL (La regla operativa es simple: si un dato entra al analisis, debe dejar huella en el cache, en el indice o en la salida de) Tj T* (validacion.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 615.8898 cm
+Q
+q
+1 0 0 1 46 587.8898 cm
+q
+.062745 .164706 .262745 rg
+BT 1 0 0 1 0 3 Tm /F2 15 Tf 18 TL (7. Archivos clave del repositorio) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 556.8898 cm
+q
+BT 1 0 0 1 0 15.5 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 src/pae_risk_tracker/paths.py -> define data/raw, data/processed, data/cache, data/outputs, data/validation y) Tj T* (data/duckdb.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 538.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 src/pae_risk_tracker/storage/duckdb_store.py -> wrapper para leer y escribir DuckDB.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 519.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 src/pae_risk_tracker/retrieval/search_index.py -> materializa pae_search_index y su manifest.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 501.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 src/pae_risk_tracker/api/server.py -> monta la API con el mismo DuckDBStore compartido.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 482.8898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 src/pae_risk_tracker/agent/orchestrator.py -> consulta DuckDB, el indice y la validacion para responder.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 464.3898 cm
+q
+BT 1 0 0 1 0 3 Tm 12.5 TL /F1 9.5 Tf 0 0 0 rg (\177 src/pae_risk_tracker/validation/service.py -> persiste reportes de validacion y snapshots de trazabilidad.) Tj T* ET
+Q
+Q
+q
+1 0 0 1 46 452.3898 cm
+Q
+q
+1 0 0 1 46 433.8898 cm
+q
+0 0 0 rg
+BT 1 0 0 1 0 3 Tm /F1 9.5 Tf 12.5 TL (Con esto un interventor puede saber donde vive cada dato, quien lo usa y como se traza de extremo a extremo.) Tj T* ET
+Q
+Q
+ 
+endstream
+endobj
+xref
+0 18
+0000000000 65535 f 
+0000000061 00000 n 
+0000000112 00000 n 
+0000000219 00000 n 
+0000000331 00000 n 
+0000000436 00000 n 
+0000000641 00000 n 
+0000000846 00000 n 
+0000001051 00000 n 
+0000001256 00000 n 
+0000001461 00000 n 
+0000001531 00000 n 
+0000001825 00000 n 
+0000001909 00000 n 
+0000004395 00000 n 
+0000008144 00000 n 
+0000014329 00000 n 
+0000017746 00000 n 
+trailer
+<<
+/ID 
+[<675a61274d4ebfdd1ddced7faa8ed403><675a61274d4ebfdd1ddced7faa8ed403>]
+% ReportLab generated PDF document -- digest (opensource)
+
+/Info 11 0 R
+/Root 10 0 R
+/Size 18
+>>
+startxref
+20997
+%%EOF

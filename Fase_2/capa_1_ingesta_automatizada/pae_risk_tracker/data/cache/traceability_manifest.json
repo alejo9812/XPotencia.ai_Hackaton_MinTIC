@@ -1,0 +1,22 @@
+{
+  "bidder_fetch": {
+    "dataset_id": "hgi6-6wh3",
+    "rows": 392,
+    "years": [
+      2025,
+      2026
+    ]
+  },
+  "bidder_rows": 391,
+  "bidder_summary_rows": 220,
+  "core_rows": 20,
+  "enriched_rows": 20,
+  "generated_at": "2026-05-09T05:02:47.562575Z",
+  "process_fetch": {
+    "batches": 1,
+    "dataset_id": "p6dx-8zbt",
+    "ids": 20,
+    "rows": 23
+  },
+  "process_rows": 22
+}

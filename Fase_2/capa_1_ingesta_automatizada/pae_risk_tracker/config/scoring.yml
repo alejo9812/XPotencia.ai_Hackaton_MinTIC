@@ -1,0 +1,24 @@
+{
+  "score_min": 0,
+  "score_max": 100,
+  "levels": [
+    {"label": "Bajo", "min": 0, "max": 30},
+    {"label": "Medio", "min": 31, "max": 55},
+    {"label": "Alto", "min": 56, "max": 75},
+    {"label": "Crítico", "min": 76, "max": 100}
+  ],
+  "dimension_weights": {
+    "competition": 20,
+    "supplier_concentration": 15,
+    "value_outlier": 15,
+    "execution": 15,
+    "paco_context": 15,
+    "traceability": 10,
+    "planning": 10
+  },
+  "rules": [
+    "Score alto no equivale a corrupción comprobada.",
+    "Score alto equivale a prioridad alta de revisión.",
+    "Toda señal debe explicarse en lenguaje documental y prudente."
+  ]
+}

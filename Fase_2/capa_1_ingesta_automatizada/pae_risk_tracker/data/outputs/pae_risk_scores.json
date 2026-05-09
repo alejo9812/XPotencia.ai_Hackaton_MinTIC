@@ -1,0 +1,2486 @@
+{
+  "summary": {
+    "total_records": 20,
+    "average_score": 70.8,
+    "level_counts": {
+      "bajo": 0,
+      "medio": 0,
+      "alto": 15,
+      "critico": 5
+    },
+    "top_flags": [
+      {
+        "code": "RF-30",
+        "count": 40
+      },
+      {
+        "code": "RF-03",
+        "count": 20
+      },
+      {
+        "code": "RF-08",
+        "count": 20
+      },
+      {
+        "code": "RF-09",
+        "count": 20
+      },
+      {
+        "code": "RF-17",
+        "count": 20
+      },
+      {
+        "code": "RF-20",
+        "count": 20
+      },
+      {
+        "code": "RF-23",
+        "count": 20
+      },
+      {
+        "code": "RF-36",
+        "count": 20
+      },
+      {
+        "code": "RF-14",
+        "count": 12
+      },
+      {
+        "code": "RF-26",
+        "count": 9
+      }
+    ]
+  },
+  "top_k": [
+    {
+      "contract_id": "CO1.PCCNTR.7207889",
+      "risk_score": 86,
+      "risk_level": "critico",
+      "summary": "Contrato CO1.PCCNTR.7207889 con score 86/100 (critico). Principales señales: Contratación directa recurrente, Proceso publicado muy cerca del inicio escolar, Objeto contractual genérico.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-02",
+          "dimension": "planning",
+          "label": "Contratación directa recurrente",
+          "weight": 8,
+          "evidence": "Direct contracting appears recurrent with 1 contracts for the same entity-supplier pair.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'Prestación de servicios de apoyo a la gestión para la implementación del Programa\\nde Restaurante Escolar - PAE; los prog'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-04",
+          "dimension": "planning",
+          "label": "Objeto contractual genérico",
+          "weight": 6,
+          "evidence": "Generic object text with 42 words and 2 generic hits.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-14",
+          "dimension": "supplier_concentration",
+          "label": "Proveedor concentra muchos contratos PAE en la misma entidad",
+          "weight": 8,
+          "evidence": "Supplier concentration is high in this entity (share=1.00, amount_share=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-18",
+          "dimension": "paco_context",
+          "label": "Proveedor con responsabilidad fiscal en PACO",
+          "weight": 10,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-22",
+          "dimension": "execution",
+          "label": "Valor con adiciones muy superior al inicial",
+          "weight": 8,
+          "evidence": "Addition ratio is high (0.00%).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-26",
+          "dimension": "execution",
+          "label": "Adiciones de valor",
+          "weight": 8,
+          "evidence": "Additions present with addition_count=2.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-27",
+          "dimension": "execution",
+          "label": "Prórrogas sucesivas",
+          "weight": 7,
+          "evidence": "Time extension observed (0 additional days).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-28",
+          "dimension": "execution",
+          "label": "Modificaciones frecuentes",
+          "weight": 6,
+          "evidence": "Modifications or additions are present in the record.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "execution": 15,
+        "paco_context": 15,
+        "planning": 10,
+        "supplier_concentration": 8,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.7183647",
+      "risk_score": 83,
+      "risk_level": "critico",
+      "summary": "Contrato CO1.PCCNTR.7183647 con score 83/100 (critico). Principales señales: Proceso publicado muy cerca del inicio escolar, Un solo oferente, Pocos oferentes en contrato de alto valor.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'INTERVENTORÍA ADMINISTRATIVA; TÉCNICA; FINANCIERA Y JURÍDICA AL SUMINISTRO DE RACIONES ALIMENTICIAS PARA LOS NIÑOS; NIÑA'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-14",
+          "dimension": "supplier_concentration",
+          "label": "Proveedor concentra muchos contratos PAE en la misma entidad",
+          "weight": 8,
+          "evidence": "Supplier concentration is high in this entity (share=1.00, amount_share=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-16",
+          "dimension": "supplier_concentration",
+          "label": "Consorcio o unión temporal con integrantes repetidos",
+          "weight": 6,
+          "evidence": "Supplier name suggests a consortium or temporary union: CONSORCIO INTERPIEDECUESTA 2025.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-22",
+          "dimension": "execution",
+          "label": "Valor con adiciones muy superior al inicial",
+          "weight": 8,
+          "evidence": "Addition ratio is high (0.00%).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-26",
+          "dimension": "execution",
+          "label": "Adiciones de valor",
+          "weight": 8,
+          "evidence": "Additions present with addition_count=2.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-27",
+          "dimension": "execution",
+          "label": "Prórrogas sucesivas",
+          "weight": 7,
+          "evidence": "Time extension observed (0 additional days).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-28",
+          "dimension": "execution",
+          "label": "Modificaciones frecuentes",
+          "weight": 6,
+          "evidence": "Modifications or additions are present in the record.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "execution": 15,
+        "paco_context": 9,
+        "planning": 7,
+        "supplier_concentration": 14,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.7208570",
+      "risk_score": 83,
+      "risk_level": "critico",
+      "summary": "Contrato CO1.PCCNTR.7208570 con score 83/100 (critico). Principales señales: Proceso publicado muy cerca del inicio escolar, Un solo oferente, Pocos oferentes en contrato de alto valor.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'PRESTACION DE SERVICIOS DE APOYO EN DIFERENTES AREAS DE ARCHIVO Y ADMINISTRATIVAS DE LA ESE JORGE GONZALEZ OLMOS DEL MUN'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-14",
+          "dimension": "supplier_concentration",
+          "label": "Proveedor concentra muchos contratos PAE en la misma entidad",
+          "weight": 8,
+          "evidence": "Supplier concentration is high in this entity (share=1.00, amount_share=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-19",
+          "dimension": "paco_context",
+          "label": "Proveedor asociado a colusión en PACO",
+          "weight": 12,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-22",
+          "dimension": "execution",
+          "label": "Valor con adiciones muy superior al inicial",
+          "weight": 8,
+          "evidence": "Addition ratio is high (0.00%).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-26",
+          "dimension": "execution",
+          "label": "Adiciones de valor",
+          "weight": 8,
+          "evidence": "Additions present with addition_count=4.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-27",
+          "dimension": "execution",
+          "label": "Prórrogas sucesivas",
+          "weight": 7,
+          "evidence": "Time extension observed (0 additional days).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-28",
+          "dimension": "execution",
+          "label": "Modificaciones frecuentes",
+          "weight": 6,
+          "evidence": "Modifications or additions are present in the record.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "execution": 15,
+        "paco_context": 15,
+        "planning": 7,
+        "supplier_concentration": 8,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.8764554",
+      "risk_score": 83,
+      "risk_level": "critico",
+      "summary": "Contrato CO1.PCCNTR.8764554 con score 83/100 (critico). Principales señales: Proceso publicado muy cerca del inicio escolar, Un solo oferente, Pocos oferentes en contrato de alto valor.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'CONTRATAR LA PRESTACIÓN DEL SERVICIO Y EJECUCIÓN DEL PROGRAMA DE ALIMENTACIÓN ESCOLAR (PAE) CON DESTINO A LOS NIÑOS; NIÑ'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-14",
+          "dimension": "supplier_concentration",
+          "label": "Proveedor concentra muchos contratos PAE en la misma entidad",
+          "weight": 8,
+          "evidence": "Supplier concentration is high in this entity (share=1.00, amount_share=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-19",
+          "dimension": "paco_context",
+          "label": "Proveedor asociado a colusión en PACO",
+          "weight": 12,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-22",
+          "dimension": "execution",
+          "label": "Valor con adiciones muy superior al inicial",
+          "weight": 8,
+          "evidence": "Addition ratio is high (0.00%).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-26",
+          "dimension": "execution",
+          "label": "Adiciones de valor",
+          "weight": 8,
+          "evidence": "Additions present with addition_count=3.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-27",
+          "dimension": "execution",
+          "label": "Prórrogas sucesivas",
+          "weight": 7,
+          "evidence": "Time extension observed (0 additional days).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-28",
+          "dimension": "execution",
+          "label": "Modificaciones frecuentes",
+          "weight": 6,
+          "evidence": "Modifications or additions are present in the record.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "execution": 15,
+        "paco_context": 15,
+        "planning": 7,
+        "supplier_concentration": 8,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.8769371",
+      "risk_score": 83,
+      "risk_level": "critico",
+      "summary": "Contrato CO1.PCCNTR.8769371 con score 83/100 (critico). Principales señales: Proceso publicado muy cerca del inicio escolar, Un solo oferente, Pocos oferentes en contrato de alto valor.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'INTEGRAR ESFUERZOS INSTITUCIONALES; TÉCNICOS; ADMINISTRATIVOS Y FINANCIEROS PARA LA GARANTÍA DEL DERECHO A LA EDUCACIÓN '.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-14",
+          "dimension": "supplier_concentration",
+          "label": "Proveedor concentra muchos contratos PAE en la misma entidad",
+          "weight": 8,
+          "evidence": "Supplier concentration is high in this entity (share=0.50, amount_share=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-19",
+          "dimension": "paco_context",
+          "label": "Proveedor asociado a colusión en PACO",
+          "weight": 12,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-26",
+          "dimension": "execution",
+          "label": "Adiciones de valor",
+          "weight": 8,
+          "evidence": "Additions present with addition_count=1.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-27",
+          "dimension": "execution",
+          "label": "Prórrogas sucesivas",
+          "weight": 7,
+          "evidence": "Time extension observed (0 additional days).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-28",
+          "dimension": "execution",
+          "label": "Modificaciones frecuentes",
+          "weight": 6,
+          "evidence": "Modifications or additions are present in the record.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "execution": 15,
+        "paco_context": 15,
+        "planning": 7,
+        "supplier_concentration": 8,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.7199583",
+      "risk_score": 72,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.7199583 con score 72/100 (alto). Principales señales: Proceso publicado muy cerca del inicio escolar, Contratos repetidos con el mismo objeto y entidad, Un solo oferente.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'PRESTACIÓN DE SERVICIOS PROFESIONALES PARA DESARROLLAR LAS ACTIVIDADES DE PLANEACIÓN; EJECUCIÓN Y CONTROL DEL EJE DE COB'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-05",
+          "dimension": "planning",
+          "label": "Contratos repetidos con el mismo objeto y entidad",
+          "weight": 7,
+          "evidence": "Repeated or highly similar object text within the same entity (1 similar records).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-11",
+          "dimension": "competition",
+          "label": "Mismos proponentes compiten siempre entre sí",
+          "weight": 6,
+          "evidence": "Same small bidder pool across the entity (1 suppliers).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-26",
+          "dimension": "execution",
+          "label": "Adiciones de valor",
+          "weight": 8,
+          "evidence": "Additions present with addition_count=1.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-27",
+          "dimension": "execution",
+          "label": "Prórrogas sucesivas",
+          "weight": 7,
+          "evidence": "Time extension observed (0 additional days).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-28",
+          "dimension": "execution",
+          "label": "Modificaciones frecuentes",
+          "weight": 6,
+          "evidence": "Modifications or additions are present in the record.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "execution": 15,
+        "paco_context": 9,
+        "planning": 10,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.8764093",
+      "risk_score": 72,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.8764093 con score 72/100 (alto). Principales señales: Proceso publicado muy cerca del inicio escolar, Contratos repetidos con el mismo objeto y entidad, Un solo oferente.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'PRESTACIÓN DE SERVICIOS PROFESIONALES PARA DESARROLLAR LAS ACTIVIDADES DE PLANEACIÓN; EJECUCIÓN Y CONTROL DEL EJE DE COB'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-05",
+          "dimension": "planning",
+          "label": "Contratos repetidos con el mismo objeto y entidad",
+          "weight": 7,
+          "evidence": "Repeated or highly similar object text within the same entity (1 similar records).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-11",
+          "dimension": "competition",
+          "label": "Mismos proponentes compiten siempre entre sí",
+          "weight": 6,
+          "evidence": "Same small bidder pool across the entity (1 suppliers).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-26",
+          "dimension": "execution",
+          "label": "Adiciones de valor",
+          "weight": 8,
+          "evidence": "Additions present with addition_count=1.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-27",
+          "dimension": "execution",
+          "label": "Prórrogas sucesivas",
+          "weight": 7,
+          "evidence": "Time extension observed (0 additional days).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-28",
+          "dimension": "execution",
+          "label": "Modificaciones frecuentes",
+          "weight": 6,
+          "evidence": "Modifications or additions are present in the record.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "execution": 15,
+        "paco_context": 9,
+        "planning": 10,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.7203285",
+      "risk_score": 71,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.7203285 con score 71/100 (alto). Principales señales: Contratación directa recurrente, Proceso publicado muy cerca del inicio escolar, Objeto contractual genérico.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-02",
+          "dimension": "planning",
+          "label": "Contratación directa recurrente",
+          "weight": 8,
+          "evidence": "Direct contracting appears recurrent with 1 contracts for the same entity-supplier pair.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'PRESTACION DE SERVICIOS DE APOYO A LA GESTIÓN COMO ENLACE QUE ORIENTE Y GARANTICE LA ENTREGA DE LA ALIMENTACION ESCOLAR '.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-04",
+          "dimension": "planning",
+          "label": "Objeto contractual genérico",
+          "weight": 6,
+          "evidence": "Generic object text with 51 words and 2 generic hits.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-14",
+          "dimension": "supplier_concentration",
+          "label": "Proveedor concentra muchos contratos PAE en la misma entidad",
+          "weight": 8,
+          "evidence": "Supplier concentration is high in this entity (share=1.00, amount_share=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-19",
+          "dimension": "paco_context",
+          "label": "Proveedor asociado a colusión en PACO",
+          "weight": 12,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "paco_context": 15,
+        "planning": 10,
+        "supplier_concentration": 8,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.8767213",
+      "risk_score": 71,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.8767213 con score 71/100 (alto). Principales señales: Contratación directa recurrente, Proceso publicado muy cerca del inicio escolar, Objeto contractual genérico.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-02",
+          "dimension": "planning",
+          "label": "Contratación directa recurrente",
+          "weight": 8,
+          "evidence": "Direct contracting appears recurrent with 1 contracts for the same entity-supplier pair.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'PRESTACIÓN DE SERVICIOS DE APOYO A LA GESTIÓN ADMINISTRATIVA A TRAVÉS DEL ACOMPAÑAMIENTO OPERATIVO Y ASISTENCIAL EN LOS '.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-04",
+          "dimension": "planning",
+          "label": "Objeto contractual genérico",
+          "weight": 6,
+          "evidence": "Generic object text with 37 words and 2 generic hits.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-14",
+          "dimension": "supplier_concentration",
+          "label": "Proveedor concentra muchos contratos PAE en la misma entidad",
+          "weight": 8,
+          "evidence": "Supplier concentration is high in this entity (share=0.50, amount_share=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-19",
+          "dimension": "paco_context",
+          "label": "Proveedor asociado a colusión en PACO",
+          "weight": 12,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "paco_context": 15,
+        "planning": 10,
+        "supplier_concentration": 8,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.8771458",
+      "risk_score": 71,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.8771458 con score 71/100 (alto). Principales señales: Contratación directa recurrente, Proceso publicado muy cerca del inicio escolar, Contratos repetidos con el mismo objeto y entidad.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-02",
+          "dimension": "planning",
+          "label": "Contratación directa recurrente",
+          "weight": 8,
+          "evidence": "Direct contracting appears recurrent with 1 contracts for the same entity-supplier pair.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'PRESTACIÓN DE SERVICIOS PROFESIONALES PARA\\nIMPLEMENTAR ESTRATEGIAS PARA EL SEGUIMIENTO A\\nPOSIBLES TRASTORNOS ALIMENTICIO'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-05",
+          "dimension": "planning",
+          "label": "Contratos repetidos con el mismo objeto y entidad",
+          "weight": 7,
+          "evidence": "Repeated or highly similar object text within the same entity (1 similar records).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-14",
+          "dimension": "supplier_concentration",
+          "label": "Proveedor concentra muchos contratos PAE en la misma entidad",
+          "weight": 8,
+          "evidence": "Supplier concentration is high in this entity (share=0.50, amount_share=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-18",
+          "dimension": "paco_context",
+          "label": "Proveedor con responsabilidad fiscal en PACO",
+          "weight": 10,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "paco_context": 15,
+        "planning": 10,
+        "supplier_concentration": 8,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.8772352",
+      "risk_score": 71,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.8772352 con score 71/100 (alto). Principales señales: Contratación directa recurrente, Proceso publicado muy cerca del inicio escolar, Un solo oferente.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-02",
+          "dimension": "planning",
+          "label": "Contratación directa recurrente",
+          "weight": 8,
+          "evidence": "Direct contracting appears recurrent with 1 contracts for the same entity-supplier pair.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'PRESTACIÓN DE SERVICIOS COMO ENLACE MUNICIPAL PARA EL APOYO Y ACOMPAÑAMIENTO A LA EJECUCION DEL PROGRAMA DE ALIMENTACION'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-14",
+          "dimension": "supplier_concentration",
+          "label": "Proveedor concentra muchos contratos PAE en la misma entidad",
+          "weight": 8,
+          "evidence": "Supplier concentration is high in this entity (share=1.00, amount_share=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-18",
+          "dimension": "paco_context",
+          "label": "Proveedor con responsabilidad fiscal en PACO",
+          "weight": 10,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "paco_context": 15,
+        "planning": 10,
+        "supplier_concentration": 8,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.8772986",
+      "risk_score": 71,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.8772986 con score 71/100 (alto). Principales señales: Contratación directa recurrente, Proceso publicado muy cerca del inicio escolar, Contratos repetidos con el mismo objeto y entidad.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-02",
+          "dimension": "planning",
+          "label": "Contratación directa recurrente",
+          "weight": 8,
+          "evidence": "Direct contracting appears recurrent with 1 contracts for the same entity-supplier pair.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'PRESTACIÓN DE SERVICIOS PROFESIONALES PARA\\nIMPLEMENTAR ESTRATEGIAS PARA EL SEGUIMIENTO\\nA POSIBLES TRASTORNOS ALIMENTICIO'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-05",
+          "dimension": "planning",
+          "label": "Contratos repetidos con el mismo objeto y entidad",
+          "weight": 7,
+          "evidence": "Repeated or highly similar object text within the same entity (1 similar records).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-14",
+          "dimension": "supplier_concentration",
+          "label": "Proveedor concentra muchos contratos PAE en la misma entidad",
+          "weight": 8,
+          "evidence": "Supplier concentration is high in this entity (share=0.50, amount_share=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-18",
+          "dimension": "paco_context",
+          "label": "Proveedor con responsabilidad fiscal en PACO",
+          "weight": 10,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "paco_context": 15,
+        "planning": 10,
+        "supplier_concentration": 8,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.7185979",
+      "risk_score": 69,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.7185979 con score 69/100 (alto). Principales señales: Proceso publicado muy cerca del inicio escolar, Un solo oferente, Pocos oferentes en contrato de alto valor.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'PRESTAR EL SERVICIO DE ALIMENTACIÓN ESCOLAR; A TRAVÉS DEL CUAL SE BRINDA UN COMPLEMENTO ALIMENTARIO; A NIÑOS; NIÑAS Y AD'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-11",
+          "dimension": "competition",
+          "label": "Mismos proponentes compiten siempre entre sí",
+          "weight": 6,
+          "evidence": "Same small bidder pool across the entity (1 suppliers).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-22",
+          "dimension": "execution",
+          "label": "Valor con adiciones muy superior al inicial",
+          "weight": 8,
+          "evidence": "Addition ratio is high (0.00%).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-26",
+          "dimension": "execution",
+          "label": "Adiciones de valor",
+          "weight": 8,
+          "evidence": "Additions present with addition_count=6.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-27",
+          "dimension": "execution",
+          "label": "Prórrogas sucesivas",
+          "weight": 7,
+          "evidence": "Time extension observed (0 additional days).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-28",
+          "dimension": "execution",
+          "label": "Modificaciones frecuentes",
+          "weight": 6,
+          "evidence": "Modifications or additions are present in the record.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "execution": 15,
+        "paco_context": 9,
+        "planning": 7,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.8763701",
+      "risk_score": 69,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.8763701 con score 69/100 (alto). Principales señales: Proceso publicado muy cerca del inicio escolar, Un solo oferente, Pocos oferentes en contrato de alto valor.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'RESTACIÓN DE SERVICIOS PROFESIONALES PARA ASESORÍA  DE LAS ETAPAS PRECONTRACTUAL; CONTRACTUAL Y POSTCONTRACTUAL DEL COMP'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-11",
+          "dimension": "competition",
+          "label": "Mismos proponentes compiten siempre entre sí",
+          "weight": 6,
+          "evidence": "Same small bidder pool across the entity (1 suppliers).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-26",
+          "dimension": "execution",
+          "label": "Adiciones de valor",
+          "weight": 8,
+          "evidence": "Additions present with addition_count=1.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-27",
+          "dimension": "execution",
+          "label": "Prórrogas sucesivas",
+          "weight": 7,
+          "evidence": "Time extension observed (0 additional days).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-28",
+          "dimension": "execution",
+          "label": "Modificaciones frecuentes",
+          "weight": 6,
+          "evidence": "Modifications or additions are present in the record.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "execution": 15,
+        "paco_context": 9,
+        "planning": 7,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.8747026",
+      "risk_score": 68,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.8747026 con score 68/100 (alto). Principales señales: Proceso publicado muy cerca del inicio escolar, Un solo oferente, Pocos oferentes en contrato de alto valor.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'CONVENIO DE ASOCIACIÓN PARA LA EJECUCIÓN EL PROGRAMA DE ALIMENTACIÓN ESCOLAR PAE PARA LOS NIÑOS; NIÑAS Y ADOLESCENTES; E'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-14",
+          "dimension": "supplier_concentration",
+          "label": "Proveedor concentra muchos contratos PAE en la misma entidad",
+          "weight": 8,
+          "evidence": "Supplier concentration is high in this entity (share=1.00, amount_share=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-18",
+          "dimension": "paco_context",
+          "label": "Proveedor con responsabilidad fiscal en PACO",
+          "weight": 10,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "paco_context": 15,
+        "planning": 7,
+        "supplier_concentration": 8,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.8555582",
+      "risk_score": 65,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.8555582 con score 65/100 (alto). Principales señales: Contratación directa recurrente, Proceso publicado muy cerca del inicio escolar, Un solo oferente.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-02",
+          "dimension": "planning",
+          "label": "Contratación directa recurrente",
+          "weight": 8,
+          "evidence": "Direct contracting appears recurrent with 1 contracts for the same entity-supplier pair.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'PRESTAR EL SERVICIO DEL PLAN ALIMENTARIO INDÍGENA PROPIO  PAIP; COMPLEMENTO ALIMENTARIO ALMUERZO EN LA MODALIDAD OLLA CO'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-14",
+          "dimension": "supplier_concentration",
+          "label": "Proveedor concentra muchos contratos PAE en la misma entidad",
+          "weight": 8,
+          "evidence": "Supplier concentration is high in this entity (share=1.00, amount_share=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "paco_context": 9,
+        "planning": 10,
+        "supplier_concentration": 8,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.7207341",
+      "risk_score": 57,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.7207341 con score 57/100 (alto). Principales señales: Proceso publicado muy cerca del inicio escolar, Contratos repetidos con el mismo objeto y entidad, Un solo oferente.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'El contratista se compromete con el departamento a prestar los servicios profesionales como Nutricionista en la Subsecre'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-05",
+          "dimension": "planning",
+          "label": "Contratos repetidos con el mismo objeto y entidad",
+          "weight": 7,
+          "evidence": "Repeated or highly similar object text within the same entity (3 similar records).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-11",
+          "dimension": "competition",
+          "label": "Mismos proponentes compiten siempre entre sí",
+          "weight": 6,
+          "evidence": "Same small bidder pool across the entity (1 suppliers).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "paco_context": 9,
+        "planning": 10,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.7207346",
+      "risk_score": 57,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.7207346 con score 57/100 (alto). Principales señales: Proceso publicado muy cerca del inicio escolar, Contratos repetidos con el mismo objeto y entidad, Un solo oferente.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'El contratista se compromete con el departamento a prestar los servicios profesionales como Nutricionista en la Subsecre'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-05",
+          "dimension": "planning",
+          "label": "Contratos repetidos con el mismo objeto y entidad",
+          "weight": 7,
+          "evidence": "Repeated or highly similar object text within the same entity (3 similar records).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-11",
+          "dimension": "competition",
+          "label": "Mismos proponentes compiten siempre entre sí",
+          "weight": 6,
+          "evidence": "Same small bidder pool across the entity (1 suppliers).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "paco_context": 9,
+        "planning": 10,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.7207818",
+      "risk_score": 57,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.7207818 con score 57/100 (alto). Principales señales: Proceso publicado muy cerca del inicio escolar, Contratos repetidos con el mismo objeto y entidad, Un solo oferente.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'El contratista se compromete con el departamento a prestar los servicios profesionales como Contador en la Subsecretaría'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-05",
+          "dimension": "planning",
+          "label": "Contratos repetidos con el mismo objeto y entidad",
+          "weight": 7,
+          "evidence": "Repeated or highly similar object text within the same entity (2 similar records).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-11",
+          "dimension": "competition",
+          "label": "Mismos proponentes compiten siempre entre sí",
+          "weight": 6,
+          "evidence": "Same small bidder pool across the entity (1 suppliers).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "paco_context": 9,
+        "planning": 10,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    },
+    {
+      "contract_id": "CO1.PCCNTR.7207849",
+      "risk_score": 57,
+      "risk_level": "alto",
+      "summary": "Contrato CO1.PCCNTR.7207849 con score 57/100 (alto). Principales señales: Proceso publicado muy cerca del inicio escolar, Contratos repetidos con el mismo objeto y entidad, Un solo oferente.",
+      "limitations": "Campos faltantes: amount. No hay valor estimado, por lo que las comparaciones de adjudicacion son parciales. No se observa informacion de adiciones en el contrato core.",
+      "flags": [
+        {
+          "code": "RF-03",
+          "dimension": "planning",
+          "label": "Proceso publicado muy cerca del inicio escolar",
+          "weight": 7,
+          "evidence": "Contract date falls in the school start window and the object is 'El contratista se compromete con el departamento a prestar los servicios profesionales como Economista en la Subsecretar'.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-05",
+          "dimension": "planning",
+          "label": "Contratos repetidos con el mismo objeto y entidad",
+          "weight": 7,
+          "evidence": "Repeated or highly similar object text within the same entity (2 similar records).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-08",
+          "dimension": "competition",
+          "label": "Un solo oferente",
+          "weight": 8,
+          "evidence": "Low competition: participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-09",
+          "dimension": "competition",
+          "label": "Pocos oferentes en contrato de alto valor",
+          "weight": 7,
+          "evidence": "High value contract (0) with only 0 participants.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-11",
+          "dimension": "competition",
+          "label": "Mismos proponentes compiten siempre entre sí",
+          "weight": 6,
+          "evidence": "Same small bidder pool across the entity (1 suppliers).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-17",
+          "dimension": "paco_context",
+          "label": "Proveedor con multas o sanciones previas",
+          "weight": 9,
+          "evidence": "PACO context matched in paco_events.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-20",
+          "dimension": "value_outlier",
+          "label": "Valor alto frente a contratos PAE similares",
+          "weight": 8,
+          "evidence": "Amount 0 is a robust outlier (p95=0, robust_z=0.00).",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-23",
+          "dimension": "competition",
+          "label": "Contrato cuantioso con baja competencia",
+          "weight": 8,
+          "evidence": "High value and low competition: amount=0, participants=0, offers=0.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Contract lacks start and/or end dates needed for lifecycle traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-36",
+          "dimension": "traceability",
+          "label": "No hay acta de inicio o liquidación",
+          "weight": 7,
+          "evidence": "Contract lacks complete lifecycle dates for traceability.",
+          "source": "SECOP II"
+        },
+        {
+          "code": "RF-30",
+          "dimension": "traceability",
+          "label": "Garantía tardía o ausente",
+          "weight": 6,
+          "evidence": "Critical fields missing: amount.",
+          "source": "SECOP II"
+        }
+      ],
+      "dimension_scores": {
+        "competition": 20,
+        "paco_context": 9,
+        "planning": 10,
+        "traceability": 10,
+        "value_outlier": 8
+      }
+    }
+  ],
+  "row_count": 20
+}

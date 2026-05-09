@@ -1,0 +1,425 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Reto 2 | Calidad de datos</title>
+  <style>
+    :root {
+      --bg: #08111f;
+      --panel: #111a2e;
+      --panel-2: #16213a;
+      --text: #ecf2ff;
+      --muted: #98a9cb;
+      --accent: #6ee7ff;
+      --accent-2: #8b5cf6;
+      --good: #35d07f;
+      --warn: #fbbf24;
+      --bad: #fb7185;
+      --border: rgba(160, 180, 220, 0.18);
+      --shadow: 0 24px 80px rgba(0, 0, 0, 0.28);
+    }
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: Arial, Helvetica, sans-serif;
+      color: var(--text);
+      background:
+        radial-gradient(circle at top left, rgba(110, 231, 255, 0.16), transparent 30%),
+        radial-gradient(circle at top right, rgba(139, 92, 246, 0.18), transparent 28%),
+        linear-gradient(180deg, #06101b 0%, var(--bg) 100%);
+    }
+    main {
+      max-width: 1440px;
+      margin: 0 auto;
+      padding: 32px 20px 56px;
+    }
+    .hero {
+      display: grid;
+      gap: 18px;
+      padding: 28px;
+      border: 1px solid var(--border);
+      border-radius: 24px;
+      background: rgba(17, 26, 46, 0.9);
+      box-shadow: var(--shadow);
+    }
+    .hero-top {
+      display: flex;
+      justify-content: space-between;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+    .badge {
+      display: inline-flex;
+      padding: 8px 12px;
+      border-radius: 999px;
+      background: rgba(52, 211, 153, 0.12);
+      color: #bbf7d0;
+      font-size: 0.88rem;
+      font-weight: 700;
+    }
+    h1, h2, h3 { margin: 0; }
+    h1 {
+      margin-top: 14px;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      line-height: 1.04;
+    }
+    .lead, .subtle, .muted { color: var(--muted); }
+    .hero-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+    .button {
+      appearance: none;
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 12px 16px;
+      background: var(--panel-2);
+      color: var(--text);
+      text-decoration: none;
+      display: inline-flex;
+      align-items: center;
+      justify-content: center;
+    }
+    .button.primary {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: #04111b;
+      font-weight: 700;
+      border-color: transparent;
+    }
+    .status-row { display: flex; flex-wrap: wrap; gap: 10px; }
+    .pill {
+      padding: 8px 12px;
+      border-radius: 999px;
+      border: 1px solid var(--border);
+      background: rgba(255,255,255,.05);
+      color: var(--text);
+      font-size: .9rem;
+    }
+    .pill.ok { background: rgba(52, 211, 153, .12); border-color: rgba(52,211,153,.2); }
+    .pill.warn { background: rgba(245, 158, 11, .12); border-color: rgba(245,158,11,.22); }
+    .pill.bad { background: rgba(248, 113, 113, .12); border-color: rgba(248,113,113,.22); }
+    .shell {
+      display: grid;
+      gap: 18px;
+      grid-template-columns: 340px minmax(0, 1fr);
+      margin-top: 18px;
+    }
+    .sidebar, .content { display: grid; gap: 18px; }
+    .panel {
+      border: 1px solid var(--border);
+      border-radius: 22px;
+      background: rgba(17, 26, 46, 0.84);
+      padding: 18px;
+      box-shadow: 0 18px 50px rgba(0,0,0,.16);
+    }
+    .panel-head {
+      display: flex;
+      justify-content: space-between;
+      gap: 16px;
+      margin-bottom: 14px;
+    }
+    .section-kicker {
+      margin: 0 0 6px;
+      color: #bae6fd;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+      font-size: .78rem;
+      font-weight: 700;
+    }
+    .kpi-grid {
+      display: grid;
+      gap: 14px;
+      grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    }
+    .kpi-card {
+      background: var(--panel-2);
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      padding: 16px;
+    }
+    .kpi-label {
+      color: var(--muted);
+      font-size: .8rem;
+      text-transform: uppercase;
+      letter-spacing: .08em;
+    }
+    .kpi-value {
+      margin-top: 10px;
+      font-size: 1.5rem;
+      font-weight: 700;
+    }
+    .kpi-hint {
+      margin-top: 8px;
+      color: var(--muted);
+      line-height: 1.5;
+      font-size: .9rem;
+    }
+    .quality-grid {
+      display: grid;
+      gap: 12px;
+    }
+    .quality-card {
+      border: 1px solid var(--border);
+      border-radius: 18px;
+      background: rgba(255,255,255,.03);
+      padding: 14px;
+      display: grid;
+      gap: 8px;
+    }
+    .table-wrap {
+      overflow: auto;
+      border-radius: 16px;
+      border: 1px solid rgba(148,163,184,.12);
+    }
+    table { width: 100%; border-collapse: collapse; min-width: 720px; }
+    th, td {
+      border-bottom: 1px solid rgba(148,163,184,.12);
+      padding: 10px 8px;
+      text-align: left;
+      vertical-align: top;
+      font-size: 14px;
+    }
+    th {
+      background: rgba(15,23,42,.92);
+      color: #cbd5e1;
+      position: sticky;
+      top: 0;
+      z-index: 1;
+      text-transform: uppercase;
+      letter-spacing: .06em;
+      font-size: .78rem;
+    }
+    .bullet-list {
+      margin: 0;
+      padding-left: 18px;
+      line-height: 1.65;
+    }
+    .footer-note {
+      color: var(--muted);
+      text-align: right;
+      padding-top: 6px;
+    }
+    @media (max-width: 1180px) {
+      .shell { grid-template-columns: 1fr; }
+    }
+    @media (max-width: 760px) {
+      main { padding: 20px 12px 36px; }
+      .hero, .panel { padding: 16px; border-radius: 18px; }
+    }
+  </style>
+</head>
+<body>
+  <main>
+    <section class="hero">
+      <div class="hero-top">
+        <div>
+          <span class="badge">Fase 2 | Calidad de datos</span>
+          <h1>Validación semántica y calidad de la base</h1>
+          <p class="lead">
+            Este HTML separa la calidad de datos del EDA, igual que en el reto 1.
+            Aquí se muestran los puntos débiles del dataset y las variables que conviene normalizar.
+          </p>
+        </div>
+        <div class="hero-actions">
+          <a class="button primary" href="./reto2_eda.html">Abrir EDA</a>
+          <a class="button" href="../dashboard/index.html">Abrir dashboard</a>
+          <a class="button" href="./../dashboard/api/summary.json" target="_blank" rel="noreferrer">API local</a>
+        </div>
+      </div>
+      <div class="status-row">
+        <span class="pill ok">Registros: 1.003.902</span>
+        <span class="pill">Variables: 84</span>
+        <span class="pill warn">Brecha de género: no sustentable</span>
+        <span class="pill bad">Anomalías financieras: revisar</span>
+      </div>
+    </section>
+
+    <section class="shell">
+      <aside class="sidebar">
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="section-kicker">Hallazgos</p>
+              <h2>Resumen de calidad</h2>
+            </div>
+          </div>
+          <div class="kpi-grid">
+            <div class="kpi-card">
+              <div class="kpi-label">Pymes</div>
+              <div class="kpi-value">13,20</div>
+              <div class="kpi-hint">132.479 contratos marcados como Pyme.</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Anticipos</div>
+              <div class="kpi-value">0,08</div>
+              <div class="kpi-hint">756 contratos con pago adelantado.</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Ambientales</div>
+              <div class="kpi-value">21.347</div>
+              <div class="kpi-hint">Contratos con cláusulas ambientales explícitas.</div>
+            </div>
+            <div class="kpi-card">
+              <div class="kpi-label">Pareto</div>
+              <div class="kpi-value">94,05</div>
+              <div class="kpi-hint">Concentración del 20% superior de entidades.</div>
+            </div>
+          </div>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="section-kicker">Notas</p>
+              <h2>Interpretación</h2>
+            </div>
+          </div>
+          <ul class="bullet-list">
+            <li>Las variables de tipo sí/no se deberían convertir a booleanos para análisis más limpios.</li>
+            <li>La pregunta de género no tiene sustento en esta base y debe reportarse como no disponible.</li>
+            <li>La concentración de valor es muy alta, por lo que la revisión humana sigue siendo clave.</li>
+          </ul>
+        </section>
+      </aside>
+
+      <section class="content">
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="section-kicker">Variables</p>
+              <h2>Anomalías de tipo de dato</h2>
+            </div>
+          </div>
+          <div class="quality-grid">
+            
+        <div class="quality-card">
+          <strong>Es Pyme</strong>
+          <span>Tipo esperado: BOOLEAN</span>
+          <span>Es una variable binaria de si/no y conviene normalizarla a booleano.</span>
+        </div>
+        
+        <div class="quality-card">
+          <strong>Obligación Ambiental</strong>
+          <span>Tipo esperado: BOOLEAN</span>
+          <span>Tambien se interpreta como indicador binario de cumplimiento ambiental.</span>
+        </div>
+        
+        <div class="quality-card">
+          <strong>Valor del Contrato</strong>
+          <span>Tipo esperado: DECIMAL(38,0)</span>
+          <span>Es un monto monetario y no deberia quedarse como texto libre.</span>
+        </div>
+        
+        <div class="quality-card">
+          <strong>Valor de pago adelantado</strong>
+          <span>Tipo esperado: DECIMAL(38,0)</span>
+          <span>Es un valor financiero; lo correcto es tratarlo como numerico.</span>
+        </div>
+        
+        <div class="quality-card">
+          <strong>Valor Facturado</strong>
+          <span>Tipo esperado: DECIMAL(38,0)</span>
+          <span>Tambien representa dinero y debe modelarse como numerico.</span>
+        </div>
+        
+        <div class="quality-card">
+          <strong>Fecha Inicio Liquidacion</strong>
+          <span>Tipo esperado: DATE</span>
+          <span>Es una fecha de proceso contractual y deberia poder compararse como fecha.</span>
+        </div>
+        
+        <div class="quality-card">
+          <strong>Fecha Fin Liquidacion</strong>
+          <span>Tipo esperado: DATE</span>
+          <span>Es otra fecha de cierre y no deberia manejarse como texto.</span>
+        </div>
+        
+        <div class="quality-card">
+          <strong>Fecha de notificación de prorrogación</strong>
+          <span>Tipo esperado: DATE</span>
+          <span>La notificacion de prorroga corresponde a un campo de fecha.</span>
+        </div>
+        
+          </div>
+        </section>
+
+        <section class="analysis-grid">
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Consistencia</p>
+                <h2>Campos críticos del análisis</h2>
+              </div>
+            </div>
+            <div class="quality-grid">
+              <div class="quality-card">
+                <strong>es_pyme</strong>
+                <span>Se usa como indicador binario de adjudicación a Pymes.</span>
+              </div>
+              <div class="quality-card">
+                <strong>habilita_pago_adelantado</strong>
+                <span>Conviene normalizarlo a booleano y no mantenerlo como texto libre.</span>
+              </div>
+              <div class="quality-card">
+                <strong>obligaci_n_ambiental</strong>
+                <span>Es un indicador binario de cumplimiento contractual ambiental.</span>
+              </div>
+              <div class="quality-card">
+                <strong>reversion</strong>
+                <span>También debería ser booleano por su semántica de regla contractual.</span>
+              </div>
+            </div>
+          </article>
+
+          <article class="panel">
+            <div class="panel-head">
+              <div>
+                <p class="section-kicker">Respaldo</p>
+                <h2>Por qué Q19 no se responde</h2>
+              </div>
+            </div>
+            <div class="quality-card">
+              <strong>Brecha de género</strong>
+              <span>Sí existe una brecha de género financiera en la representación legal. Las mujeres concentran 434.081 contratos y 36.474.139.893.372 en valor total, con un promedio aproximado de 84.026.114 por contrato; los hombres concentran 378.213 contratos y 53.439.223.860.712 en valor total, con un promedio aproximado de 141.293.990 por contrato. La categoría Otro también aparece con 2.648 contratos y 1.292.890.484.954 en valor total. Además, la categoría No Definido es alta (188.960 contratos), con un valor total de 75.497.039.656.375 y un promedio de 399.539.794,96 por contrato, así que la lectura debe incluir esa limitación.</span>
+            </div>
+            <div class="quality-card" style="margin-top:12px;">
+              <strong>Anomalías financieras</strong>
+              <span>
+                Los tres contratos más altos son atípicos por magnitud y conviene revisarlos con la fuente original o con el expediente contractual.
+              </span>
+            </div>
+          </article>
+        </section>
+
+        <section class="panel">
+          <div class="panel-head">
+            <div>
+              <p class="section-kicker">Top 3</p>
+              <h2>Valores atípicos financieros</h2>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>#</th>
+                  <th>Entidad</th>
+                  <th>Monto</th>
+                  <th>Tipo</th>
+                  <th>Modalidad</th>
+                  <th>Veredicto</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr><td>1</td><td>MINISTERIO DE MINAS Y ENERGIA</td><td>4.205.027.751.839</td><td>Otro</td><td>Contratación Directa (con ofertas)</td><td>Anomalo / por verificar</td></tr><tr><td>2</td><td>MINISTERIO DE COMERCIO INDUSTRIA Y TURISMO - MINCIT</td><td>2.846.224.257.835</td><td>Compraventa</td><td>Seleccion Abreviada Menor Cuantia Sin Manifestacion Interes</td><td>Anomalo / por verificar</td></tr><tr><td>3</td><td>RNEC</td><td>2.553.311.282.500</td><td>Prestación de servicios</td><td>Selección Abreviada de Menor Cuantía</td><td>Anomalo / por verificar</td></tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <footer class="footer-note">
+          Calidad de datos separada del EDA, como en el reto 1.
+        </footer>
+      </section>
+    </section>
+  </main>
+</body>
+</html>

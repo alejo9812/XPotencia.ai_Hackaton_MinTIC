@@ -1,0 +1,61 @@
+{
+  "project": "PAE Risk Tracker",
+  "default_timeout_seconds": 20,
+  "default_user_agent": "PAE-Risk-Tracker/0.1 (+validation)",
+  "allow_domains": [
+    "datos.gov.co",
+    "www.datos.gov.co",
+    "colombiacompra.gov.co",
+    "www.colombiacompra.gov.co",
+    "community.secop.gov.co",
+    "www.community.secop.gov.co"
+  ],
+  "sources": [
+    {
+      "key": "secop_contracts_endpoint",
+      "name": "SECOP II Contratos Electronicos endpoint",
+      "kind": "api_endpoint",
+      "url": "https://www.datos.gov.co/resource/jbjy-vk9h.json?$limit=1",
+      "domain": "www.datos.gov.co",
+      "enabled": true,
+      "notes": "Public API endpoint used for source health monitoring."
+    },
+    {
+      "key": "secop_processes_endpoint",
+      "name": "SECOP II Procesos de Contratacion endpoint",
+      "kind": "api_endpoint",
+      "url": "https://www.datos.gov.co/resource/p6dx-8zbt.json?$limit=1",
+      "domain": "www.datos.gov.co",
+      "enabled": true,
+      "notes": "Public API endpoint used for source health monitoring."
+    },
+    {
+      "key": "secop_additions_endpoint",
+      "name": "SECOP II Adiciones endpoint",
+      "kind": "api_endpoint",
+      "url": "https://www.datos.gov.co/resource/cb9c-h8sn.json?$limit=1",
+      "domain": "www.datos.gov.co",
+      "enabled": true,
+      "notes": "Public API endpoint used for source health monitoring."
+    },
+    {
+      "key": "colombia_compra_open_data",
+      "name": "Colombia Compra Eficiente datos abiertos",
+      "kind": "portal_page",
+      "url": "https://www.colombiacompra.gov.co/transparencia/datos-abiertos",
+      "domain": "www.colombiacompra.gov.co",
+      "enabled": true,
+      "notes": "Landing page for the official open data portal.",
+      "search_url_template": "https://www.colombiacompra.gov.co/search/node/{query}"
+    },
+    {
+      "key": "community_secop_portal",
+      "name": "SECOP community portal",
+      "kind": "portal_page",
+      "url": "https://community.secop.gov.co/",
+      "domain": "community.secop.gov.co",
+      "enabled": false,
+      "notes": "Disabled by default because public accessibility can vary."
+    }
+  ]
+}

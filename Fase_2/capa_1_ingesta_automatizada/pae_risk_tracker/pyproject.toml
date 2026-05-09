@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=68", "wheel"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "pae-risk-tracker"
+version = "0.1.0"
+description = "PAE risk tracker for SECOP II data"
+readme = "README.md"
+requires-python = ">=3.10"
+dependencies = [
+  "duckdb>=1.2",
+  "fastapi>=0.115",
+  "pandas>=2.0",
+  "pyarrow>=14.0",
+  "streamlit>=1.36",
+  "uvicorn>=0.30",
+]
+
+[project.scripts]
+pae-risk-tracker = "pae_risk_tracker.cli:main"
+
+[tool.setuptools]
+package-dir = {"" = "src"}
+
+[tool.setuptools.packages.find]
+where = ["src"]
+
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+addopts = "-q"

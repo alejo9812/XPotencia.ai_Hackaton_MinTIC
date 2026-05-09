@@ -1,0 +1,63 @@
+{
+  "core": {
+    "contract_id": ["id_contrato", "id_del_contrato", "referencia_del_contrato", "referencia_contrato"],
+    "process_id": ["proceso_de_compra", "id_del_proceso", "id_procedimiento", "id_proceso", "referencia_del_proceso"],
+    "process_reference": ["referencia_del_contrato", "referencia_del_proceso", "referencia_proceso"],
+    "entity_name": ["nombre_entidad", "entidad", "entidad_compradora", "nombre_entidad_creadora"],
+    "entity_nit": ["nit_entidad", "codigo_entidad_creadora", "codigo_entidad"],
+    "supplier_name": ["proveedor_adjudicado", "proveedor", "nombre_proveedor_objeto_de", "nombre", "nombre_grupo"],
+    "supplier_doc": ["documento_proveedor", "nit_proveedor", "nit", "as_codigo_proveedor_objeto", "nit_grupo"],
+    "object_text": [
+      "descripcion_del_proceso",
+      "nombre_del_procedimiento",
+      "descripcion_del_procedimiento",
+      "descripcion",
+      "notas",
+      "tipo",
+      "condiciones_de_entrega",
+      "justificacion_modalidad_de"
+    ],
+    "justification": ["justificacion_modalidad_de", "justificacion_modalidad", "justificacion"],
+    "modality": ["modalidad_de_contratacion", "tipo_de_contrato", "fase", "tipo"],
+    "status": ["estado_contrato", "estado"],
+    "amount": ["valor", "valor_total", "valor_a_pagar", "valor_total_de_la_factura", "valor_neto_de_la_factura"],
+    "estimated_amount": ["valor_estimado", "valor_presupuesto", "valor_base", "valor_de_referencia"],
+    "date": [
+      "fecha_de_firma",
+      "fecha_de_publicacion_del_proceso",
+      "fecharegistro",
+      "fecha_factura",
+      "fecha_de_emision",
+      "fecha_evento"
+    ],
+    "start_date": ["fecha_de_inicio_del_contrato", "fecha_de_inicio", "fecha_inicio", "inicio_del_contrato"],
+    "end_date": ["fecha_de_fin_del_contrato", "fecha_de_fin", "fecha_fin", "fin_del_contrato"],
+    "duration_days": ["dias_adicionados", "dias_adicionales", "plazo_dias", "duracion_dias"],
+    "addition_value": ["valor_adicionado", "valor_de_adicion", "valor_adicion", "adicion_valor"],
+    "addition_days": ["dias_adicionados", "dias_adicionales", "tiempo_adicionado"],
+    "participants": ["numero_de_proponentes", "numero_participantes", "participantes", "oferentes"],
+    "offers": ["numero_de_ofertas", "ofertas", "propuestas", "bids"],
+    "department": ["departamento", "departamento_entidad", "departamento_grupo", "localizaci_n"],
+    "municipality": ["ciudad", "ciudad_entidad", "municipio", "minucipio_grupo", "ubicacion"],
+    "url_process": ["urlproceso", "url_proceso"]
+  },
+  "search": {
+    "text_columns": [
+      "descripcion_del_proceso",
+      "nombre_del_procedimiento",
+      "descripcion_del_procedimiento",
+      "tipo_de_contrato",
+      "modalidad_de_contratacion",
+      "justificacion_modalidad_de",
+      "condiciones_de_entrega"
+    ],
+    "excluded_columns": [
+      "descripcion_del_proceso",
+      "nombre_del_procedimiento",
+      "descripcion_del_procedimiento",
+      "tipo_de_contrato",
+      "modalidad_de_contratacion",
+      "justificacion_modalidad_de"
+    ]
+  }
+}

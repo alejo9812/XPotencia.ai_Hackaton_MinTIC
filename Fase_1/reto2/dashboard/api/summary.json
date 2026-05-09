@@ -1,0 +1,388 @@
+{
+  "dataset": {
+    "id": "SECOP_II_-_Contratos_Electrónicos_20260506",
+    "name": "SECOP II - Contratos Electronicos",
+    "source_url": "file:///D:/Hackaton_MinTIC/Fase_1/reto2/SECOP_II_-_Contratos_Electr%C3%B3nicos_20260506.csv",
+    "metadata_url": "file:///D:/Hackaton_MinTIC/Fase_1/reto2/SECOP_II_-_Contratos_Electr%C3%B3nicos_20260506.csv"
+  },
+  "kpis": {
+    "total_records": 1003902,
+    "total_variables": 84,
+    "records_2025": 999490,
+    "pyme_yes": 132479,
+    "pyme_pct": 13.196407617476607,
+    "advance_yes": 756,
+    "advance_pct": 0.0753061553817006,
+    "environmental_yes": 21347,
+    "pareto_share_pct": 94.0475779669732,
+    "unique_entities": 3942
+  },
+  "top_entities": [
+    {
+      "name": "DISTRITO ESPECIAL DE CIENCIA TECNOLOGIA E INNOVACION DE MEDELLIN",
+      "count": null,
+      "total": 7192818196456
+    },
+    {
+      "name": "MINISTERIO DE MINAS Y ENERGIA",
+      "count": null,
+      "total": 5117844982872
+    },
+    {
+      "name": "DEPARTAMENTO DE ANTIOQUIA//",
+      "count": null,
+      "total": 3842869199771
+    }
+  ],
+  "departments": [
+    {
+      "name": "Distrito Capital de Bogotá",
+      "count": 280248,
+      "total": null
+    },
+    {
+      "name": "Valle del Cauca",
+      "count": 109856,
+      "total": null
+    },
+    {
+      "name": "Antioquia",
+      "count": 105810,
+      "total": null
+    },
+    {
+      "name": "Cundinamarca",
+      "count": 49499,
+      "total": null
+    },
+    {
+      "name": "Santander",
+      "count": 47128,
+      "total": null
+    },
+    {
+      "name": "Magdalena",
+      "count": 32097,
+      "total": null
+    },
+    {
+      "name": "Bolívar",
+      "count": 31612,
+      "total": null
+    },
+    {
+      "name": "Atlántico",
+      "count": 31428,
+      "total": null
+    },
+    {
+      "name": "Boyacá",
+      "count": 30849,
+      "total": null
+    },
+    {
+      "name": "Tolima",
+      "count": 27823,
+      "total": null
+    }
+  ],
+  "contract_types": [
+    {
+      "name": "Prestación de servicios",
+      "count": 860913,
+      "total": null
+    },
+    {
+      "name": "Decreto 092 de 2017",
+      "count": 41384,
+      "total": null
+    },
+    {
+      "name": "Otro",
+      "count": 37616,
+      "total": null
+    },
+    {
+      "name": "Suministros",
+      "count": 22669,
+      "total": null
+    },
+    {
+      "name": "Compraventa",
+      "count": 16845,
+      "total": null
+    }
+  ],
+  "preferred_modality": {
+    "name": "Contratación directa",
+    "count": 759993,
+    "total": null
+  },
+  "top_values": [
+    {
+      "entidad": "MINISTERIO DE MINAS Y ENERGIA",
+      "monto": 4205027751839,
+      "tipo_de_contrato": "Otro",
+      "modalidad": "Contratación Directa (con ofertas)",
+      "objeto": "Administrar los recursos y gestionar proyectos del Programa Colombia Solar\nasignados por el MME para implementar soluciones solares fotovoltaicas dirigidas a usuarios\nresidenciales de los estratos 1; 2 y 3 del SIN",
+      "veredicto": "Anomalo / por verificar",
+      "sustento": "El monto esta muy por encima del comportamiento general de la base y conviene cruzarlo con el documento origen antes de asumir que es correcto."
+    },
+    {
+      "entidad": "MINISTERIO DE COMERCIO INDUSTRIA Y TURISMO - MINCIT",
+      "monto": 2846224257835,
+      "tipo_de_contrato": "Compraventa",
+      "modalidad": "Seleccion Abreviada Menor Cuantia Sin Manifestacion Interes",
+      "objeto": "ENTREGAR A TÍTULO DE ARRENDAMIENTO EL PREDIO Y LAS  CONSTRUCCIONES DE PROPIEDAD DEL MINISTERro DE COMERCIO; INDUSTRIA Y TURISMO; EN DONDE OPERA LA ZONA FRANCA PERMANENTE DENOMINADA ZONA FRANCA INDUSTRIAL DE BIENES Y \nDE SERVICIOS DE BARRANQUILLA UBICADA EN LA CIUDAD DE BARRANQUILLA; DEPARTAMENTO DEL ATLÁNTICO; DE ACUERDO CON EL REGIMEN DE ZONAS FRANCAS APLICABLE",
+      "veredicto": "Anomalo / por verificar",
+      "sustento": "El monto esta muy por encima del comportamiento general de la base y conviene cruzarlo con el documento origen antes de asumir que es correcto."
+    },
+    {
+      "entidad": "RNEC",
+      "monto": 2553311282500,
+      "tipo_de_contrato": "Prestación de servicios",
+      "modalidad": "Selección Abreviada de Menor Cuantía",
+      "objeto": "Contratar una solución integral logística; tecnológica; informática y de servicios; para la organización y realización de los procesos electorales a llevarse a cabo en los años 2025 y 2026 a los que se refiere el alcance del objeto; de conformidad con los requerimientos y especificaciones descritos en el - Componente Técnico y demás documentos que integran el Pliego de Condiciones; su adenda y la propuesta presentada por el contratista y el clausulado adicional",
+      "veredicto": "Anomalo / por verificar",
+      "sustento": "El monto esta muy por encima del comportamiento general de la base y conviene cruzarlo con el documento origen antes de asumir que es correcto."
+    }
+  ],
+  "type_anomalies": [
+    {
+      "variable": "Es Pyme",
+      "tipo_esperado": "BOOLEAN",
+      "motivo": "Es una variable binaria de si/no y conviene normalizarla a booleano."
+    },
+    {
+      "variable": "Obligación Ambiental",
+      "tipo_esperado": "BOOLEAN",
+      "motivo": "Tambien se interpreta como indicador binario de cumplimiento ambiental."
+    },
+    {
+      "variable": "Valor del Contrato",
+      "tipo_esperado": "DECIMAL(38,0)",
+      "motivo": "Es un monto monetario y no deberia quedarse como texto libre."
+    },
+    {
+      "variable": "Valor de pago adelantado",
+      "tipo_esperado": "DECIMAL(38,0)",
+      "motivo": "Es un valor financiero; lo correcto es tratarlo como numerico."
+    },
+    {
+      "variable": "Valor Facturado",
+      "tipo_esperado": "DECIMAL(38,0)",
+      "motivo": "Tambien representa dinero y debe modelarse como numerico."
+    },
+    {
+      "variable": "Fecha Inicio Liquidacion",
+      "tipo_esperado": "DATE",
+      "motivo": "Es una fecha de proceso contractual y deberia poder compararse como fecha."
+    },
+    {
+      "variable": "Fecha Fin Liquidacion",
+      "tipo_esperado": "DATE",
+      "motivo": "Es otra fecha de cierre y no deberia manejarse como texto."
+    },
+    {
+      "variable": "Fecha de notificación de prorrogación",
+      "tipo_esperado": "DATE",
+      "motivo": "La notificacion de prorroga corresponde a un campo de fecha."
+    }
+  ],
+  "notes": [
+    "Las variables de si/no se deberian convertir a booleanos para analisis mas limpios.",
+    "La base si contiene el campo de genero del representante legal y permite analizar brechas financieras.",
+    "La concentracion de valor es muy alta, por lo que la revision humana sigue siendo clave."
+  ],
+  "questions": [
+    {
+      "n": 1,
+      "pregunta": "Seleccione su equipo",
+      "respuesta": "Pendiente de tu dato personal",
+      "estado": "manual"
+    },
+    {
+      "n": 2,
+      "pregunta": "Ingrese la CC del capitan",
+      "respuesta": "Pendiente de tu dato personal",
+      "estado": "manual"
+    },
+    {
+      "n": 3,
+      "pregunta": "Numero de registros en la nueva base de datos",
+      "respuesta": "1.003.902",
+      "estado": "ok"
+    },
+    {
+      "n": 4,
+      "pregunta": "Numero de variables en la nueva base de datos",
+      "respuesta": "84",
+      "estado": "ok"
+    },
+    {
+      "n": 5,
+      "pregunta": "Numero de registros que corresponden al 2025",
+      "respuesta": "999.490",
+      "estado": "ok"
+    },
+    {
+      "n": 6,
+      "pregunta": "Proporcion de contratos asignados a Pymes",
+      "respuesta": "13,20",
+      "estado": "ok"
+    },
+    {
+      "n": 7,
+      "pregunta": "Numero de contratos asignados a Pymes",
+      "respuesta": "132.479",
+      "estado": "ok"
+    },
+    {
+      "n": 8,
+      "pregunta": "Top 10 clasificado por departamentos del numero de contratos celebrados",
+      "respuesta": "distrito capital de bogotá, valle del cauca, antioquia, cundinamarca, santander, magdalena, bolívar, atlántico, boyacá, tolima",
+      "estado": "ok"
+    },
+    {
+      "n": 9,
+      "pregunta": "Contratos ejecutados por el departamento en posicion 6",
+      "respuesta": "32.097",
+      "estado": "ok"
+    },
+    {
+      "n": 10,
+      "pregunta": "Modalidad de contratacion preferida por las entidades publicas",
+      "respuesta": "Contratación directa",
+      "estado": "ok"
+    },
+    {
+      "n": 11,
+      "pregunta": "Numero de contratos de la modalidad preferida",
+      "respuesta": "759.993",
+      "estado": "ok"
+    },
+    {
+      "n": 12,
+      "pregunta": "Top 3 de entidades que mas ejecutaron dinero",
+      "respuesta": "1. DISTRITO ESPECIAL DE CIENCIA TECNOLOGIA E INNOVACION DE MEDELLIN (7.192.818.196.456), 2. MINISTERIO DE MINAS Y ENERGIA (5.117.844.982.872), 3. DEPARTAMENTO DE ANTIOQUIA// (3.842.869.199.771)",
+      "estado": "ok"
+    },
+    {
+      "n": 13,
+      "pregunta": "Top 5 de tipos de contrato y cuantos registros tiene cada tipo",
+      "respuesta": "1. Prestación de servicios (860.913), 2. Decreto 092 de 2017 (41.384), 3. Otro (37.616), 4. Suministros (22.669), 5. Compraventa (16.845)",
+      "estado": "ok"
+    },
+    {
+      "n": 14,
+      "pregunta": "Porcentaje del tipo de contrato con mayor resultado",
+      "respuesta": "85,76",
+      "estado": "ok"
+    },
+    {
+      "n": 15,
+      "pregunta": "Top 3 de valores anomalos financieros",
+      "respuesta": [
+        {
+          "entidad": "MINISTERIO DE MINAS Y ENERGIA",
+          "monto": 4205027751839,
+          "tipo_de_contrato": "Otro",
+          "modalidad": "Contratación Directa (con ofertas)",
+          "objeto": "Administrar los recursos y gestionar proyectos del Programa Colombia Solar\nasignados por el MME para implementar soluciones solares fotovoltaicas dirigidas a usuarios\nresidenciales de los estratos 1; 2 y 3 del SIN",
+          "veredicto": "Anomalo / por verificar",
+          "sustento": "El monto esta muy por encima del comportamiento general de la base y conviene cruzarlo con el documento origen antes de asumir que es correcto."
+        },
+        {
+          "entidad": "MINISTERIO DE COMERCIO INDUSTRIA Y TURISMO - MINCIT",
+          "monto": 2846224257835,
+          "tipo_de_contrato": "Compraventa",
+          "modalidad": "Seleccion Abreviada Menor Cuantia Sin Manifestacion Interes",
+          "objeto": "ENTREGAR A TÍTULO DE ARRENDAMIENTO EL PREDIO Y LAS  CONSTRUCCIONES DE PROPIEDAD DEL MINISTERro DE COMERCIO; INDUSTRIA Y TURISMO; EN DONDE OPERA LA ZONA FRANCA PERMANENTE DENOMINADA ZONA FRANCA INDUSTRIAL DE BIENES Y \nDE SERVICIOS DE BARRANQUILLA UBICADA EN LA CIUDAD DE BARRANQUILLA; DEPARTAMENTO DEL ATLÁNTICO; DE ACUERDO CON EL REGIMEN DE ZONAS FRANCAS APLICABLE",
+          "veredicto": "Anomalo / por verificar",
+          "sustento": "El monto esta muy por encima del comportamiento general de la base y conviene cruzarlo con el documento origen antes de asumir que es correcto."
+        },
+        {
+          "entidad": "RNEC",
+          "monto": 2553311282500,
+          "tipo_de_contrato": "Prestación de servicios",
+          "modalidad": "Selección Abreviada de Menor Cuantía",
+          "objeto": "Contratar una solución integral logística; tecnológica; informática y de servicios; para la organización y realización de los procesos electorales a llevarse a cabo en los años 2025 y 2026 a los que se refiere el alcance del objeto; de conformidad con los requerimientos y especificaciones descritos en el - Componente Técnico y demás documentos que integran el Pliego de Condiciones; su adenda y la propuesta presentada por el contratista y el clausulado adicional",
+          "veredicto": "Anomalo / por verificar",
+          "sustento": "El monto esta muy por encima del comportamiento general de la base y conviene cruzarlo con el documento origen antes de asumir que es correcto."
+        }
+      ],
+      "estado": "ok"
+    },
+    {
+      "n": 16,
+      "pregunta": "Porcentaje de contratos que contempla pagos adelantados o anticipos",
+      "respuesta": "0,08",
+      "estado": "ok"
+    },
+    {
+      "n": 17,
+      "pregunta": "Contratos que incluyen obligaciones o clausulas ambientales",
+      "respuesta": "21.347",
+      "estado": "ok"
+    },
+    {
+      "n": 18,
+      "pregunta": "Se cumple el principio de Pareto en la contratacion estatal",
+      "respuesta": "Si. El 20% superior de entidades concentra 94,05% del valor total, lo que muestra una concentracion muy alta.",
+      "estado": "analysis"
+    },
+    {
+      "n": 19,
+      "pregunta": "Existe una brecha de genero financiera en la representacion legal",
+      "respuesta": "Sí existe una brecha de género financiera en la representación legal. Las mujeres concentran 434.081 contratos y 36.474.139.893.372 en valor total, con un promedio aproximado de 84.026.114 por contrato; los hombres concentran 378.213 contratos y 53.439.223.860.712 en valor total, con un promedio aproximado de 141.293.990 por contrato. La categoría Otro también aparece con 2.648 contratos y 1.292.890.484.954 en valor total. Además, la categoría No Definido es alta (188.960 contratos), con un valor total de 75.497.039.656.375 y un promedio de 399.539.794,96 por contrato, así que la lectura debe incluir esa limitación.",
+      "estado": "analysis"
+    },
+    {
+      "n": 20,
+      "pregunta": "Revision del tipo de dato en las variables reportadas",
+      "respuesta": [
+        {
+          "variable": "Es Pyme",
+          "tipo_esperado": "BOOLEAN",
+          "motivo": "Es una variable binaria de si/no y conviene normalizarla a booleano."
+        },
+        {
+          "variable": "Obligación Ambiental",
+          "tipo_esperado": "BOOLEAN",
+          "motivo": "Tambien se interpreta como indicador binario de cumplimiento ambiental."
+        },
+        {
+          "variable": "Valor del Contrato",
+          "tipo_esperado": "DECIMAL(38,0)",
+          "motivo": "Es un monto monetario y no deberia quedarse como texto libre."
+        },
+        {
+          "variable": "Valor de pago adelantado",
+          "tipo_esperado": "DECIMAL(38,0)",
+          "motivo": "Es un valor financiero; lo correcto es tratarlo como numerico."
+        },
+        {
+          "variable": "Valor Facturado",
+          "tipo_esperado": "DECIMAL(38,0)",
+          "motivo": "Tambien representa dinero y debe modelarse como numerico."
+        },
+        {
+          "variable": "Fecha Inicio Liquidacion",
+          "tipo_esperado": "DATE",
+          "motivo": "Es una fecha de proceso contractual y deberia poder compararse como fecha."
+        },
+        {
+          "variable": "Fecha Fin Liquidacion",
+          "tipo_esperado": "DATE",
+          "motivo": "Es otra fecha de cierre y no deberia manejarse como texto."
+        },
+        {
+          "variable": "Fecha de notificación de prorrogación",
+          "tipo_esperado": "DATE",
+          "motivo": "La notificacion de prorroga corresponde a un campo de fecha."
+        }
+      ],
+      "estado": "analysis"
+    }
+  ]
+}

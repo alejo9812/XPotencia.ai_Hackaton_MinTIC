@@ -1,0 +1,169 @@
+{
+  "project_name": "Dashboard de Opacidad Contractual - Alimentacion Escolar",
+  "subtitle": "Analisis de contratos publicos SECOP II / PAE",
+  "source_label": "Datos mock preprocesados",
+  "period_default": "all",
+  "page_size": 6,
+  "default_sort": {
+    "key": "risk_score",
+    "direction": "desc"
+  },
+  "risk_thresholds": {
+    "low": [0, 30],
+    "medium": [31, 55],
+    "high": [56, 100]
+  },
+  "risk_colors": {
+    "low": "#16a34a",
+    "medium": "#f59e0b",
+    "high": "#dc2626"
+  },
+  "chart_palette": [
+    "#1d4ed8",
+    "#0ea5e9",
+    "#14b8a6",
+    "#16a34a",
+    "#f59e0b",
+    "#dc2626",
+    "#8b5cf6",
+    "#64748b"
+  ],
+  "weights": {
+    "amountHigh": 12,
+    "amountVeryHigh": 20,
+    "shortDescription": 14,
+    "genericDescription": 10,
+    "missingEntity": 9,
+    "missingProvider": 9,
+    "missingAmount": 9,
+    "missingDate": 7,
+    "missingModality": 8,
+    "repeatProvider": 12,
+    "lowCompetition": 10,
+    "sensitiveModality": 8,
+    "invalidDate": 8,
+    "sanctionSignal": 15
+  },
+  "red_flags": [
+    {
+      "code": "LOW_COMPETITION",
+      "name": "Baja pluralidad de oferentes",
+      "severity": "Alta",
+      "category": "competencia",
+      "description": "El proceso presenta menor competencia que la referencia esperada.",
+      "evidence_hint": "Numero de oferentes por debajo del umbral configurado."
+    },
+    {
+      "code": "DIRECT_AWARD",
+      "name": "Contratacion directa o poco competitiva",
+      "severity": "Alta",
+      "category": "modalidad",
+      "description": "La modalidad reduce la competencia o la trazabilidad del proceso.",
+      "evidence_hint": "Modalidad clasificada como directa o equivalente."
+    },
+    {
+      "code": "FREQUENT_ADDITIONS",
+      "name": "Adiciones frecuentes o altas",
+      "severity": "Alta",
+      "category": "valor",
+      "description": "El contrato acumula adiciones por encima de una referencia prudente.",
+      "evidence_hint": "Porcentaje de adicion significativo frente al valor inicial."
+    },
+    {
+      "code": "REPEATED_MODIFICATIONS",
+      "name": "Modificaciones contractuales repetidas",
+      "severity": "Media",
+      "category": "ejecucion",
+      "description": "Se observan cambios reiterados en el contrato o sus anexos.",
+      "evidence_hint": "Numero de modificaciones superior al patron esperado."
+    },
+    {
+      "code": "OUTLIER_VALUE",
+      "name": "Valores atipicos",
+      "severity": "Media",
+      "category": "valor",
+      "description": "El valor se aparta del rango habitual de contratos comparables.",
+      "evidence_hint": "Monto superior o inferior a la media del grupo comparable."
+    },
+    {
+      "code": "SUPPLIER_CONCENTRATION",
+      "name": "Concentracion en un proveedor",
+      "severity": "Alta",
+      "category": "proveedor",
+      "description": "El mismo proveedor acumula multiples contratos o alertas.",
+      "evidence_hint": "Alta recurrencia del proveedor en el universo filtrado."
+    },
+    {
+      "code": "AMBIGUOUS_OBJECT",
+      "name": "Objeto contractual ambiguo",
+      "severity": "Media",
+      "category": "texto",
+      "description": "La descripcion del objeto es generica o poco especifica.",
+      "evidence_hint": "Texto del objeto con baja especificidad o alta generalidad."
+    },
+    {
+      "code": "SHORT_OR_LONG_TERM",
+      "name": "Plazo inusual",
+      "severity": "Media",
+      "category": "tiempo",
+      "description": "La duracion del contrato se sale del patron esperado.",
+      "evidence_hint": "Plazo demasiado corto o demasiado largo frente a la referencia."
+    },
+    {
+      "code": "VALUE_VARIATION",
+      "name": "Diferencia entre valor inicial y final",
+      "severity": "Media",
+      "category": "valor",
+      "description": "La variacion entre el valor inicial y final requiere revision.",
+      "evidence_hint": "Diferencia notoria entre valor adjudicado y ejecutado."
+    },
+    {
+      "code": "HIGH_ENTITY_RECURRANCE",
+      "name": "Entidad con recurrencia de riesgo",
+      "severity": "Alta",
+      "category": "entidad",
+      "description": "La entidad repite patrones de riesgo en varios contratos.",
+      "evidence_hint": "Varios contratos de la misma entidad con score alto."
+    },
+    {
+      "code": "REPEATED_PROVIDER_BEHAVIOR",
+      "name": "Comportamiento repetitivo del proveedor",
+      "severity": "Media",
+      "category": "proveedor",
+      "description": "El proveedor presenta un patron de alertas similares.",
+      "evidence_hint": "Red flags repetidas en contratos del mismo proveedor."
+    },
+    {
+      "code": "MISSING_INFO",
+      "name": "Informacion incompleta",
+      "severity": "Baja",
+      "category": "calidad",
+      "description": "Faltan campos o soportes que mejorarian la lectura del contrato.",
+      "evidence_hint": "Campos criticos vacios o documentos incompletos."
+    },
+    {
+      "code": "TEXT_SIMILARITY",
+      "name": "Alta similitud textual",
+      "severity": "Media",
+      "category": "texto",
+      "description": "El objeto contractual se parece mucho a otros contratos del universo.",
+      "evidence_hint": "Coincidencia textual elevada con contratos comparables."
+    },
+    {
+      "code": "CRITICAL_DATES",
+      "name": "Fechas criticas",
+      "severity": "Media",
+      "category": "tiempo",
+      "description": "El contrato se firmo o ajusto cerca de fechas sensibles.",
+      "evidence_hint": "Inicio o adicion muy cerca de fechas criticas."
+    },
+    {
+      "code": "GEOGRAPHIC_PATTERN",
+      "name": "Patron geografico anomalo",
+      "severity": "Media",
+      "category": "territorio",
+      "description": "La ubicacion no sigue el patron geografico habitual del universo.",
+      "evidence_hint": "Concentracion territorial o desalineacion geografica."
+    }
+  ]
+}
