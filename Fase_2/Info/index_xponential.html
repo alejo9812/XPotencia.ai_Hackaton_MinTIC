@@ -1,0 +1,406 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Xponential AI Dashboard</title>
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<style>
+:root {
+  --primary-cyan: #28d7e5;
+  --primary-cyan-dark: #14b8c4;
+  --primary-orange: #f97316;
+  --primary-orange-dark: #d95a08;
+  --dark: #3d3d3d;
+  --light-bg: #f1f3f4;
+  --white: #ffffff;
+  --gray: #6b7280;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background: var(--light-bg);
+  color: var(--dark);
+}
+
+header {
+  background: linear-gradient(90deg, var(--primary-cyan), var(--primary-orange));
+  color: white;
+  padding: 16px 24px;
+  display: flex;
+  align-items: center;
+  gap: 20px;
+}
+
+header img {
+  width: 120px;
+  height: auto;
+  object-fit: contain;
+  background: transparent;
+  border-radius: 0;
+  padding: 0;
+  display: block;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 30px;
+}
+
+header p {
+  margin: 4px 0 0 0;
+}
+
+.container {
+  display: flex;
+  min-height: 100vh;
+}
+
+.sidebar {
+  width: 260px;
+  background: var(--dark);
+  color: white;
+  padding: 20px;
+}
+
+.sidebar button {
+  width: 100%;
+  margin-bottom: 12px;
+  padding: 12px;
+  border: none;
+  border-radius: 10px;
+  background: var(--primary-cyan);
+  color: white;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.sidebar button:hover {
+  background: var(--primary-orange);
+}
+
+.content {
+  flex: 1;
+  padding: 24px;
+}
+
+.page {
+  display: none;
+}
+
+.page.active {
+  display: block;
+}
+
+.filters {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 16px;
+  background: white;
+  padding: 20px;
+  border-radius: 16px;
+  margin-bottom: 24px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.filters input,
+.filters select,
+.filters textarea {
+  width: 100%;
+  padding: 10px;
+  border-radius: 10px;
+  border: 1px solid #d1d5db;
+}
+
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 20px;
+}
+
+.card {
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.metric {
+  font-size: 36px;
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.description {
+  color: var(--gray);
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+.table-container {
+  margin-top: 24px;
+  background: white;
+  border-radius: 18px;
+  padding: 20px;
+  overflow-x: auto;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.08);
+}
+
+.table-container table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.table-container th,
+.table-container td {
+  padding: 12px;
+  border-bottom: 1px solid #e5e7eb;
+  text-align: left;
+}
+
+.table-container th {
+  background: rgba(22,198,217,0.08);
+}
+
+.export-btn {
+  margin-top: 20px;
+  background: var(--primary-orange);
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 12px;
+  cursor: pointer;
+  font-weight: bold;
+}
+
+.export-btn:hover {
+  background: var(--primary-orange-dark);
+}
+</style>
+</head>
+<body>
+
+<header>
+  <img src="/mnt/data/xponential-ai-logo.png" alt="Xponential AI">
+  <div>
+    <h1>Xponential AI</h1>
+    <p>Dashboard Analítico de Contratación Pública</p>
+  </div>
+</header>
+
+<div class="container">
+
+<div class="sidebar">
+  <button onclick="showPage('page1')">1. Contratistas</button>
+  <button onclick="showPage('page2')">2. Empresas</button>
+  <button onclick="showPage('page3')">3. Contratos</button>
+  <button onclick="showPage('page4')">4. Exportación API</button>
+</div>
+
+<div class="content">
+
+<div class="filters">
+  <div>
+    <label>Departamento</label>
+    <select>
+      <option>Todos</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Municipio</label>
+    <select>
+      <option>Todos</option>
+    </select>
+  </div>
+
+  <div>
+    <label>IDs</label>
+    <select multiple>
+      <option>ID-001</option>
+      <option>ID-002</option>
+    </select>
+  </div>
+
+  <div>
+    <label>Fecha Inicial</label>
+    <input type="date">
+  </div>
+
+  <div>
+    <label>Fecha Final</label>
+    <input type="date">
+  </div>
+
+  <div>
+    <label>Comentarios y recomendaciones</label>
+    <textarea rows="3"></textarea>
+  </div>
+</div>
+
+<div id="page1" class="page active">
+  <h2>Información Agregada de Contratistas</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Confiabilidad de la Información</h3>
+      <div class="metric">84%</div>
+      <div class="description">
+        Faltan soportes financieros históricos y validación cruzada de experiencia contractual para alcanzar el 100%.
+      </div>
+    </div>
+
+    <div class="card">
+      <h3>Probabilidad de Irregularidad</h3>
+      <div class="metric">0.37</div>
+    </div>
+
+    <div class="card">
+      <h3>Pérdida Estimada</h3>
+      <div class="metric">12%</div>
+    </div>
+
+    <div class="card">
+      <h3>Valor Total Contratado</h3>
+      <div class="metric">$24.8B</div>
+    </div>
+  </div>
+</div>
+
+<div id="page2" class="page">
+  <h2>Fiabilidad por Empresas</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Máxima Antigüedad Agregada</h3>
+      <div class="metric">18 años</div>
+    </div>
+
+    <div class="card">
+      <h3>Número de Sanciones</h3>
+      <div class="metric">4</div>
+    </div>
+
+    <div class="card">
+      <h3>Índice de Concentración</h3>
+      <div class="metric">72%</div>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <h3>Banderas Rojas Detectadas</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Empresa</th>
+          <th>Bandera Roja</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>Empresa XYZ</td>
+          <td>Alta concentración de contratos en un solo municipio</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="page3" class="page">
+  <h2>Información de Contratos</h2>
+
+  <div class="cards">
+    <div class="card">
+      <h3>Sobreprecio vs Mercado</h3>
+      <div class="metric">21%</div>
+    </div>
+
+    <div class="card">
+      <h3>Pagado vs Contratado</h3>
+      <div class="metric">93%</div>
+    </div>
+
+    <div class="card">
+      <h3>Verificación de Póliza</h3>
+      <div class="metric">Sí</div>
+    </div>
+
+    <div class="card">
+      <h3>Sobrecosto Estimado</h3>
+      <div class="metric">$1.2B</div>
+    </div>
+
+    <div class="card">
+      <h3>Adiciones Porcentuales</h3>
+      <div class="metric">17%</div>
+    </div>
+
+    <div class="card">
+      <h3>Probabilidad de Irregularidad</h3>
+      <div class="metric">0.42</div>
+    </div>
+
+    <div class="card">
+      <h3>Valor de Pérdida Esperada</h3>
+      <div class="metric">$850M</div>
+    </div>
+  </div>
+
+  <div class="table-container">
+    <h3>Banderas Rojas Contrato</h3>
+    <table>
+      <thead>
+        <tr>
+          <th>Contrato</th>
+          <th>Bandera Roja</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>CT-2025-001</td>
+          <td>Adiciones superiores al promedio sectorial</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+<div id="page4" class="page">
+  <h2>Exportación y API</h2>
+
+  <div class="card">
+    <h3>Exportar información</h3>
+    <button class="export-btn">Exportar JSON</button>
+    <button class="export-btn">Exportar CSV</button>
+    <button class="export-btn">Consumir API</button>
+  </div>
+</div>
+
+</div>
+</div>
+
+<script>
+function showPage(pageId) {
+  document.querySelectorAll('.page').forEach(page => {
+    page.classList.remove('active');
+  });
+
+  document.getElementById(pageId).classList.add('active');
+}
+
+const data = {
+  labels: ['Ene', 'Feb', 'Mar', 'Abr'],
+  datasets: [{
+    label: 'Contratación',
+    data: [120, 190, 300, 250]
+  }]
+};
+</script>
+
+</body>
+</html>
